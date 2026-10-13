@@ -13,6 +13,7 @@ node match.mjs        # match ingredients to Kalorické tabulky foods -> matches
 node write.mjs --date YYYY-MM-DD [--write]   # write that day into the bot account diary (dry run without --write)
 node send.mjs --date YYYY-MM-DD [--send]     # send that day Oběd to your main account (dry run without --send)
 node daily.mjs [--go]                        # the whole chain for today in one command (dry run without --go)
+node daily.mjs --week --go                   # every day with a lunch from today to Sunday (next week on weekends)
 ```
 
 ## Planned
