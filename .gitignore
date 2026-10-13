@@ -3,3 +3,4 @@ __pycache__/
 node_modules/
 selection.json
 sent.json
+daily.log
