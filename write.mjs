@@ -104,6 +104,7 @@ if (!WRITE) {
 for (const p of plan) {
   const form = await api(`/user/foodstuff/add/form/${p.food.id}/${ktDate}/get?format=json`);
   form.diaryTimeGuid = LUNCH_TIME_ID;
+  form.date = ktDate; // the form always comes back with today's date - the web UI overrides it too
   const gram = form.unitOptions.find((u) => u.multiplier === 1);
   if (gram) {
     form.unitGuid = gram.id;
@@ -118,4 +119,7 @@ for (const p of plan) {
 }
 
 const after = await lunchSection();
+if ((after?.foodstuff?.length ?? 0) !== existing.length + plan.length) {
+  throw new Error(`Expected ${existing.length + plan.length} entries in Oběd on ${ktDate}, found ${after?.foodstuff?.length ?? 0} - check the diary`);
+}
 console.log(`\nDone. Oběd on ${ktDate}: ${after.foodstuff.length} entries, ${after.energyTotal} kcal.`);
