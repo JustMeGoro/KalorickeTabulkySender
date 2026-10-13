@@ -1,0 +1,778 @@
+{
+  "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
+  "canteen": "Gymnázium Orlová",
+  "fetchedAt": "2026-10-13T16:08:07.312Z",
+  "days": [
+    {
+      "date": "2026-10-01",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka kapustová s bramborem (1.1,9)",
+          "name": "Polévka kapustová s bramborem",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Hovězí maso po burgundsku (1.1,9) šťouchané brambory  (7) zel. bar",
+          "name": "Hovězí maso po burgundsku šťouchané brambory zel. bar",
+          "allergens": [
+            "1.1",
+            "9",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Hot - dog se zeleninou a cibulkou (1.1,10)",
+          "name": "Hot - dog se zeleninou a cibulkou",
+          "allergens": [
+            "1.1",
+            "10"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Voda s citronem, mléko",
+          "name": "Voda s citronem, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka s těstovinou (1.1,9)",
+          "name": "Polévka s těstovinou",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Bramborové knedlíky s uzeným (1.1,3,) kysané zelí (1.1,9)",
+          "name": "Bramborové knedlíky s uzeným kysané zelí",
+          "allergens": [
+            "1.1",
+            "3",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda, mléko",
+          "name": "Minerálka, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka kmínová s kapaním (1.1,3,7,9)",
+          "name": "Polévka kmínová s kapaním",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Kuřecí plátek na žampionech (1.1,7,9) rýže s bulgurem , zel. bar",
+          "name": "Kuřecí plátek na žampionech rýže s bulgurem, zel. bar",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Uzené maso, hrachová kaše (1.1.,7,9) chléb, kys. okurek",
+          "name": "Uzené maso, hrachová kaše (1.1.,7,9) chléb, kys. okurek",
+          "allergens": []
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Čaj, voda, mléko",
+          "name": "Čaj, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka cibulová s krutony (1.1,3,7,9)",
+          "name": "Polévka cibulová s krutony",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Smažené rybí filé (1.1,3,4,7) bram. kaše(7) zel. bar",
+          "name": "Smažené rybí filé bram. kaše zel. bar",
+          "allergens": [
+            "1.1",
+            "3",
+            "4",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Vařené vejce, fazolové lusky na smetaně (1.1,7,9) vař. brambor V",
+          "name": "Vařené vejce, fazolové lusky na smetaně vař. brambor V",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda, mléko",
+          "name": "Minerálka, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka vývar se zeleninou a kuskusem (1.1,7,9)",
+          "name": "Polévka vývar se zeleninou a kuskusem",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Segedínský guláš (1.1,7,9) houskový knedlík (1.1,3,7)",
+          "name": "Segedínský guláš houskový knedlík",
+          "allergens": [
+            "1.1",
+            "7",
+            "9",
+            "3"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Caesar salát s krutony (3,7,9)",
+          "name": "Caesar salát s krutony",
+          "allergens": [
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Džus, voda, mléko",
+          "name": "Džus, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka kedlubnová (1.1,7,9)",
+          "name": "Polévka kedlubnová",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Vepřová panenka s pepřovou omáčkou a zel. fazolkami(1.1,7,9) opekaný brambor",
+          "name": "Vepřová panenka s pepřovou omáčkou a zel. fazolkami opekaný brambor",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Těstoviny s liskooříškovým posypam (1.1,3,7) V",
+          "name": "Těstoviny s liskooříškovým posypam V",
+          "allergens": [
+            "1.1",
+            "3",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Voda s citronem, mléko",
+          "name": "Voda s citronem, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka krupicová s vejci (1.1,3,7,9)",
+          "name": "Polévka krupicová s vejci",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Špecle s hlávkovým zelím a anglickou slaninou (1.1,3,7,9)",
+          "name": "Špecle s hlávkovým zelím a anglickou slaninou",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda, mléko",
+          "name": "Minerálka, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka vývar s vaječnou jíškou (1.1,3,7,9)",
+          "name": "Polévka vývar s vaječnou jíškou",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Moravský vrabec, dužená mrkev s hráškem (1.1,7,9) vař. brambor",
+          "name": "Moravský vrabec, dužená mrkev s hráškem vař. brambor",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Smažený hermelín se zeleninovým salátem, celozrné pečivo V",
+          "name": "Smažený hermelín se zeleninovým salátem, celozrné pečivo V",
+          "allergens": []
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Čaj, voda, mléko",
+          "name": "Čaj, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka rajská s kapáním (1.1,3,7,9)",
+          "name": "Polévka rajská s kapáním",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Pečený losos na másle (4,7)  tagliatelle se špenátem",
+          "name": "Pečený losos na másle tagliatelle se špenátem",
+          "allergens": [
+            "4",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Halušky s bryndzou a slaninou, mléko (1.1,7)",
+          "name": "Halušky s bryndzou a slaninou, mléko",
+          "allergens": [
+            "1.1",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Džus, voda",
+          "name": "Džus, voda",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka zeleninová s ovesnými vločkami (1.1,7,9)",
+          "name": "Polévka zeleninová s ovesnými vločkami",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Vařené vejce, koprová omáčka (1.1,7,9), vař. brambor V",
+          "name": "Vařené vejce, koprová omáčka, vař. brambor V",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Karemelizovaný bůček (1.1,7,10) bramborová kaše,(7) salát",
+          "name": "Karemelizovaný bůček bramborová kaše, salát",
+          "allergens": [
+            "1.1",
+            "7",
+            "10"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda, mléko",
+          "name": "Minerálka, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka vývar s pohankou a zeleninou (7,9)",
+          "name": "Polévka vývar s pohankou a zeleninou",
+          "allergens": [
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Hovězí guláš (1.1,9) houskový knedlík (1.1,3,7)",
+          "name": "Hovězí guláš houskový knedlík",
+          "allergens": [
+            "1.1",
+            "9",
+            "3",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Quinoa s bulgurem zeleninou a uzeným tofu (1.1,9) V",
+          "name": "Quinoa s bulgurem zeleninou a uzeným tofu V",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Čaj, voda, mléko",
+          "name": "Čaj, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka boršč (1.1,7,9)",
+          "name": "Polévka boršč",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Tarhoně s drůbežím masem a žampiony (1.1,3,7,9) ledový salát",
+          "name": "Tarhoně s drůbežím masem a žampiony ledový salát",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Voda s citronem, mléko",
+          "name": "Voda s citronem, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka sýrová se strouhaním (1.1.3,10)",
+          "name": "Polévka sýrová se strouhaním (1.1.3,10)",
+          "allergens": []
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Balkánský kuřecí plátek (1.1,7,9) vař. brambor s pažitkou (7) zel. bar",
+          "name": "Balkánský kuřecí plátek vař. brambor s pažitkou zel. bar",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Pečená ryba na másle (4,7) vař. brambor s máslem a pažitkou kompot",
+          "name": "Pečená ryba na másle vař. brambor s máslem a pažitkou kompot",
+          "allergens": [
+            "4",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Džus, voda, mléko",
+          "name": "Džus, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka rychlá s vejci (3.7,9)",
+          "name": "Polévka rychlá s vejci",
+          "allergens": [
+            "3.7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Pečené kuře na zelí (12) bramborový knedlík (1.1)",
+          "name": "Pečené kuře na zelí bramborový knedlík",
+          "allergens": [
+            "12",
+            "1.1"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Pečená kachna na zelí(12)  bramborový knedlík (1.1)",
+          "name": "Pečená kachna na zelí bramborový knedlík",
+          "allergens": [
+            "12",
+            "1.1"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Čaj, voda, mléko",
+          "name": "Čaj, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka brokolicová (1.1,7,9)",
+          "name": "Polévka brokolicová",
+          "allergens": [
+            "1.1",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Znojemský hovězí plátek (1.1,9) dušená rýže s bulgurem",
+          "name": "Znojemský hovězí plátek dušená rýže s bulgurem",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Kynuté knedlíky s povidly (1.1,3,7) bílá káva (7)",
+          "name": "Kynuté knedlíky s povidly bílá káva",
+          "allergens": [
+            "1.1",
+            "3",
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda",
+          "name": "Minerálka, voda",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka vývar s těstovinou (1.1,3,7,9)",
+          "name": "Polévka vývar s těstovinou",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Hamburská vepřová pečeně (1.1,7,9) houskový knedlík (1.1,3,7)",
+          "name": "Hamburská vepřová pečeně houskový knedlík",
+          "allergens": [
+            "1.1",
+            "7",
+            "9",
+            "3"
+          ]
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "raw": "Zeleninové placičky (1.1,3,7,9) vař. brambor s máslem a pažitkou (7)  kompot V",
+          "name": "Zeleninové placičky vař. brambor s máslem a pažitkou kompot V",
+          "allergens": [
+            "1.1",
+            "3",
+            "7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Džus, voda, mléko",
+          "name": "Džus, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka gulášová (1.1,9)",
+          "name": "Polévka gulášová",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Vařné vejce, čočka na kyselo (1.1) chléb, kys. okurek V",
+          "name": "Vařné vejce, čočka na kyselo chléb, kys. okurek V",
+          "allergens": [
+            "1.1"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Čaj, voda, mléko",
+          "name": "Čaj, voda, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka zabijačková (1.1,9)",
+          "name": "Polévka zabijačková",
+          "allergens": [
+            "1.1",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Drůbeží rizoto se zeleninou a sýrem(7) zel. bar",
+          "name": "Drůbeží rizoto se zeleninou a sýrem zel. bar",
+          "allergens": [
+            "7"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Voda s citronem, mléko",
+          "name": "Voda s citronem, mléko",
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "meals": [
+        {
+          "slot": "Oběd - polévka",
+          "type": "soup",
+          "raw": "Polévka zelná s klobásou (1.1,7,12)",
+          "name": "Polévka zelná s klobásou",
+          "allergens": [
+            "1.1",
+            "7",
+            "12"
+          ]
+        },
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "raw": "Kuřecí rošťáci (3.7,9) opékané brambory, tatarská omčka",
+          "name": "Kuřecí rošťáci opékané brambory, tatarská omčka",
+          "allergens": [
+            "3.7",
+            "9"
+          ]
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "raw": "Minerálka, voda, mléko",
+          "name": "Minerálka, voda, mléko",
+          "allergens": []
+        }
+      ]
+    }
+  ]
+}
