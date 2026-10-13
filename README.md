@@ -8,6 +8,7 @@ Automatically reads the canteen's daily lunch menu and sends it to Kalorické ta
 node scrape.mjs    # canteen menu -> menu.json
 node lunches.mjs   # pick the lunch per day -> lunches.json (default: "Oběd 1")
 node choose.mjs    # optional: override the default on days with two lunches
+node ingredients.mjs  # Gemini splits lunches into ingredients -> ingredients.json (needs GEMINI_API_KEY in .env)
 ```
 
 ## Planned

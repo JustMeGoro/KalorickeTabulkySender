@@ -1,0 +1,314 @@
+{
+  "meals": {
+    "Pečený losos na másle tagliatelle se špenátem": [
+      {
+        "name": "losos",
+        "grams": 120
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "těstoviny vařené",
+        "grams": 150
+      },
+      {
+        "name": "špenát",
+        "grams": 80
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 30
+      },
+      {
+        "name": "olej",
+        "grams": 5
+      }
+    ],
+    "Vařené vejce, koprová omáčka, vař. brambor V": [
+      {
+        "name": "vejce vařené",
+        "grams": 100
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "smetana",
+        "grams": 70
+      },
+      {
+        "name": "mléko",
+        "grams": 80
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 15
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "cukr",
+        "grams": 10
+      },
+      {
+        "name": "kopr",
+        "grams": 5
+      }
+    ],
+    "Hovězí guláš houskový knedlík": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 120
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 200
+      },
+      {
+        "name": "cibule",
+        "grams": 50
+      },
+      {
+        "name": "olej rostlinný",
+        "grams": 15
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      },
+      {
+        "name": "hovězí vývar",
+        "grams": 100
+      }
+    ],
+    "Tarhoně s drůbežím masem a žampiony ledový salát": [
+      {
+        "name": "tarhoňa vařená",
+        "grams": 150
+      },
+      {
+        "name": "kuřecí prsa",
+        "grams": 100
+      },
+      {
+        "name": "žampiony",
+        "grams": 50
+      },
+      {
+        "name": "ledový salát",
+        "grams": 80
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      }
+    ],
+    "Balkánský kuřecí plátek vař. brambor s pažitkou": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "balkánský sýr",
+        "grams": 30
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "pažitka",
+        "grams": 5
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      }
+    ],
+    "Pečené kuře na zelí bramborový knedlík": [
+      {
+        "name": "kuřecí stehno pečené",
+        "grams": 150
+      },
+      {
+        "name": "kysané zelí dušené",
+        "grams": 150
+      },
+      {
+        "name": "bramborový knedlík",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      }
+    ],
+    "Znojemský hovězí plátek dušená rýže s bulgurem": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 100
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 150
+      },
+      {
+        "name": "bulgur vařený",
+        "grams": 50
+      },
+      {
+        "name": "sterilované okurky",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      },
+      {
+        "name": "hovězí vývar",
+        "grams": 100
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 20
+      }
+    ],
+    "Hamburská vepřová pečeně houskový knedlík": [
+      {
+        "name": "vepřové maso pečené",
+        "grams": 120
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 180
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 40
+      },
+      {
+        "name": "mrkev",
+        "grams": 30
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "olej",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      },
+      {
+        "name": "vývar",
+        "grams": 100
+      }
+    ],
+    "Vařné vejce, čočka na kyselo chléb, kys. okurek V": [
+      {
+        "name": "vejce vařené",
+        "grams": 55
+      },
+      {
+        "name": "čočka vařená",
+        "grams": 150
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "mouka pšeničná hladká",
+        "grams": 10
+      },
+      {
+        "name": "ocet",
+        "grams": 5
+      },
+      {
+        "name": "chléb pšenično-žitný",
+        "grams": 60
+      },
+      {
+        "name": "okurka kyselá",
+        "grams": 50
+      }
+    ],
+    "Drůbeží rizoto se zeleninou a sýrem": [
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "kuřecí prsa",
+        "grams": 100
+      },
+      {
+        "name": "mražená zelenina",
+        "grams": 80
+      },
+      {
+        "name": "sýr eidam",
+        "grams": 30
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      }
+    ],
+    "Kuřecí rošťáci opékané brambory, tatarská omčka": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "tatarská omáčka",
+        "grams": 30
+      }
+    ]
+  }
+}
