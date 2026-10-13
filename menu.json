@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-10-13T16:08:54.746Z",
+  "fetchedAt": "2026-10-13T16:16:28.792Z",
   "days": [
     {
       "date": "2026-10-01",
@@ -9,17 +9,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Hovězí maso po burgundsku šťouchané brambory zel. bar"
+          "name": "Hovězí ma o po burgund ku   šťouchané brambory    zel. bar"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Hot - dog se zeleninou a cibulkou"
+          "name": "Hot - dog  e zeleninou a cibulkou"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Voda s citronem, mléko"
+          "name": "Voda   citronem, mléko"
         }
       ]
     },
@@ -29,7 +29,7 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Bramborové knedlíky s uzeným kysané zelí"
+          "name": "Bramborové knedlíky   uzeným   ky ané zelí"
         },
         {
           "slot": "Oběd další",
@@ -44,12 +44,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Kuřecí plátek na žampionech rýže s bulgurem, zel. bar"
+          "name": "Kuřecí plátek na žampionech   rýže   bulgurem , zel. bar"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Uzené maso, hrachová kaše (1.1.,7,9) chléb, kys. okurek"
+          "name": "Uzené ma o, hrachová kaše (1.1.,7,9) chléb, ky . okurek"
         },
         {
           "slot": "Oběd další",
@@ -64,12 +64,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Smažené rybí filé bram. kaše zel. bar"
+          "name": "Smažené rybí filé   bram. kaše  zel. bar"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Vařené vejce, fazolové lusky na smetaně vař. brambor V"
+          "name": "Vařené vejce, fazolové lu ky na  metaně   vař. brambor V"
         },
         {
           "slot": "Oběd další",
@@ -84,17 +84,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Segedínský guláš houskový knedlík"
+          "name": "Segedín ký guláš   hou kový knedlík"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Caesar salát s krutony"
+          "name": "Cae ar  alát   krutony"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Džus, voda, mléko"
+          "name": "Džu , voda, mléko"
         }
       ]
     },
@@ -104,17 +104,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Vepřová panenka s pepřovou omáčkou a zel. fazolkami opekaný brambor"
+          "name": "Vepřová panenka   pepřovou omáčkou a zel. fazolkami  opekaný brambor"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Těstoviny s liskooříškovým posypam V"
+          "name": "Tě toviny   li kooříškovým po ypam   V"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Voda s citronem, mléko"
+          "name": "Voda   citronem, mléko"
         }
       ]
     },
@@ -124,7 +124,7 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Špecle s hlávkovým zelím a anglickou slaninou"
+          "name": "Špecle   hlávkovým zelím a anglickou  laninou"
         },
         {
           "slot": "Oběd další",
@@ -139,12 +139,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Moravský vrabec, dužená mrkev s hráškem vař. brambor"
+          "name": "Morav ký vrabec, dužená mrkev   hráškem   vař. brambor"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Smažený hermelín se zeleninovým salátem, celozrné pečivo V"
+          "name": "Smažený hermelín  e zeleninovým  alátem, celozrné pečivo V"
         },
         {
           "slot": "Oběd další",
@@ -159,17 +159,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Pečený losos na másle tagliatelle se špenátem"
+          "name": "Pečený lo o  na má le    tagliatelle  e špenátem"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Halušky s bryndzou a slaninou, mléko"
+          "name": "Halušky   bryndzou a  laninou, mléko"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Džus, voda"
+          "name": "Džu , voda"
         }
       ]
     },
@@ -179,12 +179,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Vařené vejce, koprová omáčka, vař. brambor V"
+          "name": "Vařené vejce, koprová omáčka  , vař. brambor V"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Karemelizovaný bůček bramborová kaše, salát"
+          "name": "Karemelizovaný bůček   bramborová kaše,   alát"
         },
         {
           "slot": "Oběd další",
@@ -199,12 +199,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Hovězí guláš houskový knedlík"
+          "name": "Hovězí guláš   hou kový knedlík"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Quinoa s bulgurem zeleninou a uzeným tofu V"
+          "name": "Quinoa   bulgurem zeleninou a uzeným tofu   V"
         },
         {
           "slot": "Oběd další",
@@ -219,12 +219,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Tarhoně s drůbežím masem a žampiony ledový salát"
+          "name": "Tarhoně   drůbežím ma em a žampiony   ledový  alát"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Voda s citronem, mléko"
+          "name": "Voda   citronem, mléko"
         }
       ]
     },
@@ -234,17 +234,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Balkánský kuřecí plátek vař. brambor s pažitkou zel. bar"
+          "name": "Balkán ký kuřecí plátek   vař. brambor   pažitkou   zel. bar"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Pečená ryba na másle vař. brambor s máslem a pažitkou kompot"
+          "name": "Pečená ryba na má le   vař. brambor   má lem a pažitkou kompot"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Džus, voda, mléko"
+          "name": "Džu , voda, mléko"
         }
       ]
     },
@@ -254,12 +254,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Pečené kuře na zelí bramborový knedlík"
+          "name": "Pečené kuře na zelí   bramborový knedlík"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Pečená kachna na zelí bramborový knedlík"
+          "name": "Pečená kachna na zelí   bramborový knedlík"
         },
         {
           "slot": "Oběd další",
@@ -274,12 +274,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Znojemský hovězí plátek dušená rýže s bulgurem"
+          "name": "Znojem ký hovězí plátek   dušená rýže   bulgurem"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Kynuté knedlíky s povidly bílá káva"
+          "name": "Kynuté knedlíky   povidly   bílá káva"
         },
         {
           "slot": "Oběd další",
@@ -294,17 +294,17 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Hamburská vepřová pečeně houskový knedlík"
+          "name": "Hambur ká vepřová pečeně   hou kový knedlík"
         },
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Zeleninové placičky vař. brambor s máslem a pažitkou kompot V"
+          "name": "Zeleninové placičky   vař. brambor   má lem a pažitkou    kompot V"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Džus, voda, mléko"
+          "name": "Džu , voda, mléko"
         }
       ]
     },
@@ -314,7 +314,7 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Vařné vejce, čočka na kyselo chléb, kys. okurek V"
+          "name": "Vařné vejce, čočka na ky elo   chléb, ky . okurek V"
         },
         {
           "slot": "Oběd další",
@@ -329,12 +329,12 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Drůbeží rizoto se zeleninou a sýrem zel. bar"
+          "name": "Drůbeží rizoto  e zeleninou a  ýrem  zel. bar"
         },
         {
           "slot": "Oběd další",
           "type": "drink",
-          "name": "Voda s citronem, mléko"
+          "name": "Voda   citronem, mléko"
         }
       ]
     },
@@ -344,7 +344,7 @@
         {
           "slot": "Oběd 1",
           "type": "main",
-          "name": "Kuřecí rošťáci opékané brambory, tatarská omčka"
+          "name": "Kuřecí rošťáci   opékané brambory, tatar ká omčka"
         },
         {
           "slot": "Oběd další",

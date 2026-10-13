@@ -16,7 +16,14 @@ const typeOf = (heading) => {
 
 // Allergen codes like "(1.1,9)", "(7)", "(1.1,3,)" are stripped from the name.
 const ALLERGEN_RE = /\(\s*\d+(?:\.\d+)?(?:\s*,\s*\d*(?:\.\d+)?)*\s*\)/g;
-const clean = (raw) => raw.replace(ALLERGEN_RE, " ").replace(/\s+/g, " ").replace(/\s+,/g, ",").trim();
+const clean = (raw) =>
+  raw
+    .replace(ALLERGEN_RE, " ")
+    .replace(/,?s*zel.?s*barb/gi, " ") // vegetable bar, never eaten
+    .replace(/s+/g, " ")
+    .replace(/s+,/g, ",")
+    .replace(/,$/, "")
+    .trim();
 
 const days = api.weeks
   .flatMap((w) => w.data)
