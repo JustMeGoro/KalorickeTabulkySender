@@ -19,9 +19,9 @@ const ALLERGEN_RE = /\(\s*\d+(?:\.\d+)?(?:\s*,\s*\d*(?:\.\d+)?)*\s*\)/g;
 const clean = (raw) =>
   raw
     .replace(ALLERGEN_RE, " ")
-    .replace(/,?s*zel.?s*barb/gi, " ") // vegetable bar, never eaten
-    .replace(/s+/g, " ")
-    .replace(/s+,/g, ",")
+    .replace(/,?\s*zel\.?\s*bar\b/gi, " ") // vegetable bar, never eaten
+    .replace(/\s+/g, " ")
+    .replace(/\s+,/g, ",")
     .replace(/,$/, "")
     .trim();
 
