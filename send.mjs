@@ -7,6 +7,7 @@
 // Needs KT_EMAIL, KT_PASSWORD (bot account) and KT_SEND_TO (the e-mail of the account that
 // should receive it) in .env. If the recipient in the form is not KT_SEND_TO, nothing is sent.
 import { createHash } from "node:crypto";
+import { readFile, writeFile } from "node:fs/promises";
 
 try {
   process.loadEnvFile(".env");
@@ -20,6 +21,7 @@ const LUNCH_TIME_ID = "3"; // "Oběd" in the diary
 const args = process.argv.slice(2);
 const isoDate = args[args.indexOf("--date") + 1];
 const SEND = args.includes("--send");
+const AGAIN = args.includes("--again"); // send even if this day was already sent
 if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate ?? "")) {
   console.error("Usage: node send.mjs --date YYYY-MM-DD [--send]");
   process.exit(1);
@@ -70,6 +72,11 @@ if (!form.foodstuff?.length) throw new Error(`Oběd on ${ktDate} is empty - run 
 if (recipient.toLowerCase() !== KT_SEND_TO.toLowerCase()) {
   throw new Error(`Recipient is ${recipient}, but KT_SEND_TO is ${KT_SEND_TO} - not sending`);
 }
+const sent = await readFile("sent.json", "utf8").then(JSON.parse, () => ({}));
+if (sent[isoDate] && !AGAIN) {
+  console.log(`\nAlready sent on ${sent[isoDate]} - not sending again (use --again to force).`);
+  process.exit(0);
+}
 if (!SEND) {
   console.log("\nDry run - nothing sent. Add --send to send it.");
   process.exit(0);
@@ -78,4 +85,6 @@ if (!SEND) {
 // ---- send -------------------------------------------------------------------------------
 const res = await (await http("/user/settings/share/item/diary-time?format=json", { method: "POST", json: form })).json();
 if (res.code !== 0) throw new Error(`Sending failed: ${res.message}`);
+sent[isoDate] = new Date().toISOString();
+await writeFile("sent.json", JSON.stringify(sent, null, 2) + "\n", "utf8");
 console.log(`\nSent. ${res.message ?? ""}`.trim());
