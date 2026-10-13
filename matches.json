@@ -1,0 +1,414 @@
+{
+  "losos": {
+    "status": "ok",
+    "id": "62c5a97a61ca97d2",
+    "url": "losos-peceny",
+    "title": "losos pečený",
+    "unit": "g",
+    "kcalPer100": 175,
+    "reason": "Položka losos pečený nejlépe odpovídá tepelně upravené surovině ze školního oběda bez specifikace konkrétní úpravy či značky."
+  },
+  "máslo": {
+    "status": "ok",
+    "id": "8c02f002857c4c1a",
+    "url": "maslo",
+    "title": "máslo",
+    "unit": "g",
+    "kcalPer100": 748,
+    "reason": "Položka máslo je obecná a nejlépe odpovídá surovině použité při přípravě školního oběda."
+  },
+  "těstoviny vařené": {
+    "status": "ok",
+    "id": "13fc72f4396fc7b2",
+    "url": "testoviny-varene",
+    "title": "těstoviny vařené",
+    "unit": "g",
+    "kcalPer100": 133,
+    "reason": "Položka 0 představuje obecnou variantu vařených těstovin, která nejlépe odpovídá zadání pro školní oběd."
+  },
+  "špenát": {
+    "status": "ok",
+    "id": "cc8b56e32451fb4a",
+    "url": "spenat-duseny",
+    "title": "špenát dušený",
+    "unit": "g",
+    "kcalPer100": 34,
+    "reason": "Položka špenát dušený nejlépe odpovídá tepelně upravené surovině bez přidaných komplexních ingrediencí, které jsou typické pro hotová jídla."
+  },
+  "smetana ke šlehání": {
+    "status": "ok",
+    "id": "fae016c04b3549d2b34e24c8677d500c",
+    "url": "smetana-ke-slehani",
+    "title": "Smetana ke šlehání",
+    "unit": "g",
+    "kcalPer100": 312,
+    "reason": "Položka 0 je obecná a odpovídá standardní energetické hodnotě pro smetanu ke šlehání, přičemž u této suroviny není tepelná úprava relevantní pro změnu nutričních hodnot."
+  },
+  "olej": {
+    "status": "ok",
+    "id": "f7b8d1a26a396388",
+    "url": "olej-repkovy",
+    "title": "olej řepkový",
+    "unit": "ml",
+    "kcalPer100": 898,
+    "reason": "Řepkový olej je nejčastěji používaným neutrálním olejem ve školních jídelnách a varianta 2 představuje obecnou položku bez značky."
+  },
+  "vejce vařené": {
+    "status": "ok",
+    "id": "ea9ed298739c464fb14189a28b020355",
+    "url": "varene-vejce",
+    "title": "Vařené vejce",
+    "unit": "g",
+    "kcalPer100": 160,
+    "reason": "Položka 0 představuje nejobecnější a nejvhodnější variantu pro vařené slepičí vejce bez dalších přísad či značkových specifikací."
+  },
+  "brambory vařené": {
+    "status": "ok",
+    "id": "aa916f3d795d6a04",
+    "url": "brambory-varene-bez-slupky",
+    "title": "brambory vařené bez slupky",
+    "unit": "g",
+    "kcalPer100": 85,
+    "reason": "Položka brambory vařené bez slupky je nejvíce reprezentativní obecnou variantou pro běžně podávané vařené brambory ve školní jídelně."
+  },
+  "smetana": {
+    "status": "ok",
+    "id": "48a9fc3cc0751b7b",
+    "url": "smetana-na-vareni-12-tuku-kunin",
+    "title": "Smetana na vaření 12% Kunín",
+    "unit": "g",
+    "kcalPer100": 134,
+    "reason": "Položka Smetana na vaření 12% nejlépe odpovídá obecnému typu suroviny používané při přípravě školních obědů."
+  },
+  "mléko": {
+    "status": "ok",
+    "id": "14fe316852b297ee",
+    "url": "mleko-polotucne-1-5-tuku",
+    "title": "mléko polotučné 1,5% tuku",
+    "unit": "ml",
+    "kcalPer100": 47,
+    "reason": "Položka představuje obecné polotučné mléko, které je nejvhodnější volbou pro školní obědy, pokud není specifikována tučnost."
+  },
+  "pšeničná mouka": {
+    "status": "ok",
+    "id": "4fa6314194ca1a83",
+    "url": "psenicna-mouka-hladka",
+    "title": "pšeničná mouka hladká",
+    "unit": "g",
+    "kcalPer100": 356,
+    "reason": "Pšeničná mouka se v rámci školních obědů nejčastěji používá jako hladká a položka 0 představuje obecnou variantu bez značky."
+  },
+  "cukr": {
+    "status": "ok",
+    "id": "be6d607c02cef788",
+    "url": "cukr-bily",
+    "title": "cukr bílý",
+    "unit": "g",
+    "kcalPer100": 401,
+    "reason": "Položka cukr bílý je nejpřesnější obecnou variantou pro surovinu cukr v její základní formě."
+  },
+  "kopr": {
+    "status": "ok",
+    "id": "04b138916fc7cec1",
+    "url": "kopr",
+    "title": "kopr",
+    "unit": "g",
+    "kcalPer100": 34,
+    "reason": "Položka kopr je nejobecnější variantou suroviny, která odpovídá zadanému názvu bez ohledu na způsob úpravy."
+  },
+  "hovězí maso vařené": {
+    "status": "ok",
+    "id": "d68276332c1a7480",
+    "url": "hovezi-maso-varene",
+    "title": "hovězí maso vařené",
+    "unit": "g",
+    "kcalPer100": 170,
+    "reason": "Položka 0 je nejobecnější variantou pro vařené hovězí maso, která odpovídá zadaným parametrům bez přidaných ingrediencí či značek."
+  },
+  "houskový knedlík": {
+    "status": "ok",
+    "id": "07b73f73b384c2ba",
+    "url": "knedlik-houskovy",
+    "title": "knedlík houskový",
+    "unit": "g",
+    "kcalPer100": 212,
+    "reason": "Položka představuje obecný, hotový houskový knedlík, což nejlépe odpovídá zadání bez nutnosti volit značkový výrobek nebo hotové jídlo s omáčkou."
+  },
+  "cibule": {
+    "status": "ok",
+    "id": "b67af66bbda3d607",
+    "url": "cibule",
+    "title": "cibule",
+    "unit": "g",
+    "kcalPer100": 43,
+    "reason": "Položka cibule je nejvhodnější obecnou variantou pro surovinu v hotovém jídle, protože ostatní možnosti jsou buď specifické druhy, nebo komplexní pokrmy obsahující další ingredience."
+  },
+  "olej rostlinný": {
+    "status": "ok",
+    "id": "ed7aace4e7374816aa7172c19b0f5678",
+    "url": "olej-rostlinny",
+    "title": "Olej rostlinný",
+    "unit": "ml",
+    "kcalPer100": 884,
+    "reason": "Položka 0 představuje obecný rostlinný olej, který nejlépe odpovídá surovině bez dalších přidaných ingrediencí."
+  },
+  "hladká mouka": {
+    "status": "ok",
+    "id": "4fa6314194ca1a83",
+    "url": "psenicna-mouka-hladka",
+    "title": "pšeničná mouka hladká",
+    "unit": "g",
+    "kcalPer100": 356,
+    "reason": "Položka 0 je nejobecnější variantou pšeničné hladké mouky, která odpovídá zadání, přičemž u mouky se nutriční hodnoty v syrovém stavu standardně používají i pro výpočet v hotových pokrmech."
+  },
+  "hovězí vývar": {
+    "status": "ok",
+    "id": "ec453e2606ec8860",
+    "url": "hovezi-vyvar-cisty",
+    "title": "hovězí vývar čistý",
+    "unit": "ml",
+    "kcalPer100": 16,
+    "reason": "Položka představuje nejvíce obecný a základní popis čistého hovězího vývaru bez dalších přidaných surovin, které by zkreslovaly nutriční hodnoty."
+  },
+  "tarhoňa vařená": {
+    "status": "ok",
+    "id": "fe2adeec22dd438fbfffe96d351005c9",
+    "url": "tarhona-varena-ve-vode",
+    "title": "tarhoňa vařená ve vodě",
+    "unit": "g",
+    "kcalPer100": 116,
+    "reason": "Položka odpovídá vařenému stavu suroviny a jde o obecný záznam bez značky, který je pro školní oběd nejvhodnější."
+  },
+  "kuřecí prsa": {
+    "status": "ok",
+    "id": "580e8e640c2d685f",
+    "url": "kureci-prsa-bez-kuze-varena-dusena",
+    "title": "kuřecí prsa bez kůže vařená, dušená",
+    "unit": "g",
+    "kcalPer100": 142,
+    "reason": "Položka 5 představuje obecnou a nejvíce reprezentativní variantu pro tepelně upravené kuřecí prso bez kůže, které odpovídá běžné přípravě ve školní jídelně."
+  },
+  "žampiony": {
+    "status": "ok",
+    "id": "52e190e1ddcec88d",
+    "url": "zampiony-dusene",
+    "title": "žampiony dušené",
+    "unit": "g",
+    "kcalPer100": 48,
+    "reason": "Položka žampiony dušené nejlépe odpovídá tepelně upravené surovině v rámci školního oběda bez přidaného obalování či specifické zeleninové směsi."
+  },
+  "ledový salát": {
+    "status": "ok",
+    "id": "407ef03d038cebd9",
+    "url": "ledovy-salat",
+    "title": "ledový salát",
+    "unit": "g",
+    "kcalPer100": 16,
+    "reason": "Položka představuje nejobecnější a nejvhodnější variantu pro surovinu ledový salát, která se v rámci školních obědů podává v syrovém stavu."
+  },
+  "rostlinný olej": {
+    "status": "ok",
+    "id": "1fe16e9ed4b54246b525f516294a51c5",
+    "url": "rostlinny-olej-slunecnicovy-bell-zvolen",
+    "title": "Rostlinný olej slunečnicový Bell Zvolen",
+    "unit": "ml",
+    "kcalPer100": 809,
+    "reason": "Položka 1 je jediná, která odpovídá čistému rostlinnému oleji, zatímco ostatní kandidáti jsou rybí konzervy nebo smažená cibule."
+  },
+  "balkánský sýr": {
+    "status": "ok",
+    "id": "a60651a79d6f51ca",
+    "url": "balkansky-syr",
+    "title": "balkánský sýr",
+    "unit": "g",
+    "kcalPer100": 237,
+    "reason": "Položka 0 je obecná a nejlépe odpovídá zadání, protože balkánský sýr se tepelně neupravuje a tato varianta není vázána na konkrétní značku."
+  },
+  "olej řepkový": {
+    "status": "ok",
+    "id": "f7b8d1a26a396388",
+    "url": "olej-repkovy",
+    "title": "olej řepkový",
+    "unit": "ml",
+    "kcalPer100": 898,
+    "reason": "Položka 0 představuje obecný řepkový olej bez značky, což nejlépe odpovídá zadání pro surovinu v rámci školního oběda."
+  },
+  "pažitka": {
+    "status": "ok",
+    "id": "749076e2a890a5d1",
+    "url": "pazitka",
+    "title": "pažitka",
+    "unit": "g",
+    "kcalPer100": 50,
+    "reason": "Položka 0 je jediná obecná varianta suroviny pažitka, zatímco ostatní jsou buď značkové mléčné výrobky, nebo paštiky."
+  },
+  "kuřecí stehno pečené": {
+    "status": "ok",
+    "id": "3b7f6489e706b9ac",
+    "url": "kureci-stehno-pecene",
+    "title": "kuřecí stehno pečené",
+    "unit": "g",
+    "kcalPer100": 225,
+    "reason": "Položka nejlépe odpovídá obecnému popisu pečeného kuřecího stehna včetně kůže, což je standardní podoba školního oběda."
+  },
+  "kysané zelí dušené": {
+    "status": "ok",
+    "id": "13b6b035b44d4a518c9406c099c4c4df",
+    "url": "dusene-kysane-zeli",
+    "title": "Dušené kysané zelí",
+    "unit": "g",
+    "kcalPer100": 25,
+    "reason": "Položka 1 nejlépe odpovídá obecnému popisu dušeného kysaného zelí a má realistickou kalorickou hodnotu pro tento typ přílohy."
+  },
+  "bramborový knedlík": {
+    "status": "ok",
+    "id": "4b3e641445a1eaa3",
+    "url": "bramborovy-knedlik-domaci",
+    "title": "bramborový knedlík domácí",
+    "unit": "g",
+    "kcalPer100": 148,
+    "reason": "Položka představuje obecný, tepelně upravený bramborový knedlík bez náplně, což nejlépe odpovídá běžné školní příloze."
+  },
+  "rýže vařená": {
+    "status": "ok",
+    "id": "91695eb2776396a5",
+    "url": "ryze-bila-dlouhozrnna-varena",
+    "title": "rýže bílá dlouhozrnná vařená",
+    "unit": "g",
+    "kcalPer100": 126,
+    "reason": "Položka rýže bílá dlouhozrnná vařená představuje nejtypičtější a nejvíce univerzální variantu pro běžně podávanou rýži ve školních jídelnách."
+  },
+  "bulgur vařený": {
+    "status": "ok",
+    "id": "cf5835de55a4b5da",
+    "url": "bulgur-vareny",
+    "title": "bulgur vařený",
+    "unit": "g",
+    "kcalPer100": 83,
+    "reason": "Položka 0 přesně odpovídá zadané surovině v uvařeném stavu a je obecná, zatímco ostatní možnosti obsahují další přidané ingredience nebo jde o masné výrobky."
+  },
+  "sterilované okurky": {
+    "status": "ok",
+    "id": "4cc6e34bd6452705",
+    "url": "okurky-sterilovane",
+    "title": "okurky sterilované",
+    "unit": "g",
+    "kcalPer100": 31,
+    "reason": "Položka je obecná a nejlépe odpovídá kategorii sterilovaných okurek bez vazby na konkrétní značku."
+  },
+  "rajčatový protlak": {
+    "status": "ok",
+    "id": "679ee705c92a7d68",
+    "url": "rajcatovy-protlak",
+    "title": "rajčatový protlak",
+    "unit": "g",
+    "kcalPer100": 114,
+    "reason": "Položka 0 je obecná a nejlépe odpovídá surovině bez vazby na konkrétní značku."
+  },
+  "vepřové maso pečené": {
+    "status": "ok",
+    "id": "d523265b0266135e",
+    "url": "veprove-maso-pecene",
+    "title": "vepřové maso pečené",
+    "unit": "g",
+    "kcalPer100": 171,
+    "reason": "Položka 0 představuje nejobecnější variantu pečeného vepřového masa bez dalších přidaných surovin či značkových úprav, což nejlépe odpovídá zadání pro školní oběd."
+  },
+  "mrkev": {
+    "status": "ok",
+    "id": "6745cec44c7a88f2",
+    "url": "mrkev-varena",
+    "title": "mrkev vařená",
+    "unit": "g",
+    "kcalPer100": 45,
+    "reason": "Položka mrkev vařená nejlépe odpovídá obecné úpravě mrkve ve školním obědě."
+  },
+  "vývar": {
+    "status": "ok",
+    "id": "6d73a1143ee43149",
+    "url": "kureci-vyvar-cisty-z-masa-a-zeleniny",
+    "title": "kuřecí vývar čistý (z masa a zeleniny)",
+    "unit": "ml",
+    "kcalPer100": 27,
+    "reason": "Položka představuje nejvíce neutrální a obecnou variantu čistého vývaru, která nejlépe odpovídá běžnému školnímu vývaru bez specifikovaných přidaných vložek."
+  },
+  "čočka vařená": {
+    "status": "ok",
+    "id": "cd1787dfbe78d6b1",
+    "url": "cocka-varena",
+    "title": "čočka vařená",
+    "unit": "g",
+    "kcalPer100": 110,
+    "reason": "Položka 0 představuje nejobecnější variantu vařené čočky, která nejlépe odpovídá popisu suroviny ze školního oběda bez dalších přidaných ingrediencí."
+  },
+  "mouka pšeničná hladká": {
+    "status": "ok",
+    "id": "4fa6314194ca1a83",
+    "url": "psenicna-mouka-hladka",
+    "title": "pšeničná mouka hladká",
+    "unit": "g",
+    "kcalPer100": 356,
+    "reason": "Kandidát 0 je obecná položka, která nejlépe odpovídá zadání, jelikož u mouky se nutriční hodnoty v hotovém pokrmu vztahují k její syrové formě použité při přípravě."
+  },
+  "ocet": {
+    "status": "ok",
+    "id": "27ba2a4d5ae2186e",
+    "url": "ocet",
+    "title": "ocet",
+    "unit": "ml",
+    "kcalPer100": 16,
+    "reason": "Položka ocet představuje nejvíce obecnou variantu suroviny bez přidaných ingrediencí či značkového označení."
+  },
+  "chléb pšenično-žitný": {
+    "status": "no_match",
+    "reason": "Všichni kandidáti jsou konkrétní značkové výrobky, zatímco pro školní oběd by byla vhodnější obecná položka typu 'chléb pšenično-žitný' bez obchodní značky.",
+    "candidates": [
+      "Kváskový chléb pšeničnožitný bw33 Breadway",
+      "Chléb kladenský klas pšenično-žitný Kompek",
+      "Chléb pšeničnožitný krájený Srdce domova",
+      "BBQ chléb pšeničnožitný krájený Grill Party",
+      "Chléb Hradišťan dvoukváskový pšenično-žitný",
+      "Pšenično-žitný chléb s kmínem Albertovo pekařství",
+      "Českolipský kvasový chléb pšeničnožitný",
+      "Chléb konzumní s kmínem (chléb pšeničnožitný, krájený) Penam",
+      "Pšeničnožitný toustový chléb tmavý Baskeeto",
+      "Dar z polí kváskový chléb pšeničnožitný Odkolek"
+    ]
+  },
+  "okurka kyselá": {
+    "status": "ok",
+    "id": "da3c088b1b37a47c",
+    "url": "okurka-kysela",
+    "title": "okurka kyselá",
+    "unit": "g",
+    "kcalPer100": 30,
+    "reason": "Položka 0 je obecná a nejlépe odpovídá surovině kyselá okurka bez dalších přidaných ingrediencí."
+  },
+  "mražená zelenina": {
+    "status": "ok",
+    "id": "f490879eb7cc32f1",
+    "url": "zeleninova-smes-mrazena-kukurice-mrkev-hrasek-zelene-fazolky",
+    "title": "zeleninová směs mražená kukuřice, mrkev, hrášek, zelené fazolky",
+    "unit": "g",
+    "kcalPer100": 54,
+    "reason": "Položka 7 představuje nejvíce obecnou a typickou směs mražené zeleniny používanou ve školních jídelnách, která odpovídá popisu bez přidaných tuků či značkových specifik."
+  },
+  "sýr eidam": {
+    "status": "ok",
+    "id": "f9d8425c0ee8651f",
+    "url": "eidam-syr-30-tuku-platkovy",
+    "title": "eidam sýr 30% tuku, plátkový",
+    "unit": "g",
+    "kcalPer100": 263,
+    "reason": "Položka 0 představuje obecnou variantu eidamu s 30 % tuku, která nejlépe odpovídá standardnímu typu sýra používanému ve školních jídelnách."
+  },
+  "tatarská omáčka": {
+    "status": "ok",
+    "id": "fd33bd1b7c26d912",
+    "url": "tatarska-omacka",
+    "title": "tatarská omáčka",
+    "unit": "g",
+    "kcalPer100": 478,
+    "reason": "Položka 0 představuje obecnou variantu tatarské omáčky bez vazby na konkrétní značku, což je pro školní oběd nejvhodnější volba."
+  }
+}
