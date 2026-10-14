@@ -7,9 +7,12 @@ $taskName = "KalorickeTabulkySender"
 $projectDir = $PSScriptRoot
 $node = (Get-Command node -ErrorAction Stop).Source
 
+# daily.log is written as UTF-8 (PowerShell 5.1's `*>>` would produce UTF-16). The console encoding is set to
+# UTF-8 so node's Czech output is decoded correctly, and stderr lines are turned into plain text.
 $command = "Set-Location -LiteralPath '$projectDir'; " +
-           "Add-Content -Path daily.log -Value ('--- ' + (Get-Date -Format s)); " +
-           "& '$node' daily.mjs --week --go *>> daily.log"
+           "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; " +
+           "('--- ' + (Get-Date -Format s)) | Out-File -FilePath daily.log -Append -Encoding utf8; " +
+           "& '$node' daily.mjs --week --go 2>&1 | ForEach-Object { `$_.ToString() } | Out-File -FilePath daily.log -Append -Encoding utf8"
 
 $action = New-ScheduledTaskAction -Execute "powershell.exe" `
     -Argument "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"$command`""

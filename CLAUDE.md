@@ -63,7 +63,6 @@ Working end to end. Verified by the user: scrape -> lunches -> ingredients -> ma
 
 ## Known issues / ideas
 
-- `daily.log` is UTF-16 (PowerShell 5.1 `*>>`), so it is unreadable with plain tools. Fix: write with `Out-File -Encoding utf8` in `install-task.ps1` and re-register the task.
 - `sent.json` is local: if the task runs on two computers on the same day, the lunch is shared twice. Option: store "sent" in the bot account instead.
 - The task only exists on `GORONOTEBOOK`; another computer needs a clone, its own `.env`, and `install-task.ps1`.
 - `chléb pšenično-žitný` has no match (all candidates were brand products) - edit `matches.json` or relax the pick prompt.
