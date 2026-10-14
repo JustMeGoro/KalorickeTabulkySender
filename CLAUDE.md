@@ -47,7 +47,7 @@ Gitignored local state: `.env`, `selection.json`, `sent.json`, `daily.log`.
 - **Add a food**: `GET /user/foodstuff/add/form/<id>/<date>/get?format=json`, then `POST /user/foodstuff/add?format=json&=` with that object.
   - The form always comes back with **today's** date in `date`; it must be overwritten (an earlier bug wrote a whole day into the wrong date).
   - Every food has a "1 g" unit (`multiplier: 1`), so set `unitGuid` to it and `multiplier` to the grams. Fallback is the default unit with a computed fraction.
-- **Share Oběd**: `GET /user/settings/share/item/diary-time/form/DD.MM.YYYY/3?format=json`, then `POST /user/settings/share/item/diary-time?format=json` with that object. The recipient is `guidUserTo`; `form.identifierOptions[]` maps `userFromId` -> `userFromIdentifier` (e-mail). `send.mjs` looks each `KT_SEND_TO` entry up there, sets `guidUserTo` to its `userFromId` and posts once per recipient; entries not in the list are reported and skipped. `sent.json` is `{date: {email: timestamp}}` (`recipients.mjs`); the old single-timestamp format counts as "sent to everyone". **Untested against the real API** with more than one recipient (setting `guidUserTo` is inferred), so verify with a dry run first.
+- **Share Oběd**: `GET /user/settings/share/item/diary-time/form/DD.MM.YYYY/3?format=json`, then `POST /user/settings/share/item/diary-time?format=json` with that object. The recipient is `guidUserTo`; `form.identifierOptions[]` maps `userFromId` -> `userFromIdentifier` (e-mail). `send.mjs` looks each `KT_SEND_TO` entry up there, sets `guidUserTo` to its `userFromId` and posts once per recipient; entries not in the list are reported and skipped. `sent.json` is `{date: {email: timestamp}}` (`recipients.mjs`); the old single-timestamp format counts as "sent to everyone". Verified on 2026-10-14: sending to a second recipient (dadicena@gmail.com) arrived in that account only. To backfill an already-sent day for a new person, edit that day in `sent.json` so only the earlier recipients are listed, then run `send.mjs --date ... --send`.
 - **Gemini free tier**: models are often overloaded (503/429) so the code rotates `gemini-3.5-flash` -> `gemini-flash-latest` -> `gemini-3.1-flash-lite`. `gemini-2.5-flash` is closed to new users. A full first run for a month takes ~10 minutes.
 
 ## Working agreements with the user
@@ -60,7 +60,7 @@ Gitignored local state: `.env`, `selection.json`, `sent.json`, `daily.log`.
 
 ## Status (2026-10-14)
 
-Working end to end. Verified by the user: scrape -> lunches -> ingredients -> match -> write -> send for single days, a Thursday+Friday batch, and an automatic logon run that sent 2026-10-14 (see `sent.json`).
+Working end to end. Verified by the user: scrape -> lunches -> ingredients -> match -> write -> send for single days, a Thursday+Friday batch, and an automatic logon run that sent 2026-10-14 (see `sent.json`). Multiple recipients (`KT_SEND_TO` list) also verified; `daily.log` is UTF-8.
 
 ## Known issues / ideas
 
