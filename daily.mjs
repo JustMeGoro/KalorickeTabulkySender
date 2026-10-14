@@ -11,6 +11,18 @@
 // so it is safe to run this as often as you like.
 import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
+import { missingRecipients, parseRecipients } from "./recipients.mjs";
+
+try {
+  process.loadEnvFile(".env");
+} catch {
+  // .env is optional if the variables are already set in the environment
+}
+const RECIPIENTS = parseRecipients(process.env.KT_SEND_TO);
+if (!RECIPIENTS.length) {
+  console.error("KT_SEND_TO is empty - put the recipients' e-mails (comma-separated) in .env");
+  process.exit(1);
+}
 
 const args = process.argv.slice(2);
 const GO = args.includes("--go");
@@ -48,10 +60,11 @@ step("Pick lunches", "lunches.mjs");
 
 const lunches = JSON.parse(await readFile("lunches.json", "utf8"));
 const sent = await readFile("sent.json", "utf8").then(JSON.parse, () => ({}));
-const todo = wanted.filter((d) => lunches.some((l) => l.date === d) && !sent[d]);
+const todo = wanted.filter((d) => lunches.some((l) => l.date === d) && missingRecipients(sent[d], RECIPIENTS).length > 0);
 for (const d of wanted) {
   if (!lunches.some((l) => l.date === d)) console.log(`${d}: no lunch - skipped`);
-  else if (sent[d]) console.log(`${d}: already sent on ${sent[d]} - skipped`);
+  else if (!todo.includes(d)) console.log(`${d}: already sent to everyone - skipped`);
+  else if (sent[d]) console.log(`${d}: still to send to ${missingRecipients(sent[d], RECIPIENTS).join(", ")}`);
 }
 if (todo.length === 0) {
   console.log("\nNothing to do.");

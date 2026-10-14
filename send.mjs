@@ -4,10 +4,12 @@
 //   node send.mjs --date 2026-10-14            dry run: login + show what WOULD be sent and to whom
 //   node send.mjs --date 2026-10-14 --send     really send it
 //
-// Needs KT_EMAIL, KT_PASSWORD (bot account) and KT_SEND_TO (the e-mail of the account that
-// should receive it) in .env. If the recipient in the form is not KT_SEND_TO, nothing is sent.
+// Needs KT_EMAIL, KT_PASSWORD (bot account) and KT_SEND_TO (comma-separated e-mails of the people who
+// should receive it) in .env. Each recipient must be one of the bot account's connected people; anyone
+// who is not is reported and skipped. Who already got which day is remembered in sent.json.
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
+import { markSent, parseRecipients, sentAt } from "./recipients.mjs";
 
 try {
   process.loadEnvFile(".env");
@@ -31,7 +33,8 @@ const ktDate = `${d}.${m}.${y}`;
 
 const { KT_EMAIL, KT_PASSWORD, KT_SEND_TO } = process.env;
 if (!KT_EMAIL || !KT_PASSWORD) throw new Error("KT_EMAIL / KT_PASSWORD are missing - put them in .env");
-if (!KT_SEND_TO) throw new Error("KT_SEND_TO is missing - put the e-mail of the receiving account in .env");
+const RECIPIENTS = parseRecipients(KT_SEND_TO);
+if (!RECIPIENTS.length) throw new Error("KT_SEND_TO is missing - put the e-mail(s) of the receiving accounts in .env, comma-separated");
 
 // ---- tiny HTTP client with a cookie jar --------------------------------------------------
 const jar = new Map();
@@ -58,33 +61,59 @@ if (login.code !== 0) throw new Error(`Login failed: ${login.message ?? "unknown
 console.log("Logged in.");
 
 // ---- the share form ---------------------------------------------------------------------
-const formRes = await (await http(`/user/settings/share/item/diary-time/form/${ktDate}/${LUNCH_TIME_ID}?format=json`)).json();
-if (formRes.code !== 0) throw new Error(`Share form failed: ${formRes.message}`);
-const form = formRes.data;
+const loadForm = async () => {
+  const formRes = await (await http(`/user/settings/share/item/diary-time/form/${ktDate}/${LUNCH_TIME_ID}?format=json`)).json();
+  if (formRes.code !== 0) throw new Error(`Share form failed: ${formRes.message}`);
+  return formRes.data;
+};
 
-const link = form.identifierOptions.find((o) => o.userFromId === form.guidUserTo);
-const recipient = link?.userFromIdentifier ?? "(unknown)";
-console.log(`\nOběd ${ktDate} -> ${recipient}`);
-for (const f of form.foodstuff ?? []) console.log(`  ${f.count ?? ""} ${f.title ?? ""}`.trimEnd());
-console.log(`  ${form.foodstuff?.length ?? 0} items`);
+const first = await loadForm();
+console.log(`\nOběd ${ktDate}`);
+for (const f of first.foodstuff ?? []) console.log(`  ${f.count ?? ""} ${f.title ?? ""}`.trimEnd());
+console.log(`  ${first.foodstuff?.length ?? 0} items`);
+if (!first.foodstuff?.length) throw new Error(`Oběd on ${ktDate} is empty - run write.mjs first`);
 
-if (!form.foodstuff?.length) throw new Error(`Oběd on ${ktDate} is empty - run write.mjs first`);
-if (recipient.toLowerCase() !== KT_SEND_TO.toLowerCase()) {
-  throw new Error(`Recipient is ${recipient}, but KT_SEND_TO is ${KT_SEND_TO} - not sending`);
-}
 const sent = await readFile("sent.json", "utf8").then(JSON.parse, () => ({}));
-if (sent[isoDate] && !AGAIN) {
-  console.log(`\nAlready sent on ${sent[isoDate]} - not sending again (use --again to force).`);
-  process.exit(0);
-}
-if (!SEND) {
-  console.log("\nDry run - nothing sent. Add --send to send it.");
-  process.exit(0);
+const failed = [];
+
+for (const recipient of RECIPIENTS) {
+  const done = sentAt(sent[isoDate], recipient);
+  if (done && !AGAIN) {
+    console.log(`\n${recipient}: already sent on ${done} - skipped (use --again to force).`);
+    continue;
+  }
+
+  // a fresh form per recipient, with the recipient picked from the people connected to the bot account
+  const form = await loadForm();
+  const option = form.identifierOptions?.find((o) => o.userFromIdentifier?.toLowerCase() === recipient.toLowerCase());
+  if (!option) {
+    const known = (form.identifierOptions ?? []).map((o) => o.userFromIdentifier).join(", ") || "none";
+    console.error(`\n${recipient}: not one of the bot account's connected people (available: ${known}) - not sending`);
+    failed.push(recipient);
+    continue;
+  }
+  form.guidUserTo = option.userFromId;
+  console.log(`\n-> ${option.userFromIdentifier}`);
+
+  if (!SEND) {
+    console.log("   dry run - nothing sent");
+    continue;
+  }
+
+  // ---- send ---------------------------------------------------------------------------
+  const res = await (await http("/user/settings/share/item/diary-time?format=json", { method: "POST", json: form })).json();
+  if (res.code !== 0) {
+    console.error(`   Sending failed: ${res.message}`);
+    failed.push(recipient);
+    continue;
+  }
+  markSent(sent, isoDate, option.userFromIdentifier);
+  await writeFile("sent.json", JSON.stringify(sent, null, 2) + "\n", "utf8");
+  console.log(`   Sent. ${res.message ?? ""}`.trim());
 }
 
-// ---- send -------------------------------------------------------------------------------
-const res = await (await http("/user/settings/share/item/diary-time?format=json", { method: "POST", json: form })).json();
-if (res.code !== 0) throw new Error(`Sending failed: ${res.message}`);
-sent[isoDate] = new Date().toISOString();
-await writeFile("sent.json", JSON.stringify(sent, null, 2) + "\n", "utf8");
-console.log(`\nSent. ${res.message ?? ""}`.trim());
+if (!SEND) console.log("\nDry run - nothing sent. Add --send to send it.");
+if (failed.length) {
+  console.error(`\nFailed for: ${failed.join(", ")}`);
+  process.exit(1);
+}

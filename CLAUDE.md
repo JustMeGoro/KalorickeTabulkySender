@@ -30,12 +30,13 @@ does by hand with friends.
 | `match.mjs` | Matches ingredient names to Kalorické tabulky foods via public autocomplete + Gemini pick -> `matches.json` (cached; hand-editable) |
 | `write.mjs` | Logs in as the bot, writes one day's ingredients into Oběd. Dry run unless `--write` |
 | `send.mjs` | Shares that day's Oběd to `KT_SEND_TO`. Dry run unless `--send`; records `sent.json` |
+| `recipients.mjs` | Parses `KT_SEND_TO` and tracks per-recipient sent state |
 | `daily.mjs` | Orchestrates everything, one day or a week |
 | `gemini.mjs` | Shared Gemini helper with model fallback (`ingredients.mjs` still has its own copy of this logic) |
 | `install-task.ps1` | Registers the logon task (run once per computer) |
 
 Gitignored local state: `.env`, `selection.json`, `sent.json`, `daily.log`.
-`.env` keys: `GEMINI_API_KEY`, `KT_EMAIL`, `KT_PASSWORD` (bot account), `KT_SEND_TO` (main account e-mail), optional `GEMINI_MODEL`.
+`.env` keys: `GEMINI_API_KEY`, `KT_EMAIL`, `KT_PASSWORD` (bot account), `KT_SEND_TO` (comma-separated e-mails of everyone who should get the Oběd; each must be a connected person of the bot account), optional `GEMINI_MODEL`.
 
 ## Facts about the external services
 
@@ -46,7 +47,7 @@ Gitignored local state: `.env`, `selection.json`, `sent.json`, `daily.log`.
 - **Add a food**: `GET /user/foodstuff/add/form/<id>/<date>/get?format=json`, then `POST /user/foodstuff/add?format=json&=` with that object.
   - The form always comes back with **today's** date in `date`; it must be overwritten (an earlier bug wrote a whole day into the wrong date).
   - Every food has a "1 g" unit (`multiplier: 1`), so set `unitGuid` to it and `multiplier` to the grams. Fallback is the default unit with a computed fraction.
-- **Share Oběd**: `GET /user/settings/share/item/diary-time/form/DD.MM.YYYY/3?format=json`, then `POST /user/settings/share/item/diary-time?format=json` with that object. The recipient is preset in `guidUserTo`; `send.mjs` refuses to send unless it equals `KT_SEND_TO`.
+- **Share Oběd**: `GET /user/settings/share/item/diary-time/form/DD.MM.YYYY/3?format=json`, then `POST /user/settings/share/item/diary-time?format=json` with that object. The recipient is `guidUserTo`; `form.identifierOptions[]` maps `userFromId` -> `userFromIdentifier` (e-mail). `send.mjs` looks each `KT_SEND_TO` entry up there, sets `guidUserTo` to its `userFromId` and posts once per recipient; entries not in the list are reported and skipped. `sent.json` is `{date: {email: timestamp}}` (`recipients.mjs`); the old single-timestamp format counts as "sent to everyone". **Untested against the real API** with more than one recipient (setting `guidUserTo` is inferred), so verify with a dry run first.
 - **Gemini free tier**: models are often overloaded (503/429) so the code rotates `gemini-3.5-flash` -> `gemini-flash-latest` -> `gemini-3.1-flash-lite`. `gemini-2.5-flash` is closed to new users. A full first run for a month takes ~10 minutes.
 
 ## Working agreements with the user
