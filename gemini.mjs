@@ -14,9 +14,10 @@ const endpoint = (model) => `https://generativelanguage.googleapis.com/v1beta/mo
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export async function generateJson(prompt, schema) {
+// images: optional [{ mimeType, data }] with base64 data, sent together with the prompt
+export async function generateJson(prompt, schema, images = []) {
   const body = {
-    contents: [{ parts: [{ text: prompt }] }],
+    contents: [{ parts: [...images.map((i) => ({ inlineData: { mimeType: i.mimeType, data: i.data } })), { text: prompt }] }],
     generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.2 },
   };
   for (let attempt = 0; attempt < MODELS.length * 3; attempt++) {

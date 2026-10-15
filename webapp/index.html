@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunch Photo</title>
+<style>
+  :root { --bg:#fff; --fg:#1d1d1f; --muted:#6b7280; --card:#f3f4f6; --accent:#2563eb; --ok:#15803d; --err:#b91c1c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#111214; --fg:#f3f4f6; --muted:#9ca3af; --card:#1c1e22; --accent:#60a5fa; --ok:#4ade80; --err:#f87171; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:16px; font:16px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); max-width:480px; margin-inline:auto; }
+  h1 { font-size:20px; margin:8px 0 16px; }
+  .card { background:var(--card); border-radius:12px; padding:14px; margin-bottom:14px; }
+  label { display:block; font-size:13px; color:var(--muted); margin:10px 0 4px; }
+  input[type=text], input[type=password], input[type=date] { width:100%; padding:10px; font-size:16px; border-radius:8px; border:1px solid var(--muted); background:var(--bg); color:var(--fg); }
+  button { width:100%; padding:14px; font-size:17px; border:0; border-radius:10px; background:var(--accent); color:#fff; margin-top:12px; }
+  button.secondary { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+  button:disabled { opacity:.5; }
+  img { width:100%; border-radius:10px; margin-top:12px; display:block; }
+  #meal { font-weight:600; }
+  #status { margin-top:12px; min-height:1.4em; }
+  .ok { color:var(--ok); } .err { color:var(--err); }
+  details summary { cursor:pointer; color:var(--muted); }
+  small { color:var(--muted); }
+</style>
+</head>
+<body>
+<h1>Lunch photo</h1>
+
+<div class="card">
+  <label for="date">Day</label>
+  <input type="date" id="date">
+  <div id="meal"></div>
+  <input type="file" id="file" accept="image/*" capture="environment" hidden>
+  <button id="pick" class="secondary">Take / choose photo</button>
+  <img id="preview" alt="" hidden>
+  <button id="send" disabled>Send photo</button>
+  <div id="status"></div>
+</div>
+
+<details class="card" id="settings">
+  <summary>Settings</summary>
+  <label for="repo">Repository (owner/name)</label>
+  <input type="text" id="repo" value="JustMeGoro/KalorickeTabulkySender" autocapitalize="off" autocomplete="off">
+  <label for="token">GitHub token (this repo only, Contents: read and write)</label>
+  <input type="password" id="token" autocomplete="off">
+  <small>Stored only in this phone's browser.</small>
+  <button id="save" class="secondary">Save</button>
+</details>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const store = {
+  get: (k) => { try { return localStorage.getItem(k) ?? ""; } catch { return ""; } },
+  set: (k, v) => { try { localStorage.setItem(k, v); } catch {} },
+};
+const MAX_SIDE = 1280; // px - enough for judging portions, keeps the upload small
+let blob = null;
+
+const today = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
+const say = (text, cls = "") => { $("status").textContent = text; $("status").className = cls; };
+
+$("date").value = today();
+$("repo").value = store.get("repo") || $("repo").value;
+$("token").value = store.get("token");
+if (!store.get("token")) $("settings").open = true;
+
+const api = (path, opts = {}) =>
+  fetch(`https://api.github.com/repos/${$("repo").value.trim()}/contents/${path}`, {
+    ...opts,
+    headers: { Authorization: `Bearer ${$("token").value.trim()}`, Accept: "application/vnd.github+json", ...(opts.headers ?? {}) },
+  });
+
+// Show what lunch is planned for the chosen day (best effort; the app works without it).
+async function showMeal() {
+  $("meal").textContent = "";
+  if (!$("token").value) return;
+  try {
+    const res = await api("lunches.json", { headers: { Accept: "application/vnd.github.raw+json" } });
+    if (!res.ok) return;
+    const lunch = (await res.json()).find((l) => l.date === $("date").value);
+    $("meal").textContent = lunch ? lunch.name : "No lunch planned for this day";
+  } catch {}
+}
+
+$("save").onclick = () => {
+  store.set("repo", $("repo").value.trim());
+  store.set("token", $("token").value.trim());
+  say("Saved.", "ok");
+  showMeal();
+};
+$("date").onchange = showMeal;
+$("pick").onclick = () => $("file").click();
+
+// Downscale to MAX_SIDE and re-encode as JPEG.
+async function shrink(file) {
+  const bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
+  const scale = Math.min(1, MAX_SIDE / Math.max(bmp.width, bmp.height));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bmp.width * scale);
+  canvas.height = Math.round(bmp.height * scale);
+  canvas.getContext("2d").drawImage(bmp, 0, 0, canvas.width, canvas.height);
+  return new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.85));
+}
+
+$("file").onchange = async () => {
+  const file = $("file").files[0];
+  if (!file) return;
+  say("Preparing photo...");
+  try {
+    blob = await shrink(file);
+    $("preview").src = URL.createObjectURL(blob);
+    $("preview").hidden = false;
+    $("send").disabled = false;
+    say(`Ready (${Math.round(blob.size / 1024)} kB).`);
+  } catch (e) {
+    say(`Could not read the photo: ${e.message}`, "err");
+  }
+};
+
+const toBase64 = (b) => new Promise((resolve, reject) => {
+  const r = new FileReader();
+  r.onload = () => resolve(r.result.split(",")[1]);
+  r.onerror = reject;
+  r.readAsDataURL(b);
+});
+
+$("send").onclick = async () => {
+  if (!blob) return;
+  if (!$("token").value) { $("settings").open = true; return say("Add your GitHub token in Settings first.", "err"); }
+  $("send").disabled = true;
+  say("Uploading...");
+  try {
+    const path = `photos/${$("date").value}.jpg`;
+    // retaking a photo replaces the old file, which GitHub only allows with the old file's sha
+    const existing = await api(path);
+    const sha = existing.ok ? (await existing.json()).sha : undefined;
+    const res = await api(path, {
+      method: "PUT",
+      body: JSON.stringify({ message: `Lunch photo ${$("date").value}`, content: await toBase64(blob), sha }),
+    });
+    if (!res.ok) throw new Error(`GitHub said ${res.status}: ${(await res.json().catch(() => ({}))).message ?? ""}`);
+    say("Uploaded. The lunch is being processed - it shows up in your diary in a few minutes.", "ok");
+  } catch (e) {
+    say(`Upload failed: ${e.message}`, "err");
+  } finally {
+    $("send").disabled = false;
+  }
+};
+
+showMeal();
+</script>
+</body>
+</html>

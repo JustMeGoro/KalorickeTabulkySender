@@ -71,8 +71,12 @@ console.log("Logged in.");
 const lunches = JSON.parse(await readFile("lunches.json", "utf8"));
 const lunch = lunches.find((l) => l.date === isoDate);
 if (!lunch) throw new Error(`No lunch for ${isoDate} in lunches.json`);
-const ingredients = JSON.parse(await readFile("ingredients.json", "utf8")).meals[lunch.name];
-if (!ingredients) throw new Error(`No ingredients for "${lunch.name}" - run node ingredients.mjs`);
+const estimated = JSON.parse(await readFile("ingredients.json", "utf8")).meals[lunch.name];
+if (!estimated) throw new Error(`No ingredients for "${lunch.name}" - run node ingredients.mjs`);
+// grams corrected from the lunch photo (portion.mjs) win over the plain estimates
+const portion = (await readFile("portions.json", "utf8").then(JSON.parse, () => ({})))[isoDate];
+const ingredients = portion?.meal === lunch.name ? portion.items : estimated;
+if (ingredients === portion?.items) console.log("Using gram amounts from the lunch photo.");
 const matches = JSON.parse(await readFile("matches.json", "utf8"));
 
 const plan = [];

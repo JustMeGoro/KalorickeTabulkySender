@@ -1,0 +1,50 @@
+name: lunch
+
+# Runs the whole pipeline in the cloud, so the laptop does not have to be on.
+#  - when a lunch photo is uploaded from the phone (photos/<date>.jpg)
+#  - every weekday at 05:00 UTC: breaks the day's lunch into ingredients
+#  - every weekday at 19:00 UTC (20:00-21:00 in Prague): sends the estimate for days without a photo
+#  - by hand from the Actions tab
+on:
+  push:
+    paths: ["photos/**"]
+  schedule:
+    - cron: "0 5 * * 1-5"
+    - cron: "0 19 * * 1-5"
+  workflow_dispatch:
+
+# one run at a time: they all read and write sent.json
+concurrency:
+  group: lunch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Europe/Prague
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      KT_EMAIL: ${{ secrets.KT_EMAIL }}
+      KT_PASSWORD: ${{ secrets.KT_PASSWORD }}
+      KT_SEND_TO: ${{ secrets.KT_SEND_TO }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node daily.mjs --week --go --photos
+      # keep the state (what was sent, portions, caches) in the repo, even if a day failed
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "lunch-bot"
+          git config user.email "lunch-bot@users.noreply.github.com"
+          git add sent.json portions.json menu.json lunches.json ingredients.json matches.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update lunch state"
+          git pull --rebase
+          git push
