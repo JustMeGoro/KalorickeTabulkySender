@@ -33,8 +33,10 @@
   <label for="date">Day</label>
   <input type="date" id="date">
   <div id="meal"></div>
-  <input type="file" id="file" accept="image/*" capture="environment" hidden>
-  <button id="pick" class="secondary">Take / choose photo</button>
+  <input type="file" id="fileCamera" accept="image/*" capture="environment" hidden>
+  <input type="file" id="fileGallery" accept="image/*" hidden>
+  <button id="pickCamera" class="secondary">Take photo</button>
+  <button id="pickGallery" class="secondary">Choose from gallery</button>
   <img id="preview" alt="" hidden>
   <button id="send" disabled>Send photo</button>
   <div id="status"></div>
@@ -95,7 +97,8 @@ $("save").onclick = () => {
   showMeal();
 };
 $("date").onchange = showMeal;
-$("pick").onclick = () => $("file").click();
+$("pickCamera").onclick = () => $("fileCamera").click();
+$("pickGallery").onclick = () => $("fileGallery").click();
 
 // Downscale to MAX_SIDE and re-encode as JPEG.
 async function shrink(file) {
@@ -108,8 +111,8 @@ async function shrink(file) {
   return new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.85));
 }
 
-$("file").onchange = async () => {
-  const file = $("file").files[0];
+async function onPicked(input) {
+  const file = input.files[0];
   if (!file) return;
   say("Preparing photo...");
   try {
@@ -121,7 +124,9 @@ $("file").onchange = async () => {
   } catch (e) {
     say(`Could not read the photo: ${e.message}`, "err");
   }
-};
+}
+$("fileCamera").onchange = (e) => onPicked(e.target);
+$("fileGallery").onchange = (e) => onPicked(e.target);
 
 const toBase64 = (b) => new Promise((resolve, reject) => {
   const r = new FileReader();
