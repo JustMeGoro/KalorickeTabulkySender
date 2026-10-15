@@ -68,8 +68,10 @@ async function askGemini(name) {
 const lunches = JSON.parse(await readFile("lunches.json", "utf8"));
 const cache = await readFile("ingredients.json", "utf8").then(JSON.parse, () => ({ meals: {} }));
 
+// --date YYYY-MM-DD also processes that (past) day, e.g. for testing with an old photo
+const ONLY_DATE = process.argv[process.argv.indexOf("--date") + 1];
 const today = new Date().toISOString().slice(0, 10);
-const names = [...new Set(lunches.filter((l) => l.date >= today).map((l) => l.name))];
+const names = [...new Set(lunches.filter((l) => l.date >= today || l.date === ONLY_DATE).map((l) => l.name))];
 const todo = names.filter((n) => !cache.meals[n]);
 console.log(`${names.length} upcoming meals, ${todo.length} new`);
 

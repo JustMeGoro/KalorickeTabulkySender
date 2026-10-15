@@ -23,6 +23,9 @@
   #status { margin-top:12px; min-height:1.4em; }
   .ok { color:var(--ok); } .err { color:var(--err); }
   details summary { cursor:pointer; color:var(--muted); }
+  .dayrow { display:flex; gap:8px; align-items:center; }
+  .dayrow button { width:56px; margin-top:0; padding:10px 0; }
+  .dayrow input { text-align:center; }
   small { color:var(--muted); }
 </style>
 </head>
@@ -31,7 +34,11 @@
 
 <div class="card">
   <label for="date">Day</label>
-  <input type="date" id="date">
+  <div class="dayrow">
+    <button id="prev" class="secondary" aria-label="Previous day">&lt;</button>
+    <input type="text" id="date" inputmode="numeric" placeholder="YYYY-MM-DD" autocomplete="off">
+    <button id="next" class="secondary" aria-label="Next day">&gt;</button>
+  </div>
   <div id="meal"></div>
   <input type="file" id="fileCamera" accept="image/*" capture="environment" hidden>
   <input type="file" id="fileGallery" accept="image/*" hidden>
@@ -97,6 +104,15 @@ $("save").onclick = () => {
   showMeal();
 };
 $("date").onchange = showMeal;
+$("date").oninput = () => { if (/^\d{4}-\d{2}-\d{2}$/.test($("date").value)) showMeal(); };
+const shiftDay = (n) => {
+  const [y, m, d] = ($("date").value.match(/^\d{4}-\d{2}-\d{2}$/) ? $("date").value : today()).split("-").map(Number);
+  const t = new Date(y, m - 1, d + n);
+  $("date").value = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
+  showMeal();
+};
+$("prev").onclick = () => shiftDay(-1);
+$("next").onclick = () => shiftDay(1);
 $("pickCamera").onclick = () => $("fileCamera").click();
 $("pickGallery").onclick = () => $("fileGallery").click();
 
@@ -137,6 +153,7 @@ const toBase64 = (b) => new Promise((resolve, reject) => {
 
 $("send").onclick = async () => {
   if (!blob) return;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test($("date").value)) return say("Day must look like 2026-10-12.", "err");
   if (!$("token").value) { $("settings").open = true; return say("Add your GitHub token in Settings first.", "err"); }
   $("send").disabled = true;
   say("Uploading...");

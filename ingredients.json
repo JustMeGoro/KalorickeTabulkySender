@@ -309,6 +309,36 @@
         "name": "tatarská omáčka",
         "grams": 30
       }
+    ],
+    "Moravský vrabec, dužená mrkev s hráškem vař. brambor": [
+      {
+        "name": "vepřové maso",
+        "grams": 130
+      },
+      {
+        "name": "sádlo",
+        "grams": 10
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mrkev",
+        "grams": 100
+      },
+      {
+        "name": "hrášek",
+        "grams": 40
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      }
     ]
   }
 }
