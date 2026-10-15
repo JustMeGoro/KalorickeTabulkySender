@@ -38,7 +38,7 @@ does by hand with friends.
 Gitignored local state: `.env`, `selection.json`, `sent.json`, `daily.log`.
 `.env` keys: `GEMINI_API_KEY`, `KT_EMAIL`, `KT_PASSWORD` (bot account), `KT_SEND_TO` (comma-separated e-mails of everyone who should get the Oběd; each must be a connected person of the bot account), optional `GEMINI_MODEL`.
 
-## Photo mode (cloud, built 2026-10-15, not yet switched on)
+## Photo mode (cloud, live since 2026-10-15)
 
 Idea from the user: break the lunch into ingredients early, but only send once the user has photographed the plate on the phone; Gemini then corrects the grams from the photo.
 
@@ -46,7 +46,7 @@ Idea from the user: break the lunch into ingredients early, but only send once t
 - `portion.mjs --date D`: Gemini vision gets the photo + ingredient list + estimates and returns grams -> `portions.json`. Values are clamped to 0.25x-2.5x of the estimate. `write.mjs` prefers `portions.json` over the estimates.
 - `daily.mjs --photos`: a day is sent only when `photos/<date>.jpg` exists; without a photo it waits until `CUTOFF_HOUR` (default 20) of that day and then sends the estimate. Ingredients/matching still run early for all pending days.
 - `.github/workflows/lunch.yml`: runs `daily.mjs --week --go --photos` in GitHub Actions on photo upload, weekdays 05:00 and 19:00 UTC, or manually. Needs repo secrets `GEMINI_API_KEY`, `KT_EMAIL`, `KT_PASSWORD`, `KT_SEND_TO` (set by the user, never by Claude). It commits `sent.json`, `portions.json` and the data caches back to the repo, so `sent.json` is no longer gitignored.
-- When the cloud run is live, the laptop task must be removed (`Unregister-ScheduledTask -TaskName KalorickeTabulkySender -Confirm:$false`), otherwise both would send. Unknown until tried: whether Kalorické tabulky accepts logins from GitHub's datacenter IPs.
+- The laptop logon task was removed on 2026-10-15 (cloud sends instead; `install-task.ps1` is kept only as a fallback - do not run it while the workflow is active or both would send). Verified: the workflow runs with the secrets, and a read-only login check (`workflow_dispatch` with `check_login`) logs in to Kalorické tabulky from GitHub. Not yet verified in the cloud: write + send + the photo step (first real day: 2026-10-19).
 
 ## Facts about the external services
 
