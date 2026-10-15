@@ -28,8 +28,10 @@ const prompt = `The photo shows a school lunch on a plate: "${lunch.name}".
 The recipe has these ingredients, with a typical portion estimated in grams (cooked / as served):
 ${estimate.map((e) => `- ${e.name}: ${e.grams} g`).join("\n")}
 
-Look at the photo and judge how much of each ingredient is really on the plate. Use the plate, cutlery and
-the other foods for scale. Return EVERY ingredient from the list, with exactly the same name, and its
+Look at the photo and judge how much of each ingredient is really on the plate. For scale: it is a standard
+school-canteen dinner plate about 24 cm across (a full plate like this usually holds 450-600 g of food in
+total), and a fork is about 19 cm and a knife about 21 cm long. Estimate each food's volume on the plate
+against those sizes and convert it to grams (cooked potatoes are about 0.8 g/cm3 when piled, sauces about 1 g/cm3). Return EVERY ingredient from the list, with exactly the same name, and its
 grams as served on this plate. If an ingredient is not visible (a sauce soaked into something, oil, spices),
 keep it close to the estimate. Whole numbers only.`;
 
