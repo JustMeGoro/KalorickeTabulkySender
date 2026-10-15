@@ -1,1 +1,32 @@
-{}
+{
+  "2026-10-15": {
+    "meal": "Hovězí guláš houskový knedlík",
+    "createdAt": "2026-10-15T10:37:13.427Z",
+    "items": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 60
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 180
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "olej rostlinný",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 8
+      },
+      {
+        "name": "hovězí vývar",
+        "grams": 80
+      }
+    ]
+  }
+}

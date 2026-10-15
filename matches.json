@@ -410,5 +410,32 @@
     "unit": "g",
     "kcalPer100": 478,
     "reason": "Položka 0 představuje obecnou variantu tatarské omáčky bez vazby na konkrétní značku, což je pro školní oběd nejvhodnější volba."
+  },
+  "vepřové maso": {
+    "status": "ok",
+    "id": "d523265b0266135e",
+    "url": "veprove-maso-pecene",
+    "title": "vepřové maso pečené",
+    "unit": "g",
+    "kcalPer100": 171,
+    "reason": "Kandidát 7 představuje obecné tepelně upravené vepřové maso bez omezení na konkrétní značku či výřez."
+  },
+  "sádlo": {
+    "status": "ok",
+    "id": "05f67278e8ce87a5",
+    "url": "veprove-sadlo",
+    "title": "vepřové sádlo",
+    "unit": "g",
+    "kcalPer100": 896,
+    "reason": "Položka 'vepřové sádlo' je nejvhodnější obecnou kandidátkou bez značky odpovídající zadané surovině."
+  },
+  "hrášek": {
+    "status": "ok",
+    "id": "db2ca5c28a0f4dff8b80adf5fb64d99e",
+    "url": "hrasek-zeleny-vareny",
+    "title": "hrášek zelený vařený",
+    "unit": "g",
+    "kcalPer100": 80,
+    "reason": "Položka odpovídá tepelně upravenému hrášku a je obecná, což nejlépe odpovídá zadání pro školní oběd."
   }
 }
