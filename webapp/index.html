@@ -7,17 +7,14 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Lunch">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>
   :root { --bg:#fff; --fg:#1d1d1f; --muted:#6b7280; --card:#f3f4f6; --accent:#2563eb; --ok:#15803d; --err:#b91c1c; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#111214; --fg:#f3f4f6; --muted:#9ca3af; --card:#1c1e22; --accent:#60a5fa; --ok:#4ade80; --err:#f87171; }
-  }
   * { box-sizing: border-box; }
   body { margin:0; padding:max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); font:16px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); max-width:480px; margin-inline:auto; }
   h1 { font-size:20px; margin:8px 0 16px; }
