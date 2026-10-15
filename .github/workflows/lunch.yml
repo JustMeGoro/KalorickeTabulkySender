@@ -12,6 +12,11 @@ on:
     - cron: "0 5 * * 1-5"
     - cron: "0 19 * * 1-5"
   workflow_dispatch:
+    inputs:
+      check_login:
+        description: "Only test the Kalorické tabulky login from GitHub (read-only dry run of write.mjs for today)"
+        type: boolean
+        default: false
 
 # one run at a time: they all read and write sent.json
 concurrency:
@@ -36,7 +41,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Login check (dry run, changes nothing)
+        if: inputs.check_login
+        run: node write.mjs --date $(date +%F)
       - run: node daily.mjs --week --go --photos
+        if: ${{ !inputs.check_login }}
       # keep the state (what was sent, portions, caches) in the repo, even if a day failed
       - name: Save state
         if: always()
