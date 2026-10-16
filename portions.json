@@ -28,5 +28,35 @@
         "grams": 80
       }
     ]
+  },
+  "2026-10-16": {
+    "meal": "Tarhoně s drůbežím masem a žampiony ledový salát",
+    "createdAt": "2026-10-16T11:29:19.332Z",
+    "items": [
+      {
+        "name": "tarhoňa vařená",
+        "grams": 180
+      },
+      {
+        "name": "kuřecí prsa",
+        "grams": 90
+      },
+      {
+        "name": "žampiony",
+        "grams": 40
+      },
+      {
+        "name": "ledový salát",
+        "grams": 20
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 8
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      }
+    ]
   }
 }
