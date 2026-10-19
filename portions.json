@@ -58,5 +58,35 @@
         "grams": 20
       }
     ]
+  },
+  "2026-10-19": {
+    "meal": "Balkánský kuřecí plátek vař. brambor s pažitkou",
+    "createdAt": "2026-10-19T11:20:45.801Z",
+    "items": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 190
+      },
+      {
+        "name": "balkánský sýr",
+        "grams": 35
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "pažitka",
+        "grams": 5
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      }
+    ]
   }
 }
