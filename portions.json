@@ -88,5 +88,31 @@
         "grams": 10
       }
     ]
+  },
+  "2026-10-20": {
+    "meal": "Pečené kuře na zelí bramborový knedlík",
+    "createdAt": "2026-10-20T12:12:23.544Z",
+    "items": [
+      {
+        "name": "kuřecí stehno pečené",
+        "grams": 140
+      },
+      {
+        "name": "kysané zelí dušené",
+        "grams": 120
+      },
+      {
+        "name": "bramborový knedlík",
+        "grams": 220
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 8
+      },
+      {
+        "name": "cibule",
+        "grams": 25
+      }
+    ]
   }
 }
