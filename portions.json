@@ -114,5 +114,47 @@
         "grams": 25
       }
     ]
+  },
+  "2026-10-21": {
+    "meal": "Znojemský hovězí plátek dušená rýže s bulgurem",
+    "createdAt": "2026-10-21T11:32:32.180Z",
+    "items": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 105
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 160
+      },
+      {
+        "name": "bulgur vařený",
+        "grams": 50
+      },
+      {
+        "name": "sterilované okurky",
+        "grams": 40
+      },
+      {
+        "name": "cibule",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 12
+      },
+      {
+        "name": "hovězí vývar",
+        "grams": 120
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 15
+      }
+    ]
   }
 }
