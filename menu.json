@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-10-21T11:32:25.986Z",
+  "fetchedAt": "2026-10-22T09:58:18.143Z",
   "days": [
     {
       "date": "2026-10-01",
@@ -350,6 +350,76 @@
           "slot": "Oběd další",
           "type": "drink",
           "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Přírodní kuřecí plátek, opékaný brambor, zel.obloha"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Špagety s rajčaty a bazalkou se sýrem V"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Přírodní karbanátek s nivou bram. kaše"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Bramborové šišky plněné mákem bílá káva V"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Chilli con carne, tortilla"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Francouzké brambory červená řepa"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Rybí filé v těstičku šťouchané brambory"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Šoulet s uzeným masem (kroupy, hrách) kys. okurek"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Krušnohorské kuře s těstovinou (houby)"
         }
       ]
     }

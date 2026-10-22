@@ -93,5 +93,30 @@
     "date": "2026-10-27",
     "slot": "Oběd 1",
     "name": "Kuřecí rošťáci opékané brambory, tatarská omčka"
+  },
+  {
+    "date": "2026-11-02",
+    "slot": "Oběd 1",
+    "name": "Přírodní kuřecí plátek, opékaný brambor, zel.obloha"
+  },
+  {
+    "date": "2026-11-03",
+    "slot": "Oběd 1",
+    "name": "Přírodní karbanátek s nivou bram. kaše"
+  },
+  {
+    "date": "2026-11-04",
+    "slot": "Oběd 1",
+    "name": "Chilli con carne, tortilla"
+  },
+  {
+    "date": "2026-11-05",
+    "slot": "Oběd 1",
+    "name": "Rybí filé v těstičku šťouchané brambory"
+  },
+  {
+    "date": "2026-11-06",
+    "slot": "Oběd 1",
+    "name": "Krušnohorské kuře s těstovinou (houby)"
   }
 ]

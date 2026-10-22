@@ -437,5 +437,149 @@
     "unit": "g",
     "kcalPer100": 80,
     "reason": "Položka odpovídá tepelně upravenému hrášku a je obecná, což nejlépe odpovídá zadání pro školní oběd."
+  },
+  "brambory pečené": {
+    "status": "ok",
+    "id": "412225e4aa60f8f4",
+    "url": "brambory-pecene",
+    "title": "brambory pečené",
+    "unit": "g",
+    "kcalPer100": 137,
+    "reason": "Položka 'brambory pečené' přesně odpovídá hledané surovině a představuje obecný pokrm."
+  },
+  "rajče": {
+    "status": "ok",
+    "id": "cd39270fd2144e1a9510ce9e1210ddd5",
+    "url": "dusena-zelenina-cuketa-rajce-paprika",
+    "title": "dušená zelenina cuketa, rajče, paprika",
+    "unit": "g",
+    "kcalPer100": 24,
+    "reason": "Položka odpovídá tepelně upravené zeleninové směsi obsahující rajče, což nejlépe reflektuje surovinu v rámci školního oběda."
+  },
+  "okurka salátová": {
+    "status": "ok",
+    "id": "47c3415addecabd5",
+    "url": "okurka-salatova",
+    "title": "okurka salátová",
+    "unit": "g",
+    "kcalPer100": 16,
+    "reason": "Kandidát 0 je přesný název hledané základní suroviny v syrovém stavu, ve kterém se salátová okurka běžně konzumuje."
+  },
+  "čínské zelí": {
+    "status": "ok",
+    "id": "c8a23bd2831e21b5",
+    "url": "cinske-zeli-pak-choi",
+    "title": "čínské zelí (Pak choi)",
+    "unit": "g",
+    "kcalPer100": 21,
+    "reason": "Položka čínské zelí (Pak choi) představuje přímo hledanou základní zeleninu bez přidaných ingrediencí salátů."
+  },
+  "mleté maso": {
+    "status": "ok",
+    "id": "4b945d79946d46e29db674a3210ca5a8",
+    "url": "hovezi-maso-mlete",
+    "title": "hovězí maso mleté",
+    "unit": "g",
+    "kcalPer100": 221,
+    "reason": "Vybrána obecná položka mletého masa bez vazby na konkrétního výrobce či značku."
+  },
+  "sýr niva": {
+    "status": "ok",
+    "id": "05d99031746cccb9",
+    "url": "niva-plisnovy-syr",
+    "title": "niva plísňový sýr",
+    "unit": "g",
+    "kcalPer100": 381,
+    "reason": "Kandidát 0 je obecná položka pro sýr Niva bez konkrétní značky nebo přidaných tavených složek."
+  },
+  "strouhanka": {
+    "status": "ok",
+    "id": "93161b80c0857c0d",
+    "url": "strouhanka",
+    "title": "strouhanka",
+    "unit": "g",
+    "kcalPer100": 360,
+    "reason": "Kandidát 0 'strouhanka' je obecná položka, která přesně odpovídá hledané surovině."
+  },
+  "vejce": {
+    "status": "ok",
+    "id": "ea9ed298739c464fb14189a28b020355",
+    "url": "varene-vejce",
+    "title": "Vařené vejce",
+    "unit": "g",
+    "kcalPer100": 160,
+    "reason": "Kandidát 5 představuje obecnou vařenou variantu vejce, což odpovídá požadavku na hotový pokrm."
+  },
+  "pšeničná tortilla": {
+    "status": "ok",
+    "id": "92de09038d41f0cc",
+    "url": "tortila-psenicna",
+    "title": "Tortila pšeničná",
+    "unit": "g",
+    "kcalPer100": 334,
+    "reason": "Kandidát 0 je obecná pšeničná tortilla bez značky, což přesně odpovídá požadavkům."
+  },
+  "mleté hovězí maso": {
+    "status": "ok",
+    "id": "4d71c22d723e7eaf",
+    "url": "hovezi-maso-mlete-dusene",
+    "title": "hovězí maso mleté dušené",
+    "unit": "g",
+    "kcalPer100": 208,
+    "reason": "Kandidát 7 je obecná položka odpovídající tepelně upravenému (dušenému) mletému hovězímu masu."
+  },
+  "fazole červené": {
+    "status": "ok",
+    "id": "5a6fdf04e0216911",
+    "url": "cervene-fazole-varene",
+    "title": "Červené fazole vařené",
+    "unit": "g",
+    "kcalPer100": 127,
+    "reason": "Položka Červené fazole vařené nejlépe odpovídá popisu hotové suroviny bez přidaných omáček či značkových úprav."
+  },
+  "rajčatové pyré": {
+    "status": "ok",
+    "id": "95fc9b47accb40a6925eae41c1afd37b",
+    "url": "rajcatove-pyre",
+    "title": "rajčatové pyré",
+    "unit": "g",
+    "kcalPer100": 26,
+    "reason": "Kandidát 0 je obecná, neznačková položka bez přidaných ingrediencí, která přesně odpovídá hledané surovině."
+  },
+  "kukuřice": {
+    "status": "ok",
+    "id": "8ce0544512074499b98c0aa92a91858b",
+    "url": "kukurice",
+    "title": "kukuřice",
+    "unit": "g",
+    "kcalPer100": 132,
+    "reason": "Položka 0 představuje obecnou variantu vařené kukuřice, která nejlépe odpovídá surovině ve školním obědě."
+  },
+  "rybí filé": {
+    "status": "ok",
+    "id": "312185728641068f",
+    "url": "rybi-file",
+    "title": "rybí filé",
+    "unit": "g",
+    "kcalPer100": 70,
+    "reason": "Kandidát 0 je obecná položka přesně odpovídající zadané surovině bez značek a dalších specifických přísad."
+  },
+  "kuřecí maso vařené": {
+    "status": "ok",
+    "id": "4967d45055dec1c7",
+    "url": "varene-kureci-maso",
+    "title": "Vařené kuřecí maso",
+    "unit": "g",
+    "kcalPer100": 142,
+    "reason": "Položka 0 přesně odpovídá uvařenému kuřecímu masu v obecné podobě."
+  },
+  "houby": {
+    "status": "ok",
+    "id": "ae958d26adf25e8b",
+    "url": "houby-varene",
+    "title": "houby vařené",
+    "unit": "g",
+    "kcalPer100": 28,
+    "reason": "Položka houby vařené nejlépe odpovídá popisu tepelně upravené suroviny bez přidaného tuku či dalších ingrediencí."
   }
 }

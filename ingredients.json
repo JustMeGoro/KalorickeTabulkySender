@@ -339,6 +339,164 @@
         "name": "pšeničná mouka",
         "grams": 10
       }
+    ],
+    "Přírodní kuřecí plátek, opékaný brambor, zel.obloha": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 130
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "brambory pečené",
+        "grams": 220
+      },
+      {
+        "name": "rajče",
+        "grams": 30
+      },
+      {
+        "name": "okurka salátová",
+        "grams": 30
+      },
+      {
+        "name": "čínské zelí",
+        "grams": 20
+      }
+    ],
+    "Přírodní karbanátek s nivou bram. kaše": [
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko",
+        "grams": 50
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "mleté maso",
+        "grams": 120
+      },
+      {
+        "name": "sýr niva",
+        "grams": 25
+      },
+      {
+        "name": "strouhanka",
+        "grams": 10
+      },
+      {
+        "name": "vejce",
+        "grams": 15
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "Chilli con carne, tortilla": [
+      {
+        "name": "pšeničná tortilla",
+        "grams": 70
+      },
+      {
+        "name": "mleté hovězí maso",
+        "grams": 120
+      },
+      {
+        "name": "fazole červené",
+        "grams": 60
+      },
+      {
+        "name": "rajčatové pyré",
+        "grams": 80
+      },
+      {
+        "name": "kukuřice",
+        "grams": 30
+      },
+      {
+        "name": "cibule",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "Rybí filé v těstičku šťouchané brambory": [
+      {
+        "name": "rybí filé",
+        "grams": 130
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 20
+      },
+      {
+        "name": "vejce",
+        "grams": 15
+      },
+      {
+        "name": "mléko",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "cibule",
+        "grams": 10
+      }
+    ],
+    "Krušnohorské kuře s těstovinou (houby)": [
+      {
+        "name": "těstoviny vařené",
+        "grams": 220
+      },
+      {
+        "name": "kuřecí maso vařené",
+        "grams": 120
+      },
+      {
+        "name": "houby",
+        "grams": 40
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "smetana",
+        "grams": 30
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
     ]
   }
 }
