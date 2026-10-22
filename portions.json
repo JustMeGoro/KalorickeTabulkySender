@@ -156,5 +156,43 @@
         "grams": 15
       }
     ]
+  },
+  "2026-10-22": {
+    "meal": "Hamburská vepřová pečeně houskový knedlík",
+    "createdAt": "2026-10-22T10:52:33.188Z",
+    "items": [
+      {
+        "name": "vepřové maso pečené",
+        "grams": 120
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 180
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 40
+      },
+      {
+        "name": "mrkev",
+        "grams": 30
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "olej",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      },
+      {
+        "name": "vývar",
+        "grams": 100
+      }
+    ]
   }
 }
