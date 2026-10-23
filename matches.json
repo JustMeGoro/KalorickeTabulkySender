@@ -581,5 +581,14 @@
     "unit": "g",
     "kcalPer100": 28,
     "reason": "Položka houby vařené nejlépe odpovídá popisu tepelně upravené suroviny bez přidaného tuku či dalších ingrediencí."
+  },
+  "rybí filet": {
+    "status": "ok",
+    "id": "8a3e6b4075a548fc",
+    "url": "rybi-file-na-masle-pecene",
+    "title": "rybí filé na másle pečené",
+    "unit": "g",
+    "kcalPer100": 207,
+    "reason": "Kandidát 0 představuje obecnou a tepelně upravenou variantu rybího filé, která nejlépe odpovídá hotovému školnímu obědu."
   }
 }

@@ -497,6 +497,156 @@
         "name": "rostlinný olej",
         "grams": 10
       }
+    ],
+    "Rybí stripsy bram.kaše": [
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko",
+        "grams": 40
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "rybí filet",
+        "grams": 120
+      },
+      {
+        "name": "strouhanka",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      }
+    ],
+    "Vepřové ražniči vařený brambor, tatarská omáčka": [
+      {
+        "name": "vepřové maso",
+        "grams": 120
+      },
+      {
+        "name": "anglická slanina",
+        "grams": 25
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "paprika",
+        "grams": 20
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "tatarská omáčka",
+        "grams": 30
+      }
+    ],
+    "Lašský vep. kotlet duš. rýže s bulgurem salát": [
+      {
+        "name": "vepřová kotleta",
+        "grams": 120
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 140
+      },
+      {
+        "name": "bulgur vařený",
+        "grams": 80
+      },
+      {
+        "name": "anglická slanina",
+        "grams": 20
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "pšeničná mouka hladká",
+        "grams": 10
+      },
+      {
+        "name": "slunečnicový olej",
+        "grams": 15
+      },
+      {
+        "name": "okurka",
+        "grams": 100
+      }
+    ],
+    "Fazolový guláš chléb": [
+      {
+        "name": "fazole vařené",
+        "grams": 180
+      },
+      {
+        "name": "klobása",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 15
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "chléb",
+        "grams": 80
+      }
+    ],
+    "Vepřenky s cibulí a kečupem vař. brambor": [
+      {
+        "name": "vepřové maso mleté",
+        "grams": 130
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "kečup",
+        "grams": 30
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      }
     ]
   }
 }

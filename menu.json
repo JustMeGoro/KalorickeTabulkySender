@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-10-23T09:52:51.473Z",
+  "fetchedAt": "2026-10-23T11:33:49.429Z",
   "days": [
     {
       "date": "2026-10-01",
@@ -434,7 +434,7 @@
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Sojové maso na čínský způsob indiánská rýže"
+          "name": "Sojové maso na čínský způsob indiánská rýže V"
         },
         {
           "slot": "Oběd další",
@@ -454,7 +454,7 @@
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Gnocchi se špenátem a sýrem"
+          "name": "Gnocchi se špenátem a sýrem V"
         },
         {
           "slot": "Oběd další",
@@ -474,7 +474,7 @@
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Kuskus se zeleninou a hlívou ustřičnou"
+          "name": "Kuskus se zeleninou a hlívou ustřičnou V"
         },
         {
           "slot": "Oběd další",
@@ -494,7 +494,7 @@
         {
           "slot": "Oběd 2",
           "type": "main",
-          "name": "Vaječná omeleta vař. brambor s máslem salát"
+          "name": "Vaječná omeleta vař. brambor s máslem salát V"
         },
         {
           "slot": "Oběd další",
