@@ -56,6 +56,8 @@ The app has a Photo tab and a Dashboard tab. The Dashboard shows what the cloud 
 - Runs with nothing to do and nothing failing only add a history line (so a quiet cron run never hides an earlier failure); `workflow_dispatch` input `publish_status` forces publishing.
 - The app reads those files with the same token (Contents: read is enough), polling every 4 s while a run is active, else every 20 s.
 - Workflow retry: `RUN_ATTEMPT` / `WILL_RETRY` env tell `status.mjs` whether a retry follows. Gemini calls have a 60 s timeout (`gemini.mjs`).
+- Alerts: `status/alerts.json` (kept across runs) is shown at the very top of the Dashboard, with a red dot on the tab. `status.mjs` raises `gemini-quota` (429 whose body says quota/RESOURCE_EXHAUSTED; `gemini.mjs` logs `HTTP 429 QUOTA exceeded`), `gemini-overload` (>= 6 5xx/timeouts in a run), `kt-login` (Login failed) and `repo-size` (>= 800 MB), and clears them when that part of the pipeline works again. The app itself adds "GitHub token rejected" (401) and "no run for > 100 h". Actions minutes cannot be read with the workflow token, so there is no alert for them.
+- Camera: the Take photo button opens the camera inside the app (`getUserMedia`, shot drawn to a canvas, max 1280 px) because handing over to the phone's camera app can make Android restart the installed app and lose the photo; the phone's camera app (`capture` input) is only the fallback. Not verified on the phone yet.
 - Verified: publishing from Actions works (run 2026-10-23). The Dashboard layout was checked with fake data in the browser pane, not yet on the phone.
 
 ## Extra food on the tray and questions (built 2026-10-23)

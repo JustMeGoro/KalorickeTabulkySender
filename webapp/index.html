@@ -67,6 +67,18 @@
   .modal .row { display:flex; gap:8px; }
   .modal .row > div:first-child { flex:1; } .modal .row > div:last-child { width:110px; }
   .modal .actions { display:flex; gap:8px; } .modal .actions button { margin-top:12px; }
+  .cam { position:fixed; inset:0; background:#000; z-index:20; display:flex; flex-direction:column; }
+  .cam video { flex:1; min-height:0; width:100%; object-fit:contain; }
+  .camBar { display:flex; align-items:center; justify-content:space-between; padding:16px 20px max(20px, env(safe-area-inset-bottom)); }
+  .camBar > * { flex:1; }
+  .camBar button { margin:0; width:auto; background:transparent; color:#fff; font-size:16px; text-align:left; padding:10px 0; }
+  .camBar #camShot { flex:none; width:72px; height:72px; border-radius:50%; background:#fff; border:5px solid #9ccc65; padding:0; }
+  .alerts:empty { display:none; }
+  .alert { border-left:4px solid var(--err); background:#fef2f2; border-radius:8px; padding:10px 12px; margin-bottom:10px; }
+  .alert.warn { border-color:var(--warn); background:#fffbeb; color:var(--fg); }
+  .alert.warn b { color:var(--warn); }
+  .alert b { display:block; } .alert .when { font-size:12px; color:var(--muted); margin-top:2px; }
+  .dot { color:var(--err); }
   [hidden] { display:none !important; }
 </style>
 </head>
@@ -103,6 +115,7 @@
 </section>
 
 <section id="viewDash" hidden>
+  <div class="alerts" id="alerts"></div>
   <div class="card" id="dashHead"></div>
   <div class="card" id="dashPhases" hidden>
     <h2>Steps</h2>
@@ -131,6 +144,15 @@
   <small id="pushState">Ask me when the app is not sure about something on your tray.</small>
   <button id="pushBtn" class="secondary">Enable notifications</button>
 </details>
+
+<div class="cam" id="cam" hidden>
+  <video id="camVideo" playsinline autoplay muted></video>
+  <div class="camBar">
+    <button id="camCancel">Cancel</button>
+    <button id="camShot" aria-label="Take the photo"></button>
+    <span></span>
+  </div>
+</div>
 
 <div class="modal" id="modal" hidden>
   <div class="sheet">
@@ -223,18 +245,33 @@ const shiftDay = (n) => {
 };
 $("prev").onclick = () => shiftDay(-1);
 $("next").onclick = () => shiftDay(1);
-$("pickCamera").onclick = () => $("fileCamera").click();
 $("pickGallery").onclick = () => $("fileGallery").click();
 
 // Downscale to MAX_SIDE and re-encode as JPEG.
-async function shrink(file) {
-  const bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
-  const scale = Math.min(1, MAX_SIDE / Math.max(bmp.width, bmp.height));
+function drawScaled(source, width, height) {
+  const scale = Math.min(1, MAX_SIDE / Math.max(width, height));
   const canvas = document.createElement("canvas");
-  canvas.width = Math.round(bmp.width * scale);
-  canvas.height = Math.round(bmp.height * scale);
-  canvas.getContext("2d").drawImage(bmp, 0, 0, canvas.width, canvas.height);
+  canvas.width = Math.round(width * scale);
+  canvas.height = Math.round(height * scale);
+  canvas.getContext("2d").drawImage(source, 0, 0, canvas.width, canvas.height);
   return new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.85));
+}
+async function shrink(file) {
+  let bmp;
+  try {
+    bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
+  } catch {
+    bmp = await createImageBitmap(file); // older engines do not know the option
+  }
+  return drawScaled(bmp, bmp.width, bmp.height);
+}
+
+function setPhoto(b) {
+  blob = b;
+  $("preview").src = URL.createObjectURL(b);
+  $("preview").hidden = false;
+  $("send").disabled = false;
+  say(`Ready (${Math.round(b.size / 1024)} kB).`);
 }
 
 async function onPicked(input) {
@@ -242,17 +279,50 @@ async function onPicked(input) {
   if (!file) return;
   say("Preparing photo...");
   try {
-    blob = await shrink(file);
-    $("preview").src = URL.createObjectURL(blob);
-    $("preview").hidden = false;
-    $("send").disabled = false;
-    say(`Ready (${Math.round(blob.size / 1024)} kB).`);
+    setPhoto(await shrink(file));
   } catch (e) {
     say(`Could not read the photo: ${e.message}`, "err");
   }
+  input.value = ""; // so the same file can be chosen again
 }
 $("fileCamera").onchange = (e) => onPicked(e.target);
 $("fileGallery").onchange = (e) => onPicked(e.target);
+
+// The camera runs inside the app. Handing over to the phone's camera app can make Android restart this
+// installed app, and the photo is lost on the way back. The phone's camera app stays as a fallback.
+let camStream = null;
+function closeCamera() {
+  camStream?.getTracks().forEach((t) => t.stop());
+  camStream = null;
+  $("camVideo").srcObject = null;
+  $("cam").hidden = true;
+}
+$("pickCamera").onclick = async () => {
+  if (!navigator.mediaDevices?.getUserMedia) return $("fileCamera").click();
+  try {
+    camStream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: "environment" }, width: { ideal: 2560 }, height: { ideal: 1920 } },
+      audio: false,
+    });
+    $("camVideo").srcObject = camStream;
+    $("cam").hidden = false;
+    await $("camVideo").play().catch(() => {});
+  } catch (e) {
+    closeCamera();
+    say(`In-app camera not available (${e.name}) - opening the phone's camera app.`);
+    $("fileCamera").click();
+  }
+};
+$("camCancel").onclick = closeCamera;
+$("camShot").onclick = async () => {
+  const v = $("camVideo");
+  if (!v.videoWidth) return;
+  const shot = await drawScaled(v, v.videoWidth, v.videoHeight);
+  closeCamera();
+  setPhoto(shot);
+};
+window.addEventListener("error", (e) => say(`Something went wrong: ${e.message}`, "err"));
+window.addEventListener("unhandledrejection", (e) => say(`Something went wrong: ${e.reason?.message ?? e.reason}`, "err"));
 
 const toBase64 = (b) => new Promise((resolve, reject) => {
   const r = new FileReader();
@@ -340,6 +410,7 @@ async function refresh() {
     $("viewDash").dataset.error = e.message;
   }
   renderDash();
+  loadAlerts();
 }
 
 function renderPhase(list, p, fallbackLabel) {
@@ -498,6 +569,43 @@ async function poll() {
 function schedule(ms) { clearTimeout(timer); timer = setTimeout(poll, ms); }
 document.addEventListener("visibilitychange", () => { if (!document.hidden) pollNow(); });
 setInterval(() => { if (!$("viewDash").hidden && run) renderDash(); }, 1000); // clocks and countdowns
+
+// ---- alerts: problems shown at the very top of the dashboard ------------------------------------------------------
+// The pipeline keeps status/alerts.json (Gemini quota or overload, bot login, repository size). The app adds the
+// problems only it can see: a rejected GitHub token and a pipeline that has not run for days.
+let alerts = [];
+let tokenRejected = false;
+
+async function loadAlerts() {
+  if (!$("token").value) return;
+  try {
+    const res = await api("status/alerts.json?ref=status", { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" });
+    tokenRejected = res.status === 401;
+    if (res.ok) alerts = await res.json();
+    else if (res.status === 404) alerts = [];
+  } catch {}
+  renderAlerts();
+}
+
+function renderAlerts() {
+  const all = [];
+  if (tokenRejected) all.push({ level: "error", title: "GitHub token rejected", text: "The token in Settings is expired or was revoked, so the app cannot read or upload anything. Create a new one on GitHub and save it in Settings." });
+  const lastRun = history.at(-1);
+  const hours = lastRun ? (Date.now() - new Date(lastRun.startedAt)) / 3_600_000 : 0;
+  if (hours > 100) all.push({ level: "warn", title: "The pipeline has not run for a while", text: `The last run was ${Math.floor(hours / 24)} days ago. GitHub pauses scheduled workflows in quiet repositories - open the Actions tab on GitHub and enable the workflow if it is disabled.` });
+  all.push(...alerts);
+  const box = $("alerts");
+  box.replaceChildren();
+  for (const a of all) {
+    const d = el("div", `alert ${a.level === "error" ? "" : "warn"}`);
+    d.append(el("b", "", a.title), el("div", "", a.text));
+    if (a.since) d.append(el("div", "when", `since ${new Date(a.since).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}`));
+    box.append(d);
+  }
+  const tab = $("tabDash");
+  tab.textContent = "Dashboard";
+  if (all.length) tab.append(el("span", "dot", " ●"));
+}
 
 // ---- questions: "is this part of your lunch?" ---------------------------------------------------------
 // When the pipeline is unsure about something on the tray it saves it in portions.json (with a box around
@@ -672,8 +780,9 @@ if ("serviceWorker" in navigator) {
 }
 pushRefresh();
 checkQuestions();
-document.addEventListener("visibilitychange", () => { if (!document.hidden) checkQuestions(); });
-setInterval(() => { if (!document.hidden) checkQuestions(); }, 60_000);
+loadAlerts();
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { checkQuestions(); loadAlerts(); } });
+setInterval(() => { if (!document.hidden) { checkQuestions(); loadAlerts(); } }, 60_000);
 showTab(store.get("tab") === "dash" ? "dash" : "photo");
 showMeal();
 </script>

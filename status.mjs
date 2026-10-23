@@ -90,6 +90,59 @@ export function nextScheduled(from = new Date()) {
   return null;
 }
 
+// ---- alerts: problems that stay visible at the top of the dashboard until they are gone -----------------------
+// status/alerts.json is kept between runs (run.json is replaced by every run). A run raises an alert when it sees
+// the problem and clears it when the same part of the pipeline works again.
+function detectAlerts() {
+  const text = run.lines.map((l) => l.m);
+  const count = (re) => text.filter((m) => re.test(m)).length;
+  const done = (ids) => run.phases.some((p) => ids.includes(p.id) && p.state === "done");
+  const geminiWorked = done(["ingredients", "match", "portions"]);
+  const found = new Map();
+  const clear = new Set();
+
+  if (count(/HTTP 429 QUOTA/) > 0) {
+    found.set("gemini-quota", { level: "error", title: "Gemini free quota reached", text: "Gemini reports that the free quota is used up (per minute or per day). Runs keep retrying and the daily quota resets at midnight Pacific time (about 09:00 in Prague)." });
+  } else if (geminiWorked) clear.add("gemini-quota");
+
+  const overloaded = count(/HTTP 5\d\d|no answer in 60 s/);
+  if (overloaded >= 6) {
+    found.set("gemini-overload", { level: "warn", title: "Gemini is overloaded", text: `${overloaded} requests to Gemini failed in the last run. Runs are slower than usual but retry other models.` });
+  } else if (geminiWorked && overloaded < 3) clear.add("gemini-overload");
+
+  if (count(/Login failed/) > 0) {
+    found.set("kt-login", { level: "error", title: "Kalorické tabulky login fails", text: "The bot account was rejected. Check the KT_EMAIL / KT_PASSWORD secrets - was the bot password changed?" });
+  } else if (done(["write", "send"])) clear.add("kt-login");
+
+  return { found, clear };
+}
+
+async function repoSizeAlert(found, clear) {
+  const res = await gh("");
+  if (!res.ok) return;
+  const mb = Math.round((await res.json()).size / 1024);
+  if (mb >= 800) found.set("repo-size", { level: mb >= 3000 ? "error" : "warn", title: "The repository is getting big", text: `It is about ${mb} MB (GitHub recommends staying under 1 GB). The lunch photos in photos/ are the main thing that grows - old ones can be deleted.` });
+  else clear.add("repo-size");
+}
+
+async function updateAlerts() {
+  const { found, clear } = detectAlerts();
+  await repoSizeAlert(found, clear);
+  let current = [];
+  const cur = await gh(`/contents/status/alerts.json?ref=${BRANCH}`);
+  if (cur.ok) {
+    const meta = await cur.json();
+    shas.set("status/alerts.json", meta.sha);
+    current = JSON.parse(Buffer.from(meta.content, "base64").toString("utf8"));
+  }
+  const byId = new Map(current.map((a) => [a.id, a]));
+  const now = new Date().toISOString();
+  for (const [id, a] of found) byId.set(id, { id, ...a, since: byId.get(id)?.since ?? now, updatedAt: now });
+  for (const id of clear) byId.delete(id);
+  const next = [...byId.values()];
+  if (JSON.stringify(next) !== JSON.stringify(current)) await putJson("status/alerts.json", next);
+}
+
 export async function finish(state, summary) {
   run.state = state;
   run.summary = summary;
@@ -105,6 +158,11 @@ export async function finish(state, summary) {
   touch();
   await drain();
   if (ENABLED) {
+    try {
+      await updateAlerts();
+    } catch (e) {
+      console.warn(`status: alerts not updated (${e.message})`);
+    }
     try {
       await pushHistory();
     } catch (e) {

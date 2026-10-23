@@ -37,7 +37,9 @@ export async function generateJson(prompt, schema, images = []) {
       continue;
     }
     if (res.status === 429 || res.status >= 500) {
-      console.warn(`  ${model}: HTTP ${res.status}, trying next model`);
+      // 429 is either a short rate limit or the free quota being used up; the dashboard alerts on the latter
+      const quota = res.status === 429 && /quota|RESOURCE_EXHAUSTED|exceeded/i.test(await res.text().catch(() => ""));
+      console.warn(`  ${model}: HTTP ${res.status}${quota ? " QUOTA exceeded" : ""}, trying next model`);
       await sleep(2000);
       continue;
     }
