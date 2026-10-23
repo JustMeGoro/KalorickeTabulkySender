@@ -232,40 +232,5 @@
         "grams": 13
       }
     ]
-  },
-  "2099-01-01": {
-    "meal": "TEST DAY (delete me)",
-    "photoHash": "test",
-    "createdAt": "2026-10-23T17:11:47.872Z",
-    "notified": true,
-    "items": [],
-    "extras": [
-      {
-        "id": "x1",
-        "name": "džus",
-        "grams": 200,
-        "confident": false,
-        "box": [
-          266,
-          917,
-          426,
-          1000
-        ],
-        "note": "Test: a glass with a yellow drink at the right edge of the tray"
-      },
-      {
-        "id": "x2",
-        "name": "chléb",
-        "grams": 90,
-        "confident": false,
-        "box": [
-          336,
-          0,
-          566,
-          479
-        ],
-        "note": "Test: slices of bread on the left"
-      }
-    ]
   }
 }
