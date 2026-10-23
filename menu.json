@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-10-22T21:59:02.740Z",
+  "fetchedAt": "2026-10-23T09:52:51.473Z",
   "days": [
     {
       "date": "2026-10-01",
@@ -420,6 +420,101 @@
           "slot": "Oběd 1",
           "type": "main",
           "name": "Krušnohorské kuře s těstovinou (houby)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Rybí stripsy bram.kaše"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Sojové maso na čínský způsob indiánská rýže"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Vepřové ražniči vařený brambor, tatarská omáčka"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Gnocchi se špenátem a sýrem"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Lašský vep. kotlet duš. rýže s bulgurem salát"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Kuskus se zeleninou a hlívou ustřičnou"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Fazolový guláš chléb"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Vaječná omeleta vař. brambor s máslem salát"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Vepřenky s cibulí a kečupem vař. brambor"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
         }
       ]
     }
