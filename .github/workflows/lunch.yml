@@ -55,7 +55,8 @@ jobs:
         run: npm ci --omit=dev --no-audit --no-fund
       - name: Test notification
         if: inputs.test_push
-        run: node notify.mjs --title "Is this part of your lunch?" --body "Test: džus, chléb - tap to answer." --url "./?q=1" --tag test
+        run: |
+          node notify.mjs --title "Is this part of your lunch?" --body "Test: džus, chléb - tap to answer." --url "./?q=1" --tag test
       - name: Login check (dry run, changes nothing)
         if: inputs.check_login
         run: node write.mjs --date $(date +%F)
