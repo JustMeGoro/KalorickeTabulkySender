@@ -2,17 +2,7 @@
 // Results are cached by meal name in ingredients.json, so each meal is only sent once.
 // Needs GEMINI_API_KEY in .env. Set GEMINI_MODEL in .env to change the model.
 import { readFile, writeFile } from "node:fs/promises";
-
-try {
-  process.loadEnvFile(".env");
-} catch {
-  // .env is optional if the variables are already set in the environment
-}
-const KEY = process.env.GEMINI_API_KEY;
-if (!KEY) throw new Error("GEMINI_API_KEY is missing - put it in .env");
-// Free-tier models are often overloaded (503), so fall back through several. GEMINI_MODEL overrides the first.
-const MODELS = [process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"].filter(Boolean);
-const endpoint = (model) => `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+import { generateJson, sleep } from "./gemini.mjs";
 
 const PROMPT = (name) => `Jsi nutriční asistent. Rozlož tento školní oběd na jednotlivé suroviny, jak bys je zadal do kalorických tabulek.
 Pro každou surovinu uveď:
@@ -37,33 +27,7 @@ const SCHEMA = {
   required: ["ingredients"],
 };
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-async function askGemini(name) {
-  const body = {
-    contents: [{ parts: [{ text: PROMPT(name) }] }],
-    generationConfig: { responseMimeType: "application/json", responseSchema: SCHEMA, temperature: 0.2 },
-  };
-  for (let attempt = 0; attempt < MODELS.length * 3; attempt++) {
-    const model = MODELS[attempt % MODELS.length];
-    const res = await fetch(endpoint(model), {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": KEY },
-      body: JSON.stringify(body),
-    });
-    if (res.status === 429 || res.status >= 500) {
-      console.warn(`  ${model}: HTTP ${res.status}, trying next model`);
-      await sleep(2000);
-      continue;
-    }
-    if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-    const data = await res.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) throw new Error(`Empty Gemini response for "${name}"`);
-    return JSON.parse(text).ingredients;
-  }
-  throw new Error(`Gemini kept failing for "${name}"`);
-}
+const askGemini = async (name) => (await generateJson(PROMPT(name), SCHEMA)).ingredients;
 
 const lunches = JSON.parse(await readFile("lunches.json", "utf8"));
 const cache = await readFile("ingredients.json", "utf8").then(JSON.parse, () => ({ meals: {} }));

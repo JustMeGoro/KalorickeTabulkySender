@@ -44,7 +44,8 @@ jobs:
       - name: Login check (dry run, changes nothing)
         if: inputs.check_login
         run: node write.mjs --date $(date +%F)
-      - run: node daily.mjs --week --go --photos
+      # one automatic retry: Gemini sometimes stalls or is overloaded
+      - run: node daily.mjs --week --go --photos || (sleep 60 && node daily.mjs --week --go --photos)
         if: ${{ !inputs.check_login }}
       # keep the state (what was sent, portions, caches) in the repo, even if a day failed
       - name: Save state

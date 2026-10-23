@@ -22,11 +22,20 @@ export async function generateJson(prompt, schema, images = []) {
   };
   for (let attempt = 0; attempt < MODELS.length * 3; attempt++) {
     const model = MODELS[attempt % MODELS.length];
-    const res = await fetch(endpoint(model), {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": KEY },
-      body: JSON.stringify(body),
-    });
+    let res;
+    try {
+      // a request that hangs (seen in the cloud: no response headers for 5 minutes) is cut off and retried
+      res = await fetch(endpoint(model), {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-goog-api-key": KEY },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(60_000),
+      });
+    } catch (e) {
+      console.warn(`  ${model}: ${e.name === "TimeoutError" ? "no answer in 60 s" : e.message}, trying next model`);
+      await sleep(2000);
+      continue;
+    }
     if (res.status === 429 || res.status >= 500) {
       console.warn(`  ${model}: HTTP ${res.status}, trying next model`);
       await sleep(2000);
