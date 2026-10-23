@@ -48,6 +48,16 @@ Idea from the user: break the lunch into ingredients early, but only send once t
 - `.github/workflows/lunch.yml`: runs `daily.mjs --week --go --photos` in GitHub Actions on photo upload, weekdays 05:00 and 19:00 UTC, or manually. Needs repo secrets `GEMINI_API_KEY`, `KT_EMAIL`, `KT_PASSWORD`, `KT_SEND_TO` (set by the user, never by Claude). It commits `sent.json`, `portions.json` and the data caches back to the repo, so `sent.json` is no longer gitignored.
 - The laptop logon task was removed on 2026-10-15 (cloud sends instead; `install-task.ps1` is kept only as a fallback - do not run it while the workflow is active or both would send). Verified: the workflow runs with the secrets, and a read-only login check (`workflow_dispatch` with `check_login`) logs in to Kalorické tabulky from GitHub. Not yet verified in the cloud: write + send + the photo step (first real day: 2026-10-19).
 
+## Dashboard (built 2026-10-23)
+
+The app has a Photo tab and a Dashboard tab. The Dashboard shows what the cloud run is doing: steps with state, a live terminal, the failure (where + why + hint) and when the next attempt is, plus recent runs.
+
+- `status.mjs`: used by `daily.mjs` (which now spawns the step scripts asynchronously and streams their output). In Actions it pushes `status/run.json` (latest run that did work or failed: phases, last 600 terminal lines, failure, next attempt, first attempt log on retry) and `status/history.json` (one line per run) to an orphan `status` branch through the GitHub contents API, at most one push every ~2.5 s. Locally it does nothing. `explain()` turns known errors (Gemini timeout/overload, bot login, missing recipient, partial write...) into a reason and a hint.
+- Runs with nothing to do and nothing failing only add a history line (so a quiet cron run never hides an earlier failure); `workflow_dispatch` input `publish_status` forces publishing.
+- The app reads those files with the same token (Contents: read is enough), polling every 4 s while a run is active, else every 20 s.
+- Workflow retry: `RUN_ATTEMPT` / `WILL_RETRY` env tell `status.mjs` whether a retry follows. Gemini calls have a 60 s timeout (`gemini.mjs`).
+- Verified: publishing from Actions works (run 2026-10-23). The Dashboard layout was checked with fake data in the browser pane, not yet on the phone.
+
 ## Facts about the external services
 
 - **Canteen (eStrava, Gymnázium Orlová, `idzar=103`)**: `https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ` is public JSON, no login. The web page itself is an SPA.
