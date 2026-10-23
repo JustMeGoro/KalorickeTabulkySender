@@ -45,6 +45,7 @@ jobs:
       KT_PASSWORD: ${{ secrets.KT_PASSWORD }}
       KT_SEND_TO: ${{ secrets.KT_SEND_TO }}
       VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+      NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
