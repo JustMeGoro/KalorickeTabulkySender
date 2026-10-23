@@ -1,4 +1,4 @@
-// Service worker (v4): makes the page installable and shows push notifications ("is this part of your lunch?").
+// Service worker (v5): makes the page installable and shows push notifications ("is this part of your lunch?").
 // It caches nothing, so the page and the lunch data are always fresh.
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (e) => e.waitUntil(self.clients.claim()));
@@ -15,7 +15,7 @@ self.addEventListener("push", (event) => {
     self.registration.showNotification(data.title || "Lunch", {
       body: data.body || "",
       icon: "icon-192.png",
-      badge: "icon-192.png",
+      badge: "badge-96.png",
       tag: data.tag || "lunch",
       renotify: true, // alert again even if a notification with the same tag is already there
       requireInteraction: true, // stays until you tap or swipe it away
