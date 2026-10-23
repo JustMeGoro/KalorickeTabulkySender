@@ -14,10 +14,11 @@
 <meta name="apple-mobile-web-app-title" content="Lunch">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>
-  :root { --bg:#fff; --fg:#1d1d1f; --muted:#5f6b57; --card:#f1f8e9; --accent:#558b2f; --ok:#2e7d32; --err:#b91c1c; }
+  :root { --bg:#fff; --fg:#1d1d1f; --muted:#5f6b57; --card:#f1f8e9; --accent:#558b2f; --ok:#2e7d32; --err:#b91c1c; --warn:#b45309; }
   * { box-sizing: border-box; }
   body { margin:0; padding:max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); font:16px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); max-width:480px; margin-inline:auto; }
-  h1 { font-size:20px; margin:8px 0 16px; }
+  h1 { font-size:20px; margin:8px 0 12px; }
+  h2 { font-size:15px; margin:0 0 8px; }
   .card { background:var(--card); border-radius:12px; padding:14px; margin-bottom:14px; }
   label { display:block; font-size:13px; color:var(--muted); margin:10px 0 4px; }
   input[type=text], input[type=password], input[type=date] { width:100%; padding:10px; font-size:16px; border-radius:8px; border:1px solid var(--muted); background:var(--bg); color:var(--fg); }
@@ -27,33 +28,82 @@
   img { width:100%; border-radius:10px; margin-top:12px; display:block; }
   #meal { font-weight:600; }
   #status { margin-top:12px; min-height:1.4em; }
-  .ok { color:var(--ok); } .err { color:var(--err); }
+  .ok { color:var(--ok); } .err { color:var(--err); } .warn { color:var(--warn); }
   details summary { cursor:pointer; color:var(--muted); }
   .dayrow { display:flex; gap:8px; align-items:center; }
   .dayrow button { width:56px; margin-top:0; padding:10px 0; }
   .dayrow input { text-align:center; }
-  small { color:var(--muted); }
+  small, .muted { color:var(--muted); }
+  small { font-size:13px; }
+
+  .tabs { display:flex; gap:8px; margin-bottom:14px; }
+  .tabs button { margin:0; padding:10px; font-size:15px; }
+  .tabs button:not(.on) { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+
+  .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:600; color:#fff; background:var(--muted); }
+  .badge.running { background:var(--accent); } .badge.success { background:var(--ok); } .badge.failed { background:var(--err); }
+  .meta { font-size:13px; color:var(--muted); margin-top:6px; }
+  .meta a { color:var(--accent); }
+  .failbox { border-left:4px solid var(--err); background:#fef2f2; border-radius:8px; padding:10px 12px; margin-top:10px; }
+  .failbox b { color:var(--err); }
+  .nextbox { border-left:4px solid var(--warn); background:#fffbeb; border-radius:8px; padding:10px 12px; margin-top:10px; }
+  .phases { list-style:none; margin:0; padding:0; }
+  .phases li { display:flex; gap:10px; padding:6px 0; border-bottom:1px solid #dcedc8; }
+  .phases li:last-child { border-bottom:0; }
+  .phases .ic { width:20px; text-align:center; flex:none; }
+  .phases .dayhead { font-weight:600; font-size:13px; color:var(--muted); display:block; border-bottom:0; padding-bottom:0; margin-top:8px; }
+  .phases .detail { font-size:13px; color:var(--muted); }
+  .spin { display:inline-block; animation:spin 1s linear infinite; } @keyframes spin { to { transform:rotate(360deg); } }
+  .term { background:#14210f; color:#e6f0dc; border-radius:10px; padding:10px; font:12px/1.45 ui-monospace, Menlo, Consolas, monospace; max-height:340px; overflow:auto; white-space:pre-wrap; word-break:break-word; }
+  .term .t { color:#8aa079; } .term .warn { color:#fbbf24; } .term .error { color:#fca5a5; } .term .step { color:#a5d66b; font-weight:700; }
+  .hist { list-style:none; margin:0; padding:0; font-size:14px; }
+  .hist li { padding:5px 0; border-bottom:1px solid #dcedc8; } .hist li:last-child { border-bottom:0; }
+  [hidden] { display:none !important; }
 </style>
 </head>
 <body>
-<h1>Lunch photo</h1>
+<h1>Lunch</h1>
 
-<div class="card">
-  <label for="date">Day</label>
-  <div class="dayrow">
-    <button id="prev" class="secondary" aria-label="Previous day">&lt;</button>
-    <input type="text" id="date" inputmode="numeric" placeholder="YYYY-MM-DD" autocomplete="off">
-    <button id="next" class="secondary" aria-label="Next day">&gt;</button>
-  </div>
-  <div id="meal"></div>
-  <input type="file" id="fileCamera" accept="image/*" capture="environment" hidden>
-  <input type="file" id="fileGallery" accept="image/*" hidden>
-  <button id="pickCamera" class="secondary">Take photo</button>
-  <button id="pickGallery" class="secondary">Choose from gallery</button>
-  <img id="preview" alt="" hidden>
-  <button id="send" disabled>Send photo</button>
-  <div id="status"></div>
+<div class="tabs">
+  <button id="tabPhoto" class="on">Photo</button>
+  <button id="tabDash">Dashboard</button>
 </div>
+
+<section id="viewPhoto">
+  <div class="card">
+    <label for="date">Day</label>
+    <div class="dayrow">
+      <button id="prev" class="secondary" aria-label="Previous day">&lt;</button>
+      <input type="text" id="date" inputmode="numeric" placeholder="YYYY-MM-DD" autocomplete="off">
+      <button id="next" class="secondary" aria-label="Next day">&gt;</button>
+    </div>
+    <div id="meal"></div>
+    <input type="file" id="fileCamera" accept="image/*" capture="environment" hidden>
+    <input type="file" id="fileGallery" accept="image/*" hidden>
+    <button id="pickCamera" class="secondary">Take photo</button>
+    <button id="pickGallery" class="secondary">Choose from gallery</button>
+    <img id="preview" alt="" hidden>
+    <button id="send" disabled>Send photo</button>
+    <div id="status"></div>
+  </div>
+</section>
+
+<section id="viewDash" hidden>
+  <div class="card" id="dashHead"></div>
+  <div class="card" id="dashPhases" hidden>
+    <h2>Steps</h2>
+    <ul class="phases" id="phaseList"></ul>
+  </div>
+  <div class="card">
+    <h2>Terminal</h2>
+    <div class="term" id="term">Nothing yet.</div>
+    <div id="prevAttempt" hidden></div>
+  </div>
+  <div class="card">
+    <h2>Recent runs</h2>
+    <ul class="hist" id="hist"><li class="muted">Nothing yet.</li></ul>
+  </div>
+</section>
 
 <details class="card" id="settings">
   <summary>Settings</summary>
@@ -74,11 +124,17 @@ const store = {
 const MAX_SIDE = 1280; // px - enough for judging portions, keeps the upload small
 let blob = null;
 
-const today = () => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-};
+const pad = (n) => String(n).padStart(2, "0");
+const isoDay = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const today = () => isoDay(new Date());
 const say = (text, cls = "") => { $("status").textContent = text; $("status").className = cls; };
+const clock = (iso) => (iso ? new Date(iso).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }) : "");
+const el = (tag, cls, text) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+};
 
 $("date").value = today();
 $("repo").value = store.get("repo") || $("repo").value;
@@ -91,6 +147,19 @@ const api = (path, opts = {}) =>
     headers: { Authorization: `Bearer ${$("token").value.trim()}`, Accept: "application/vnd.github+json", ...(opts.headers ?? {}) },
   });
 
+// ---- tabs -----------------------------------------------------------------------------------
+function showTab(name) {
+  $("viewPhoto").hidden = name !== "photo";
+  $("viewDash").hidden = name !== "dash";
+  $("tabPhoto").classList.toggle("on", name === "photo");
+  $("tabDash").classList.toggle("on", name === "dash");
+  store.set("tab", name);
+  if (name === "dash") pollNow();
+}
+$("tabPhoto").onclick = () => showTab("photo");
+$("tabDash").onclick = () => showTab("dash");
+
+// ---- photo tab ----------------------------------------------------------------------------
 // Show what lunch is planned for the chosen day (best effort; the app works without it).
 async function showMeal() {
   $("meal").textContent = "";
@@ -113,8 +182,7 @@ $("date").onchange = showMeal;
 $("date").oninput = () => { if (/^\d{4}-\d{2}-\d{2}$/.test($("date").value)) showMeal(); };
 const shiftDay = (n) => {
   const [y, m, d] = ($("date").value.match(/^\d{4}-\d{2}-\d{2}$/) ? $("date").value : today()).split("-").map(Number);
-  const t = new Date(y, m - 1, d + n);
-  $("date").value = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
+  $("date").value = isoDay(new Date(y, m - 1, d + n));
   showMeal();
 };
 $("prev").onclick = () => shiftDay(-1);
@@ -157,31 +225,243 @@ const toBase64 = (b) => new Promise((resolve, reject) => {
   r.readAsDataURL(b);
 });
 
+// What this phone did last, shown as the first step on the dashboard.
+let lastUpload = null; // { day, state: "running" | "done" | "failed", at, error }
+try { lastUpload = JSON.parse(store.get("lastUpload") || "null"); } catch {}
+const setUpload = (u) => { lastUpload = u; store.set("lastUpload", JSON.stringify(u)); renderDash(); };
+
 $("send").onclick = async () => {
   if (!blob) return;
   if (!/^\d{4}-\d{2}-\d{2}$/.test($("date").value)) return say("Day must look like 2026-10-12.", "err");
   if (!$("token").value) { $("settings").open = true; return say("Add your GitHub token in Settings first.", "err"); }
   $("send").disabled = true;
   say("Uploading...");
+  const day = $("date").value;
+  setUpload({ day, state: "running", at: new Date().toISOString() });
   try {
-    const path = `photos/${$("date").value}.jpg`;
+    const path = `photos/${day}.jpg`;
     // retaking a photo replaces the old file, which GitHub only allows with the old file's sha
     const existing = await api(path);
     const sha = existing.ok ? (await existing.json()).sha : undefined;
     const res = await api(path, {
       method: "PUT",
-      body: JSON.stringify({ message: `Lunch photo ${$("date").value}`, content: await toBase64(blob), sha }),
+      body: JSON.stringify({ message: `Lunch photo ${day}`, content: await toBase64(blob), sha }),
     });
     if (!res.ok) throw new Error(`GitHub said ${res.status}: ${(await res.json().catch(() => ({}))).message ?? ""}`);
-    say("Uploaded. The lunch is being processed - it shows up in your diary in a few minutes.", "ok");
+    setUpload({ day, state: "done", at: new Date().toISOString() });
+    say("Uploaded. Follow the progress on the Dashboard tab.", "ok");
+    fastUntil = Date.now() + 5 * 60_000;
+    showTab("dash");
   } catch (e) {
+    setUpload({ day, state: "failed", at: new Date().toISOString(), error: e.message });
     say(`Upload failed: ${e.message}`, "err");
   } finally {
     $("send").disabled = false;
   }
 };
 
+// ---- dashboard ----------------------------------------------------------------------------
+const TRIGGERS = { push: "Photo uploaded", schedule: "Scheduled check", workflow_dispatch: "Started by hand", local: "Local run" };
+const DAY_STEPS = [
+  ["photo", "Lunch photo"],
+  ["portions", "Reading the portions from the photo"],
+  ["write", "Writing the foods into the diary"],
+  ["send", "Sharing the lunch"],
+];
+const GLOBAL_STEPS = [
+  ["menu", "Downloading the canteen menu"],
+  ["lunches", "Picking the lunch for each day"],
+  ["ingredients", "Splitting the lunches into ingredients"],
+  ["match", "Matching ingredients to foods"],
+];
+const ICONS = { done: "✓", running: "⟳", failed: "✗", pending: "○", skipped: "–" };
+
+let run = null;
+let history = [];
+const etags = {};
+
+async function getStatus(file) {
+  if (!$("token").value) return null;
+  const headers = { Accept: "application/vnd.github.raw+json" };
+  if (etags[file]) headers["If-None-Match"] = etags[file];
+  const res = await api(`status/${file}?ref=status`, { headers, cache: "no-store" });
+  if (res.status === 304) return undefined; // unchanged
+  if (!res.ok) return null;
+  etags[file] = res.headers.get("ETag");
+  return res.json();
+}
+
+async function refresh() {
+  try {
+    const [r, h] = await Promise.all([getStatus("run.json"), getStatus("history.json")]);
+    if (r !== undefined) run = r;
+    if (h !== undefined && h) history = h;
+    $("viewDash").dataset.error = "";
+  } catch (e) {
+    $("viewDash").dataset.error = e.message;
+  }
+  renderDash();
+}
+
+function renderPhase(list, p, fallbackLabel) {
+  const li = el("li");
+  const state = p?.state ?? "pending";
+  const ic = el("span", "ic" + (state === "failed" ? " err" : state === "done" ? " ok" : ""), ICONS[state]);
+  if (state === "running") ic.classList.add("spin");
+  const body = el("div");
+  body.append(el("div", "", p?.label ?? fallbackLabel));
+  if (p?.detail) body.append(el("div", "detail", p.detail));
+  li.append(ic, body);
+  list.append(li);
+}
+
+function renderDash() {
+  const head = $("dashHead");
+  head.replaceChildren();
+  if (!$("token").value) {
+    head.append(el("div", "muted", "Add your GitHub token in Settings to see the dashboard."));
+    return;
+  }
+
+  // the phone's own upload comes first: the cloud run only starts after it
+  const up = lastUpload && Date.now() - new Date(lastUpload.at) < 30 * 60_000 ? lastUpload : null;
+  const startedAfterUpload = run && up && new Date(run.startedAt) >= new Date(up.at) - 5000;
+  if (up && (up.state !== "done" || !startedAfterUpload)) {
+    const box = el("div", "nextbox");
+    const text = up.state === "running" ? "Uploading the photo for " + up.day + "..." :
+      up.state === "done" ? `Photo for ${up.day} uploaded at ${clock(up.at)}. Waiting for the cloud run to start...` :
+      `Photo upload failed: ${up.error}`;
+    box.append(el("b", up.state === "failed" ? "err" : "", up.state === "running" ? "⟳ " : up.state === "done" ? "✓ " : "✗ "), document.createTextNode(text));
+    head.append(box);
+  }
+
+  if (!run) {
+    head.append(el("div", "muted", "No run recorded yet. A run shows up here when a lunch is processed or something fails."));
+    $("dashPhases").hidden = true;
+    renderTerm([]);
+    renderHist();
+    return;
+  }
+
+  const stale = run.state === "running" && Date.now() - new Date(run.updatedAt) > 10 * 60_000;
+  const state = stale ? "failed" : run.state;
+  const top = el("div");
+  top.append(el("span", `badge ${state}`, stale ? "Stopped?" : state === "running" ? "Running" : state === "success" ? "Done" : "Failed"));
+  head.append(top);
+  const trig = `${TRIGGERS[run.trigger] ?? run.trigger}${run.attempt > 1 ? ` - attempt ${run.attempt}` : ""}`;
+  const dur = Math.max(0, Math.round(((run.finishedAt ? new Date(run.finishedAt) : new Date()) - new Date(run.startedAt)) / 1000));
+  const meta = el("div", "meta", `${trig} - started ${clock(run.startedAt)} - ${dur} s`);
+  if (run.runUrl) { meta.append(document.createTextNode(" - ")); const a = el("a", "", "GitHub"); a.href = run.runUrl; a.target = "_blank"; a.rel = "noopener"; meta.append(a); }
+  head.append(meta);
+  if (run.summary) head.append(el("div", "", run.summary));
+  if (stale) head.append(el("div", "warn", `No update for ${Math.round((Date.now() - new Date(run.updatedAt)) / 60000)} min - the run may have been cancelled or crashed.`));
+
+  if (run.failure) {
+    const f = el("div", "failbox");
+    f.append(el("b", "", `Failed at: ${run.failure.phase}${run.failure.day ? " (" + run.failure.day + ")" : ""}`));
+    f.append(el("div", "", run.failure.reason));
+    f.append(el("div", "muted", run.failure.hint));
+    head.append(f);
+  }
+  if (run.next && run.state !== "running" && (run.state === "failed" || stale)) {
+    const n = el("div", "nextbox");
+    n.append(el("b", "", "Next attempt: "));
+    n.append(document.createTextNode(nextText(run.next)));
+    head.append(n);
+  }
+
+  // steps
+  const list = $("phaseList");
+  list.replaceChildren();
+  const find = (id, day) => run.phases.find((p) => p.id === id && (p.day ?? null) === day);
+  for (const [id, label] of GLOBAL_STEPS) {
+    const p = find(id, null);
+    if (p || run.state === "running") renderPhase(list, p, label);
+  }
+  const days = [...new Set(run.phases.filter((p) => p.day).map((p) => p.day))].sort();
+  for (const day of days) {
+    list.append(el("li", "dayhead", day));
+    const noPhoto = find("photo", day)?.label.startsWith("No photo");
+    for (const [id, label] of DAY_STEPS) {
+      const p = find(id, day);
+      if (!p && id === "portions" && noPhoto) renderPhase(list, { state: "skipped", label, detail: "no photo, the estimate is used" });
+      else if (!p && id === "photo") continue;
+      else renderPhase(list, p, label);
+    }
+  }
+  $("dashPhases").hidden = list.children.length === 0;
+
+  renderTerm(run.lines ?? []);
+  renderPrevious();
+  renderHist();
+}
+
+function nextText(next) {
+  if (!next.at) return next.why;
+  const s = Math.round((new Date(next.at) - Date.now()) / 1000);
+  const when = s > 0 ? (s < 120 ? `in ${s} s` : `at ${new Date(next.at).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}`) : "any moment now";
+  return `${next.why} - ${when}`;
+}
+
+let termKey = "";
+function renderTerm(lines) {
+  const term = $("term");
+  const key = lines.length + "|" + (lines.at(-1)?.t ?? "");
+  if (key === termKey) return; // unchanged: keep the scroll position
+  termKey = key;
+  const atBottom = term.scrollTop + term.clientHeight >= term.scrollHeight - 30;
+  term.replaceChildren();
+  if (!lines.length) { term.textContent = "Nothing yet."; return; }
+  for (const l of lines) {
+    const row = el("div", l.l);
+    row.append(el("span", "t", clock(l.t) + "  "), document.createTextNode(l.m));
+    term.append(row);
+  }
+  if (atBottom) term.scrollTop = term.scrollHeight;
+}
+
+function renderPrevious() {
+  const box = $("prevAttempt");
+  box.replaceChildren();
+  box.hidden = !run?.previous;
+  if (!run?.previous) return;
+  const d = el("details");
+  d.append(el("summary", "", `First attempt${run.previous.failure ? " - " + run.previous.failure.reason : ""}`));
+  const t = el("div", "term");
+  for (const l of run.previous.lines) { const row = el("div", l.l); row.append(el("span", "t", clock(l.t) + "  "), document.createTextNode(l.m)); t.append(row); }
+  d.append(t);
+  box.append(d);
+}
+
+function renderHist() {
+  const ul = $("hist");
+  ul.replaceChildren();
+  if (!history.length) { ul.append(el("li", "muted", "Nothing yet.")); return; }
+  for (const h of [...history].reverse().slice(0, 12)) {
+    const li = el("li");
+    const when = new Date(h.startedAt).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" });
+    li.append(el("b", h.state === "failed" ? "err" : h.state === "success" ? "ok" : "", h.state === "failed" ? "✗ " : h.state === "success" ? "✓ " : "⟳ "), document.createTextNode(`${when} - ${TRIGGERS[h.trigger] ?? h.trigger}: ${h.summary || h.state}`));
+    ul.append(li);
+  }
+}
+
+// polling: quick while a run is going or right after an upload, slow otherwise, off when hidden
+let fastUntil = 0;
+let timer = null;
+function pollNow() { clearTimeout(timer); poll(); }
+async function poll() {
+  if ($("viewDash").hidden || document.hidden) return schedule(20_000);
+  await refresh();
+  const retrySoon = run?.state === "failed" && run.next?.at && Math.abs(new Date(run.next.at) - Date.now()) < 180_000;
+  const busy = run?.state === "running" || Date.now() < fastUntil || retrySoon;
+  schedule(busy ? 4000 : 20_000);
+}
+function schedule(ms) { clearTimeout(timer); timer = setTimeout(poll, ms); }
+document.addEventListener("visibilitychange", () => { if (!document.hidden) pollNow(); });
+setInterval(() => { if (!$("viewDash").hidden && run) renderDash(); }, 1000); // clocks and countdowns
+
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+showTab(store.get("tab") === "dash" ? "dash" : "photo");
 showMeal();
 </script>
 </body>

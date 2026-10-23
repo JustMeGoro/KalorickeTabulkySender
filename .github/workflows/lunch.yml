@@ -17,6 +17,10 @@ on:
         description: "Only test the Kalorické tabulky login from GitHub (read-only dry run of write.mjs for today)"
         type: boolean
         default: false
+      publish_status:
+        description: "Show this run on the app dashboard even if there is nothing to do"
+        type: boolean
+        default: false
 
 # one run at a time: they all read and write sent.json
 concurrency:
@@ -44,9 +48,18 @@ jobs:
       - name: Login check (dry run, changes nothing)
         if: inputs.check_login
         run: node write.mjs --date $(date +%F)
-      # one automatic retry: Gemini sometimes stalls or is overloaded
-      - run: node daily.mjs --week --go --photos || (sleep 60 && node daily.mjs --week --go --photos)
+      # one automatic retry after a minute: Gemini sometimes stalls or is overloaded.
+      # status.mjs publishes the progress to the "status" branch for the app dashboard.
+      - name: Run pipeline
         if: ${{ !inputs.check_login }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          STATUS_ALWAYS: ${{ inputs.publish_status && 1 || 0 }}
+        run: |
+          RUN_ATTEMPT=1 WILL_RETRY=1 node daily.mjs --week --go --photos || {
+            sleep 60
+            RUN_ATTEMPT=2 WILL_RETRY=0 node daily.mjs --week --go --photos
+          }
       # keep the state (what was sent, portions, caches) in the repo, even if a day failed
       - name: Save state
         if: always()
