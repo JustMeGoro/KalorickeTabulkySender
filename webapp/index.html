@@ -759,7 +759,7 @@ async function pushRefresh() {
 $("pushLocal").onclick = async () => {
   try {
     const reg = await navigator.serviceWorker.ready;
-    await reg.showNotification("Lunch", { body: "Local test - the app can show notifications.", icon: "icon-192.png", tag: "local-test" });
+    await reg.showNotification("Lunch", { body: "Local test - the app can show notifications.", icon: "icon-192.png", badge: "icon-192.png", tag: "local-test", renotify: true, requireInteraction: true, vibrate: [200, 100, 200], silent: false });
     $("pushDiag").textContent = `Asked the phone to show it (permission: ${Notification.permission}, service worker: ${reg.active?.state ?? "none"}).`;
   } catch (e) {
     $("pushDiag").textContent = `Could not show it: ${e.message}`;

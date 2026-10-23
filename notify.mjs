@@ -37,7 +37,7 @@ const payload = JSON.stringify({ title: arg("--title", "Lunch"), body: arg("--bo
 let sent = 0;
 for (const sub of subs) {
   try {
-    await webpush.sendNotification(sub, payload, { TTL: 6 * 3600 });
+    await webpush.sendNotification(sub, payload, { TTL: 6 * 3600, urgency: "high" });
     sent++;
   } catch (e) {
     console.log(`notify: could not reach a phone (${e.statusCode ?? e.message}${e.statusCode === 410 ? " - it turned notifications off" : ""})`);
