@@ -143,6 +143,8 @@
   <label>Notifications</label>
   <small id="pushState">Ask me when the app is not sure about something on your tray.</small>
   <button id="pushBtn" class="secondary">Enable notifications</button>
+  <button id="pushLocal" class="secondary">Show a test notification here</button>
+  <small id="pushDiag"></small>
 </details>
 
 <div class="cam" id="cam" hidden>
@@ -751,6 +753,18 @@ async function pushRefresh() {
     : Notification.permission === "denied" ? "Blocked. Allow notifications for this app in the phone's site settings, then try again."
     : "Ask me when the app is not sure about something on your tray.";
 }
+
+// Shows a notification straight from the service worker, without the server. If this one appears but the one
+// from GitHub does not, the problem is the delivery; if neither appears, the phone blocks the notifications.
+$("pushLocal").onclick = async () => {
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    await reg.showNotification("Lunch", { body: "Local test - the app can show notifications.", icon: "icon-192.png", tag: "local-test" });
+    $("pushDiag").textContent = `Asked the phone to show it (permission: ${Notification.permission}, service worker: ${reg.active?.state ?? "none"}).`;
+  } catch (e) {
+    $("pushDiag").textContent = `Could not show it: ${e.message}`;
+  }
+};
 
 $("pushBtn").onclick = async () => {
   if (!$("token").value) return void ($("pushState").textContent = "Save your GitHub token first.");
