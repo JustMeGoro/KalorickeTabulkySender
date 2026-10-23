@@ -590,5 +590,104 @@
     "unit": "g",
     "kcalPer100": 207,
     "reason": "Kandidát 0 představuje obecnou a tepelně upravenou variantu rybího filé, která nejlépe odpovídá hotovému školnímu obědu."
+  },
+  "anglická slanina": {
+    "status": "ok",
+    "id": "34ff7a810c1446d0",
+    "url": "slanina-anglicka",
+    "title": "slanina anglická",
+    "unit": "g",
+    "kcalPer100": 403,
+    "reason": "Položka \"slanina anglická\" je nejvhodnější, protože se jedná o obecnou variantu suroviny bez značky."
+  },
+  "paprika": {
+    "status": "ok",
+    "id": "fac6acf3ca0523a7",
+    "url": "paprika",
+    "title": "paprika",
+    "unit": "g",
+    "kcalPer100": 31,
+    "reason": "Položka 'paprika' je nejvhodnější obecnou variantou pro hledanou surovinu bez odkazů na konkrétní značku nebo složený pokrm."
+  },
+  "vepřová kotleta": {
+    "status": "ok",
+    "id": "df55ec8387353f3b",
+    "url": "veprova-kotleta-pecene",
+    "title": "vepřová kotleta pečeně",
+    "unit": "g",
+    "kcalPer100": 174,
+    "reason": "Položka vepřová kotleta pečeně nejlépe odpovídá běžné úpravě masa ve školní jídelně, která je tepelně upravená a obecná."
+  },
+  "pšeničná mouka hladká": {
+    "status": "ok",
+    "id": "4fa6314194ca1a83",
+    "url": "psenicna-mouka-hladka",
+    "title": "pšeničná mouka hladká",
+    "unit": "g",
+    "kcalPer100": 356,
+    "reason": "Položka 0 je obecná pšeničná mouka hladká bez konkrétní značky, což přesně odpovídá zadání."
+  },
+  "slunečnicový olej": {
+    "status": "ok",
+    "id": "041a8cc0f2c5d431",
+    "url": "olej-slunecnicovy",
+    "title": "olej slunečnicový",
+    "unit": "ml",
+    "kcalPer100": 897,
+    "reason": "Položka 0 představuje obecný slunečnicový olej, který nejlépe odpovídá zadání bez ohledu na značku."
+  },
+  "okurka": {
+    "status": "ok",
+    "id": "47c3415addecabd5",
+    "url": "okurka-salatova",
+    "title": "okurka salátová",
+    "unit": "g",
+    "kcalPer100": 16,
+    "reason": "Položka okurka salátová je ideální obecnou ne-značkovou surovinou odpovídající zadání."
+  },
+  "fazole vařené": {
+    "status": "ok",
+    "id": "69308dc86d4aba14",
+    "url": "fazole-varene",
+    "title": "fazole vařené",
+    "unit": "g",
+    "kcalPer100": 125,
+    "reason": "Položka odpovídá obecnému popisu vařených fazolí bez specifikace konkrétního druhu či přidaných ingrediencí."
+  },
+  "klobása": {
+    "status": "ok",
+    "id": "244649e3f598786b",
+    "url": "klobasa-moravska",
+    "title": "klobása moravská",
+    "unit": "g",
+    "kcalPer100": 283,
+    "reason": "Položka 'klobása moravská' představuje nejvhodnější obecnou klobásu bez vazby na konkrétní značku."
+  },
+  "chléb": {
+    "status": "ok",
+    "id": "280c7f35efc782f0",
+    "url": "chleb",
+    "title": "Chléb",
+    "unit": "g",
+    "kcalPer100": 234,
+    "reason": "Položka Chléb je nejobecnější variantou, která nejlépe odpovídá neurčitému označení suroviny ve školním obědě."
+  },
+  "vepřové maso mleté": {
+    "status": "ok",
+    "id": "f1b6839e4a484a68808bbe04c7c28840",
+    "url": "veprove-maso-mlete-restovane",
+    "title": "vepřové maso mleté restované",
+    "unit": "g",
+    "kcalPer100": 297,
+    "reason": "Položka odpovídá tepelně upravenému vepřovému mletému masu, což nejlépe odpovídá zadání hotového pokrmu ze školní jídelny."
+  },
+  "kečup": {
+    "status": "ok",
+    "id": "49863c9e34f46c74",
+    "url": "kecup",
+    "title": "kečup",
+    "unit": "g",
+    "kcalPer100": 112,
+    "reason": "Položka 0 je nejvhodnější, protože se jedná o obecný kečup bez konkrétní značky."
   }
 }

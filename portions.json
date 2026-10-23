@@ -194,5 +194,43 @@
         "grams": 100
       }
     ]
+  },
+  "2026-10-23": {
+    "meal": "Vařné vejce, čočka na kyselo chléb, kys. okurek V",
+    "createdAt": "2026-10-23T16:15:24.116Z",
+    "items": [
+      {
+        "name": "vejce vařené",
+        "grams": 110
+      },
+      {
+        "name": "čočka vařená",
+        "grams": 250
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "mouka pšeničná hladká",
+        "grams": 10
+      },
+      {
+        "name": "ocet",
+        "grams": 5
+      },
+      {
+        "name": "chléb pšenično-žitný",
+        "grams": 90
+      },
+      {
+        "name": "okurka kyselá",
+        "grams": 13
+      }
+    ]
   }
 }
