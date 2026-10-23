@@ -21,6 +21,10 @@ on:
         description: "Only send a test notification to the phones that enabled notifications in the app"
         type: boolean
         default: false
+      message:
+        description: "Text of the test notification (opens the question window)"
+        type: string
+        default: "Test notification - it works."
       publish_status:
         description: "Show this run on the app dashboard even if there is nothing to do"
         type: boolean
@@ -56,7 +60,7 @@ jobs:
       - name: Test notification
         if: inputs.test_push
         run: |
-          node notify.mjs --title "Is this part of your lunch?" --body "Test: džus, chléb - tap to answer." --url "./?q=1" --tag test
+          node notify.mjs --title "Is this part of your lunch?" --body "${{ inputs.message }}" --url "./?q=1" --tag test
       - name: Login check (dry run, changes nothing)
         if: inputs.check_login
         run: node write.mjs --date $(date +%F)

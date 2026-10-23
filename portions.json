@@ -224,13 +224,26 @@
         "grams": 5
       },
       {
-        "name": "chléb pšenično-žitný",
-        "grams": 90
-      },
-      {
         "name": "okurka kyselá",
         "grams": 13
       }
-    ]
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "chléb",
+        "grams": 90,
+        "confident": false,
+        "box": [
+          336,
+          0,
+          566,
+          479
+        ],
+        "note": "Three slices of bread on the left of the plate. Is it part of your lunch?"
+      }
+    ],
+    "notified": false,
+    "closed": false
   }
 }
