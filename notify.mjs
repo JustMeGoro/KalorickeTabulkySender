@@ -26,7 +26,7 @@ if (topic) {
       title: arg("--title", "Lunch"),
       message: arg("--body") || "Lunch",
       priority: 4, // high: pops up on screen with sound
-      tags: ["fork_and_knife"],
+      icon: new URL("icon-192.png", APP_URL).href, // the large picture in the notification and pop-up
       click: new URL(url, APP_URL).href,
     }),
     signal: AbortSignal.timeout(20_000),
