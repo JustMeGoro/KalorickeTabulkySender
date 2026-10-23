@@ -5,6 +5,7 @@
 // or edit it by hand to force a specific food. This script never writes to your diary.
 import { readFile, writeFile } from "node:fs/promises";
 import { generateJson, sleep } from "./gemini.mjs";
+import { extraNames } from "./plan.mjs";
 
 const SEARCH = "https://www.kaloricketabulky.cz/autocomplete/foodstuff-meal";
 const MAX_CANDIDATES = 12;
@@ -34,11 +35,15 @@ const PICK_SCHEMA = {
   required: ["choice", "reason"],
 };
 
-async function pick(name, candidates) {
+const RELAXED_NOTE = `
+První výběr nenašel nic přesného. Teď vyber nejbližší obecnou potravinu (např. pro "chléb pšenično-žitný" obyčejný chléb), značkový výrobek jen když opravdu nic jiného není.`;
+
+// relaxed: a second chance after "no match" - accept the closest generic food even if it is not exact.
+async function pick(name, candidates, relaxed = false) {
   const list = candidates.map((c, i) => `${i}: ${c.title} (${c.kcalPer100} kcal/100 ${c.unit})`).join("\n");
   const prompt = `Vybírám potravinu z databáze kalorických tabulek pro surovinu ze školního oběda.
 Surovina: "${name}". Gramáž je odhadnutá pro hotové, uvařené jídlo, takže preferuj vařenou/upečenou/hotovou variantu před syrovou, pokud o syrovou nejde.
-Preferuj obecné položky před značkovými výrobky.
+Preferuj obecné položky před značkovými výrobky.${relaxed ? RELAXED_NOTE : ""}
 Kandidáti:
 ${list}
 
@@ -49,8 +54,9 @@ Vrať index nejlepšího kandidáta jako choice, nebo -1, pokud žádný nevyhov
 const ingredients = JSON.parse(await readFile("ingredients.json", "utf8"));
 const matches = await readFile("matches.json", "utf8").then(JSON.parse, () => ({}));
 
-const names = [...new Set(Object.values(ingredients.meals).flat().map((i) => i.name))];
-const todo = names.filter((n) => !matches[n]);
+// menu ingredients plus extra foods seen on the lunch photos / added by the user
+const names = [...new Set([...Object.values(ingredients.meals).flat().map((i) => i.name), ...(await extraNames())])];
+const todo = names.filter((n) => !matches[n] || (matches[n].status === "no_match" && !matches[n].relaxed));
 console.log(`${names.length} ingredients, ${todo.length} to match`);
 
 for (const [i, name] of todo.entries()) {
@@ -61,9 +67,14 @@ for (const [i, name] of todo.entries()) {
   } else if (candidates.length === 1) {
     entry = { status: "ok", ...candidates[0], reason: "only candidate" };
   } else {
-    const { choice, reason } = await pick(name, candidates);
+    let { choice, reason } = await pick(name, candidates);
+    let relaxed = false;
+    if (!candidates[choice]) {
+      ({ choice, reason } = await pick(name, candidates, true));
+      relaxed = true;
+    }
     const chosen = candidates[choice];
-    entry = chosen ? { status: "ok", ...chosen, reason } : { status: "no_match", reason, candidates: candidates.map((c) => c.title) };
+    entry = chosen ? { status: "ok", ...chosen, reason } : { status: "no_match", relaxed, reason, candidates: candidates.map((c) => c.title) };
     await sleep(1500);
   }
   matches[name] = entry;

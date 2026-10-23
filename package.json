@@ -1,0 +1,9 @@
+{
+  "name": "kaloricketabulky-sender",
+  "private": true,
+  "type": "module",
+  "description": "Only notify.mjs needs a package (web-push); everything else has no dependencies.",
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}

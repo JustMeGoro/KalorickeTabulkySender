@@ -8,6 +8,7 @@
 // Needs KT_EMAIL and KT_PASSWORD (bot account) in .env. Never sends anything to other users.
 import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { finalItems, readPortions } from "./plan.mjs";
 
 try {
   process.loadEnvFile(".env");
@@ -73,10 +74,11 @@ const lunch = lunches.find((l) => l.date === isoDate);
 if (!lunch) throw new Error(`No lunch for ${isoDate} in lunches.json`);
 const estimated = JSON.parse(await readFile("ingredients.json", "utf8")).meals[lunch.name];
 if (!estimated) throw new Error(`No ingredients for "${lunch.name}" - run node ingredients.mjs`);
-// grams corrected from the lunch photo (portion.mjs) win over the plain estimates
-const portion = (await readFile("portions.json", "utf8").then(JSON.parse, () => ({})))[isoDate];
-const ingredients = portion?.meal === lunch.name ? portion.items : estimated;
-if (ingredients === portion?.items) console.log("Using gram amounts from the lunch photo.");
+// amounts from the lunch photo (portion.mjs) win over the plain estimates; they also bring extra food seen
+// on the tray and the user's answers (plan.mjs)
+const fromPhoto = (await readPortions())[isoDate]?.meal === lunch.name ? await finalItems(isoDate) : null;
+const ingredients = fromPhoto ?? estimated;
+if (fromPhoto) console.log(`Using gram amounts from the lunch photo${fromPhoto.some((i) => i.extra) ? ` (including ${fromPhoto.filter((i) => i.extra).map((i) => i.name).join(", ")})` : ""}.`);
 const matches = JSON.parse(await readFile("matches.json", "utf8"));
 
 const plan = [];

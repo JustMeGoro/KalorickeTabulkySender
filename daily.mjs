@@ -18,6 +18,7 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { missingRecipients, parseRecipients } from "./recipients.mjs";
 import * as status from "./status.mjs";
+import { closeDay, hashFile, openQuestions, readAnswers, readPortions, writePortions } from "./plan.mjs";
 
 try {
   process.loadEnvFile(".env");
@@ -141,13 +142,31 @@ const ready = (d) => {
   if (d === today && new Date().getHours() >= cutoffHour) return true;
   return false;
 };
-const todo = pending.filter(ready);
+let todo = pending.filter(ready);
+const beforeCutoff = (d) => d === today && new Date().getHours() < cutoffHour;
+
+// Days whose photo was already analysed and still wait for the user to answer "is this part of your lunch?"
+// stay on hold until they answer (or the cutoff hour passes). They do not start a new dashboard run.
+const onHold = [];
+if (PHOTOS) {
+  const portionsNow = await readPortions();
+  for (const d of [...todo]) {
+    const entry = portionsNow[d];
+    if (!entry || !hasPhoto(d) || !beforeCutoff(d)) continue;
+    const same = entry.photoHash === hashFile(await readFile(`photos/${d}.jpg`));
+    if (same && openQuestions(entry, await readAnswers(d)).length) {
+      onHold.push(d);
+      todo = todo.filter((x) => x !== d);
+      out(`${d}: waiting for your answer in the app (${openQuestions(entry, await readAnswers(d)).map((e) => e.name).join(", ")})`);
+    }
+  }
+}
 if (PHOTOS) {
   for (const d of pending) {
     if (todo.includes(d)) {
       out(`${d}: ${hasPhoto(d) ? "photo found" : "no photo, sending the estimate"}`);
       status.phase("photo", hasPhoto(d) ? "Lunch photo received" : "No photo - using the estimate", "done", "", d);
-    } else {
+    } else if (!onHold.includes(d)) {
       out(`${d}: waiting for the lunch photo${d === today ? ` (estimate is sent at ${cutoffHour}:00 without it)` : ""}`);
     }
   }
@@ -163,17 +182,44 @@ if (prepare.length > 0) {
 }
 if (todo.length === 0) {
   out("\nNothing to do.");
-  const waiting = pending.filter((d) => !todo.includes(d));
-  await finishRun("success", waiting.length ? `Waiting for the lunch photo: ${waiting.join(", ")}` : "Nothing to do", 0);
+  const waiting = pending.filter((d) => !todo.includes(d) && !onHold.includes(d));
+  const notes = [waiting.length && `Waiting for the lunch photo: ${waiting.join(", ")}`, onHold.length && `Waiting for your answer: ${onHold.join(", ")}`].filter(Boolean);
+  await finishRun("success", notes.join(" - ") || "Nothing to do", 0);
 }
 
 const failed = [];
+const asking = [];
 for (const date of todo) {
-  const ok =
-    (!(PHOTOS && hasPhoto(date)) ||
-      (await step(`Portions from photo ${date}`, "portion.mjs", ["--date", date], { phase: "portions", label: "Reading the portions from the photo", day: date, fatal: false }))) &&
+  let ok = true;
+  if (PHOTOS && hasPhoto(date)) {
+    ok = await step(`Portions from photo ${date}`, "portion.mjs", ["--date", date], { phase: "portions", label: "Reading the portions from the photo", day: date, fatal: false });
+    if (ok) {
+      const entry = (await readPortions())[date];
+      const open = entry ? openQuestions(entry, await readAnswers(date)) : [];
+      if (open.length && !entry.notified) {
+        const names = open.map((e) => e.name).join(", ");
+        await runScript("notify.mjs", ["--title", "Is this part of your lunch?", "--body", `${names} - ${date}. Tap to answer.`, "--url", "./?q=1", "--tag", `q-${date}`]);
+        const all = await readPortions();
+        all[date].notified = true;
+        await writePortions(all);
+      }
+      if (open.length && beforeCutoff(date)) {
+        status.phase("question", "Waiting for your answer", "waiting", `Unsure about: ${open.map((e) => e.name).join(", ")}`, date);
+        out(`${date}: waiting for your answer in the app (${open.map((e) => e.name).join(", ")})`);
+        asking.push(date);
+        continue;
+      }
+      if (open.length) out(`${date}: no answer before the cutoff - the unsure items are left out`, "warn");
+      if (entry?.extras?.length) {
+        ok = await step("Match the extra foods", "match.mjs", [], { phase: "match-extras", label: "Matching the extra foods", day: date, fatal: false });
+      }
+    }
+  }
+  ok =
+    ok &&
     (await step(`Write ${date}`, "write.mjs", ["--date", date, ...(GO ? ["--write"] : [])], { phase: "write", label: "Writing the foods into the diary", day: date, fatal: false })) &&
     (await step(`Send ${date}`, "send.mjs", ["--date", date, ...(GO ? ["--send"] : [])], { phase: "send", label: "Sharing the lunch", day: date, fatal: false }));
+  if (ok && GO && PHOTOS) await closeDay(date);
   if (!ok) failed.push(date);
 }
 
@@ -182,4 +228,6 @@ if (failed.length) {
   await finishRun("failed", `Failed: ${failed.join(", ")}`, 1);
 }
 out(GO ? `\nAll done: ${todo.join(", ")}.` : `\nDry run finished. Run again with --go to do it for real.`);
-await finishRun("success", GO ? `Sent ${todo.join(", ")}` : "Dry run finished", 0);
+const done = todo.filter((d) => !asking.includes(d));
+const summary = [done.length && (GO ? `Sent ${done.join(", ")}` : "Dry run finished"), asking.length && `Waiting for your answer: ${asking.join(", ")}`].filter(Boolean).join(" - ");
+await finishRun("success", summary || "Nothing to do", 0);

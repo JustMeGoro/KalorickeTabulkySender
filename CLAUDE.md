@@ -58,6 +58,18 @@ The app has a Photo tab and a Dashboard tab. The Dashboard shows what the cloud 
 - Workflow retry: `RUN_ATTEMPT` / `WILL_RETRY` env tell `status.mjs` whether a retry follows. Gemini calls have a 60 s timeout (`gemini.mjs`).
 - Verified: publishing from Actions works (run 2026-10-23). The Dashboard layout was checked with fake data in the browser pane, not yet on the phone.
 
+## Extra food on the tray and questions (built 2026-10-23)
+
+Gemini now also looks for food on the tray that is not in the menu (bread, roll, fruit, dessert, drink) and the app can ask about unsure things.
+
+- `portion.mjs` returns `items` (menu ingredients, grams from the photo) and `extras` (name, grams, `confident`, `box` = [ymin,xmin,ymax,xmax] in 0-1000, note) -> `portions.json`. Sure extras are added automatically; unsure ones are questions. It skips a photo it already processed (hash); `--force` redoes it.
+- `plan.mjs`: `finalItems(date)` = menu items + sure extras + unsure extras the user answered "add" to (`answers/<date>.json`, written by the app, `{ "<extra id>": { action, name, grams } }`). `write.mjs` uses it; `match.mjs` also matches extra names. `closeDay(date)` marks a finished day so the app stops asking.
+- `daily.mjs`: after the portions step, unsure extras without an answer -> push notification (`notify.mjs`, once) and the day waits ("Waiting for your answer" on the dashboard) until the user answers or the cutoff hour passes (then the unsure items are left out). An answer commit (`answers/**`) starts the workflow again. Simulated locally (hold, answered, after cutoff) with a sandbox copy; not run on the real cloud yet.
+- Notifications: Web Push. `push/vapid-public.txt` (public) + secret `VAPID_PRIVATE_KEY` (set by the user); the app stores the subscription of the phone in `push/subscriptions.json` (Settings -> Enable notifications). `notify.mjs` uses the `web-push` npm package (`package.json`, `npm ci` in the workflow; every other script is dependency-free). Workflow input `test_push` sends a test notification.
+- The app: banner + modal with the crop of the photo (canvas crop of the box), editable name/grams, Add it / Skip it; opened from the notification (`sw.js` push + click handler, `?q=1`).
+- `match.mjs` now retries a `no_match` once with a relaxed prompt ("closest generic food"), which fixed `chléb pšenično-žitný`. That was why the bread of 2026-10-23 was missing from the diary: the photo step had 90 g, but unmatched ingredients are skipped.
+- Not yet verified on the real phone/photo: detection of extras with a positive example, the push notification, the modal.
+
 ## Facts about the external services
 
 - **Canteen (eStrava, Gymnázium Orlová, `idzar=103`)**: `https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ` is public JSON, no login. The web page itself is an SPA.
@@ -86,7 +98,6 @@ Working end to end. Verified by the user: scrape -> lunches -> ingredients -> ma
 
 - `sent.json` is local: if the task runs on two computers on the same day, the lunch is shared twice. Option: store "sent" in the bot account instead.
 - The task only exists on `GORONOTEBOOK`; another computer needs a clone, its own `.env`, and `install-task.ps1`.
-- `chléb pšenično-žitný` has no match (all candidates were brand products) - edit `matches.json` or relax the pick prompt.
 - Gram amounts are Gemini estimates for a typical high-school portion.
 - Menu changes after a day was sent are not re-sent; delete the day from `sent.json` and the bot's Oběd to redo it.
 - `ingredients.mjs` could import `gemini.mjs` instead of duplicating the helper.

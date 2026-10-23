@@ -360,20 +360,13 @@
     "reason": "Položka ocet představuje nejvíce obecnou variantu suroviny bez přidaných ingrediencí či značkového označení."
   },
   "chléb pšenično-žitný": {
-    "status": "no_match",
-    "reason": "Všichni kandidáti jsou konkrétní značkové výrobky, zatímco pro školní oběd by byla vhodnější obecná položka typu 'chléb pšenično-žitný' bez obchodní značky.",
-    "candidates": [
-      "Kváskový chléb pšeničnožitný bw33 Breadway",
-      "Chléb kladenský klas pšenično-žitný Kompek",
-      "Chléb pšeničnožitný krájený Srdce domova",
-      "BBQ chléb pšeničnožitný krájený Grill Party",
-      "Chléb Hradišťan dvoukváskový pšenično-žitný",
-      "Pšenično-žitný chléb s kmínem Albertovo pekařství",
-      "Českolipský kvasový chléb pšeničnožitný",
-      "Chléb konzumní s kmínem (chléb pšeničnožitný, krájený) Penam",
-      "Pšeničnožitný toustový chléb tmavý Baskeeto",
-      "Dar z polí kváskový chléb pšeničnožitný Odkolek"
-    ]
+    "status": "ok",
+    "id": "9ed83c29f7c14ecd849d5fb355472966",
+    "url": "chleb-konzumni-s-kminem-chleb-psenicnozitny-krajeny-penam",
+    "title": "Chléb konzumní s kmínem (chléb pšeničnožitný, krájený) Penam",
+    "unit": "g",
+    "kcalPer100": 220,
+    "reason": "Vybraná položka představuje běžný konzumní pšenično-žitný chléb s typickou energetickou hodnotou."
   },
   "okurka kyselá": {
     "status": "ok",

@@ -7,7 +7,7 @@ name: lunch
 #  - by hand from the Actions tab
 on:
   push:
-    paths: ["photos/**"]
+    paths: ["photos/**", "answers/**"]
   schedule:
     - cron: "0 5 * * 1-5"
     - cron: "0 19 * * 1-5"
@@ -15,6 +15,10 @@ on:
     inputs:
       check_login:
         description: "Only test the Kalorické tabulky login from GitHub (read-only dry run of write.mjs for today)"
+        type: boolean
+        default: false
+      test_push:
+        description: "Only send a test notification to the phones that enabled notifications in the app"
         type: boolean
         default: false
       publish_status:
@@ -40,18 +44,24 @@ jobs:
       KT_EMAIL: ${{ secrets.KT_EMAIL }}
       KT_PASSWORD: ${{ secrets.KT_PASSWORD }}
       KT_SEND_TO: ${{ secrets.KT_SEND_TO }}
+      VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Install web-push (for the notifications)
+        run: npm ci --omit=dev --no-audit --no-fund
+      - name: Test notification
+        if: inputs.test_push
+        run: node notify.mjs --title "Lunch" --body "Test notification - it works." --tag test
       - name: Login check (dry run, changes nothing)
         if: inputs.check_login
         run: node write.mjs --date $(date +%F)
       # one automatic retry after a minute: Gemini sometimes stalls or is overloaded.
       # status.mjs publishes the progress to the "status" branch for the app dashboard.
       - name: Run pipeline
-        if: ${{ !inputs.check_login }}
+        if: ${{ !inputs.check_login && !inputs.test_push }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
           STATUS_ALWAYS: ${{ inputs.publish_status && 1 || 0 }}
