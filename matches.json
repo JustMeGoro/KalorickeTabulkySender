@@ -682,5 +682,14 @@
     "unit": "g",
     "kcalPer100": 112,
     "reason": "Položka 0 je nejvhodnější, protože se jedná o obecný kečup bez konkrétní značky."
+  },
+  "banán": {
+    "status": "ok",
+    "id": "d10ffdda00be195b",
+    "url": "banan",
+    "title": "banán",
+    "unit": "g",
+    "kcalPer100": 94,
+    "reason": "Kandidát 0 představuje nejlepší volbu, protože jde o obecný základní druh ovce bez značky a přidaných ingrediencí."
   }
 }

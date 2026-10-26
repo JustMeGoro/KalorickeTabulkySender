@@ -235,5 +235,52 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-10-26": {
+    "meal": "Drůbeží rizoto se zeleninou a sýrem",
+    "photoHash": "fd45f882dd9af2bd",
+    "createdAt": "2026-10-26T12:18:44.195Z",
+    "items": [
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "kuřecí prsa",
+        "grams": 90
+      },
+      {
+        "name": "mražená zelenina",
+        "grams": 70
+      },
+      {
+        "name": "sýr eidam",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 25
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "banán",
+        "grams": 120,
+        "confident": true,
+        "box": [
+          281,
+          545,
+          466,
+          946
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }
