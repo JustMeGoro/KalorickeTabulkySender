@@ -691,5 +691,14 @@
     "unit": "g",
     "kcalPer100": 94,
     "reason": "Kandidát 0 představuje nejlepší volbu, protože jde o obecný základní druh ovce bez značky a přidaných ingrediencí."
+  },
+  "zmrzlina": {
+    "status": "ok",
+    "id": "f569233ddc85499f9a9ab02fa7442b78",
+    "url": "tocena-zmrzlina",
+    "title": "Točená zmrzlina",
+    "unit": "g",
+    "kcalPer100": 202,
+    "reason": "Položka představuje nejvíce obecnou variantu točené zmrzliny, která nejlépe odpovídá typu pokrmu podávaného ve školní jídelně."
   }
 }

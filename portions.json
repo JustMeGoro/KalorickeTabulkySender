@@ -282,5 +282,44 @@
       }
     ],
     "closed": true
+  },
+  "2026-10-27": {
+    "meal": "Kuřecí rošťáci opékané brambory, tatarská omčka",
+    "photoHash": "63ad72dcc55acd36",
+    "createdAt": "2026-10-27T13:12:14.267Z",
+    "items": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 110
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 170
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "tatarská omáčka",
+        "grams": 25
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "zmrzlina",
+        "grams": 50,
+        "confident": true,
+        "box": [
+          209,
+          173,
+          337,
+          350
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }
