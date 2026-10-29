@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-10-28T22:54:30.943Z",
+  "fetchedAt": "2026-10-29T11:10:43.614Z",
   "days": [
     {
       "date": "2026-10-01",
