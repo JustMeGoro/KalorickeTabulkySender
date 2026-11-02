@@ -321,5 +321,52 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-02": {
+    "meal": "Přírodní kuřecí plátek, opékaný brambor, zel.obloha",
+    "photoHash": "d802588fb4e5f893",
+    "createdAt": "2026-11-02T12:23:20.550Z",
+    "items": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "brambory pečené",
+        "grams": 170
+      },
+      {
+        "name": "rajče",
+        "grams": 30
+      },
+      {
+        "name": "okurka salátová",
+        "grams": 8
+      },
+      {
+        "name": "čínské zelí",
+        "grams": 15
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "jablko",
+        "grams": 140,
+        "confident": true,
+        "box": [
+          110,
+          858,
+          297,
+          1000
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }

@@ -700,5 +700,14 @@
     "unit": "g",
     "kcalPer100": 202,
     "reason": "Položka představuje nejvíce obecnou variantu točené zmrzliny, která nejlépe odpovídá typu pokrmu podávaného ve školní jídelně."
+  },
+  "jablko": {
+    "status": "ok",
+    "id": "2c62865228bf748d",
+    "url": "jablko",
+    "title": "jablko",
+    "unit": "g",
+    "kcalPer100": 63,
+    "reason": "Kandidát 0 je nejvhodnější, protože představuje nejobecnější položku pro jablko bez konkrétní odrůdy či značky."
   }
 }
