@@ -368,5 +368,50 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-03": {
+    "meal": "Přírodní karbanátek s nivou bram. kaše",
+    "photoHash": "ac5a52d27aa196e0",
+    "createdAt": "2026-11-03T13:12:45.754Z",
+    "items": [
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko",
+        "grams": 50
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "mleté maso",
+        "grams": 120
+      },
+      {
+        "name": "sýr niva",
+        "grams": 25
+      },
+      {
+        "name": "strouhanka",
+        "grams": 10
+      },
+      {
+        "name": "vejce",
+        "grams": 15
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
