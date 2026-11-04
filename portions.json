@@ -413,5 +413,42 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-04": {
+    "meal": "Chilli con carne, tortilla",
+    "photoHash": "1097ecaaedf47d62",
+    "createdAt": "2026-11-04T12:31:45.894Z",
+    "items": [
+      {
+        "name": "pšeničná tortilla",
+        "grams": 80
+      },
+      {
+        "name": "mleté hovězí maso",
+        "grams": 130
+      },
+      {
+        "name": "fazole červené",
+        "grams": 60
+      },
+      {
+        "name": "rajčatové pyré",
+        "grams": 80
+      },
+      {
+        "name": "kukuřice",
+        "grams": 20
+      },
+      {
+        "name": "cibule",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
