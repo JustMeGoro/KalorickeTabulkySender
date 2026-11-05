@@ -48,5 +48,50 @@
     "date": "2026-11-13",
     "slot": "Oběd 1",
     "name": "Vepřenky s cibulí a kečupem vař. brambor"
+  },
+  {
+    "date": "2026-11-16",
+    "slot": "Oběd 1",
+    "name": "Vař. hovězí, rajská omáčka houskový knedlík"
+  },
+  {
+    "date": "2026-11-18",
+    "slot": "Oběd 1",
+    "name": "Plněná vep. kapsa se šunkou a sýrem vař. brambor, salát"
+  },
+  {
+    "date": "2026-11-19",
+    "slot": "Oběd 1",
+    "name": "Tagliatelle s boloňskou omáčkou a sýrem"
+  },
+  {
+    "date": "2026-11-20",
+    "slot": "Oběd 1",
+    "name": "Ohnivé kuřecí maso bramborové placičky"
+  },
+  {
+    "date": "2026-11-23",
+    "slot": "Oběd 1",
+    "name": "Přírodní vep. plátek dušená rýže"
+  },
+  {
+    "date": "2026-11-24",
+    "slot": "Oběd 1",
+    "name": "Pečené rybí filé na zelenině šťouchané brambory salát"
+  },
+  {
+    "date": "2026-11-25",
+    "slot": "Oběd 1",
+    "name": "Krůtí perkelt halušky"
+  },
+  {
+    "date": "2026-11-26",
+    "slot": "Oběd 1",
+    "name": "Moravský vrabec, kys. zelí, bram. knedlík"
+  },
+  {
+    "date": "2026-11-27",
+    "slot": "Oběd 1",
+    "name": "Kuřecí řízek bram. kaše kompot"
   }
 ]

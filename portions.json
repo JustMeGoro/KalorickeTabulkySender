@@ -450,5 +450,60 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-05": {
+    "meal": "Rybí filé v těstičku šťouchané brambory",
+    "photoHash": "a9d07d8b153baa02",
+    "createdAt": "2026-11-05T12:22:59.935Z",
+    "items": [
+      {
+        "name": "rybí filé",
+        "grams": 130
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 20
+      },
+      {
+        "name": "vejce",
+        "grams": 15
+      },
+      {
+        "name": "mléko",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "cibule",
+        "grams": 10
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "salát",
+        "grams": 150,
+        "confident": true,
+        "box": [
+          0,
+          898,
+          314,
+          1000
+        ],
+        "note": "bowl with green salad"
+      }
+    ],
+    "closed": true
   }
 }

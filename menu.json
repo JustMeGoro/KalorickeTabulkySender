@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-11-05T00:00:26.142Z",
+  "fetchedAt": "2026-11-05T12:08:12.197Z",
   "days": [
     {
       "date": "2026-11-02",
@@ -160,6 +160,176 @@
           "slot": "Oběd 1",
           "type": "main",
           "name": "Vepřenky s cibulí a kečupem vař. brambor"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Vař. hovězí, rajská omáčka houskový knedlík"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Barevný salát s balkánským sýrem (paprika, rajče, okurek) (1.) pečivo V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Plněná vep. kapsa se šunkou a sýrem vař. brambor, salát"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Krupicová kaše s čokoládou V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, mléko, voda"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Tagliatelle s boloňskou omáčkou a sýrem"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Smažený sýr vař. brambor, kečup V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Ohnivé kuřecí maso bramborové placičky"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Přírodní vep. plátek dušená rýže"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "České buchty s marmeládou kakao V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Pečené rybí filé na zelenině šťouchané brambory salát"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Salát z pečených brambor s koprem V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Krůtí perkelt halušky"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Plněné papriky kuskusem a zeleninou sypané sýrem V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Moravský vrabec, kys. zelí, bram. knedlík"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Tarhoně se slaninou a žampiony a suš. rajčaty zel. salát V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Kuřecí řízek bram. kaše kompot"
         },
         {
           "slot": "Oběd další",

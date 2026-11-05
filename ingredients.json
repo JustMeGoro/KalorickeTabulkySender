@@ -647,6 +647,260 @@
         "name": "máslo",
         "grams": 10
       }
+    ],
+    "Vař. hovězí, rajská omáčka houskový knedlík": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 100
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 150
+      },
+      {
+        "name": "rajská omáčka",
+        "grams": 200
+      }
+    ],
+    "Plněná vep. kapsa se šunkou a sýrem vař. brambor, salát": [
+      {
+        "name": "Brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "Vepřové maso pečené",
+        "grams": 120
+      },
+      {
+        "name": "Šunka vepřová",
+        "grams": 30
+      },
+      {
+        "name": "Sýr eidam",
+        "grams": 25
+      },
+      {
+        "name": "Rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "Pšeničná mouka hladká",
+        "grams": 10
+      },
+      {
+        "name": "Máslo",
+        "grams": 10
+      },
+      {
+        "name": "Míchaný zeleninový salát",
+        "grams": 100
+      }
+    ],
+    "Tagliatelle s boloňskou omáčkou a sýrem": [
+      {
+        "name": "těstoviny vařené",
+        "grams": 200
+      },
+      {
+        "name": "mleté hovězí maso",
+        "grams": 80
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 100
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "olivový olej",
+        "grams": 10
+      },
+      {
+        "name": "sýr eidam",
+        "grams": 20
+      }
+    ],
+    "Ohnivé kuřecí maso bramborové placičky": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "brambory",
+        "grams": 200
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 30
+      },
+      {
+        "name": "vejce",
+        "grams": 50
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 20
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 40
+      },
+      {
+        "name": "paprika čerstvá",
+        "grams": 30
+      }
+    ],
+    "Přírodní vep. plátek dušená rýže": [
+      {
+        "name": "vepřová kýta",
+        "grams": 120
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "vývar",
+        "grams": 50
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 5
+      }
+    ],
+    "Pečené rybí filé na zelenině šťouchané brambory salát": [
+      {
+        "name": "rybí filé",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "mrkev",
+        "grams": 50
+      },
+      {
+        "name": "cuketa",
+        "grams": 50
+      },
+      {
+        "name": "olej rostlinný",
+        "grams": 10
+      },
+      {
+        "name": "ledový salát",
+        "grams": 80
+      },
+      {
+        "name": "olivový olej",
+        "grams": 5
+      }
+    ],
+    "Krůtí perkelt halušky": [
+      {
+        "name": "krůtí maso",
+        "grams": 120
+      },
+      {
+        "name": "halušky",
+        "grams": 250
+      },
+      {
+        "name": "cibule",
+        "grams": 50
+      },
+      {
+        "name": "olej",
+        "grams": 15
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 30
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 40
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      }
+    ],
+    "Moravský vrabec, kys. zelí, bram. knedlík": [
+      {
+        "name": "vepřové maso pečené",
+        "grams": 120
+      },
+      {
+        "name": "bramborový knedlík",
+        "grams": 200
+      },
+      {
+        "name": "kysané zelí dušené",
+        "grams": 150
+      },
+      {
+        "name": "vepřové sádlo",
+        "grams": 15
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      }
+    ],
+    "Kuřecí řízek bram. kaše kompot": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "strouhanka",
+        "grams": 20
+      },
+      {
+        "name": "vejce",
+        "grams": 30
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 15
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko polotučné",
+        "grams": 50
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "ovocný kompot",
+        "grams": 100
+      }
     ]
   }
 }

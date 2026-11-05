@@ -709,5 +709,193 @@
     "unit": "g",
     "kcalPer100": 63,
     "reason": "Kandidát 0 je nejvhodnější, protože představuje nejobecnější položku pro jablko bez konkrétní odrůdy či značky."
+  },
+  "rajská omáčka": {
+    "status": "ok",
+    "id": "9ccd049b4bddc210",
+    "url": "rajska-omacka",
+    "title": "rajská omáčka",
+    "unit": "ml",
+    "kcalPer100": 72,
+    "reason": "Kandidát 0 přesně odpovídá samostatné surovině „rajská omáčka“ bez dalších přidaných složek a jde o obecnou položku."
+  },
+  "Brambory vařené": {
+    "status": "ok",
+    "id": "aa916f3d795d6a04",
+    "url": "brambory-varene-bez-slupky",
+    "title": "brambory vařené bez slupky",
+    "unit": "g",
+    "kcalPer100": 85,
+    "reason": "Položka představuje nejvíce obecnou a odpovídající variantu pro vařené brambory bez přidaných tuků či jiných surovin."
+  },
+  "Vepřové maso pečené": {
+    "status": "ok",
+    "id": "d523265b0266135e",
+    "url": "veprove-maso-pecene",
+    "title": "vepřové maso pečené",
+    "unit": "g",
+    "kcalPer100": 171,
+    "reason": "Položka 0 nejlépe odpovídá obecnému popisu pečeného vepřového masa bez dalších přidaných surovin či značkových úprav."
+  },
+  "Šunka vepřová": {
+    "status": "ok",
+    "id": "e52c0c8d77e4df84",
+    "url": "sunka-veprova-dusena-nejvyssi-jakosti",
+    "title": "šunka vepřová dušená nejvyšší jakosti",
+    "unit": "g",
+    "kcalPer100": 118,
+    "reason": "Vybral jsem obecnou dušenou vepřovou šunku bez značky s odpovídající kalorickou hodnotou pro hotový výrobek."
+  },
+  "Sýr eidam": {
+    "status": "ok",
+    "id": "f9d8425c0ee8651f",
+    "url": "eidam-syr-30-tuku-platkovy",
+    "title": "eidam sýr 30% tuku, plátkový",
+    "unit": "g",
+    "kcalPer100": 263,
+    "reason": "Kandidát 0 je obecná položka představující běžný 30% eidam bez konkrétní značky."
+  },
+  "Rostlinný olej": {
+    "status": "ok",
+    "id": "1fe16e9ed4b54246b525f516294a51c5",
+    "url": "rostlinny-olej-slunecnicovy-bell-zvolen",
+    "title": "Rostlinný olej slunečnicový Bell Zvolen",
+    "unit": "ml",
+    "kcalPer100": 809,
+    "reason": "Položka 2 je jediná, která odpovídá čistému rostlinnému oleji, zatímco ostatní kandidáti jsou rybí konzervy nebo smažená cibule."
+  },
+  "Pšeničná mouka hladká": {
+    "status": "ok",
+    "id": "4fa6314194ca1a83",
+    "url": "psenicna-mouka-hladka",
+    "title": "pšeničná mouka hladká",
+    "unit": "g",
+    "kcalPer100": 356,
+    "reason": "Položka 0 je obecná a nejlépe odpovídá základní surovině, přičemž u mouky nelze uvažovat o vařené variantě, protože se vždy počítá v syrovém stavu."
+  },
+  "Máslo": {
+    "status": "ok",
+    "id": "8c02f002857c4c1a",
+    "url": "maslo",
+    "title": "máslo",
+    "unit": "g",
+    "kcalPer100": 748,
+    "reason": "Položka 0 je nejlepší volbou, protože představuje obecné máslo bez konkrétní značky."
+  },
+  "Míchaný zeleninový salát": {
+    "status": "ok",
+    "id": "6735172920f54d7ca6a1d08b0949ba82",
+    "url": "michany-zeleninovy-salat-s-vejcem-a-arasidovym-dipem",
+    "title": "Míchaný zeleninový salát s vejcem a arašídovým dipem",
+    "unit": "g",
+    "kcalPer100": 98,
+    "reason": "only candidate"
+  },
+  "olivový olej": {
+    "status": "ok",
+    "id": "02d5ba649347b5d7",
+    "url": "olej-olivovy",
+    "title": "olej olivový",
+    "unit": "ml",
+    "kcalPer100": 896,
+    "reason": "Pro běžné vaření ve školních jídelnách se používá standardní olivový olej, který je obecnou položkou a nejlépe odpovídá energetické hodnotě běžně používaného tuku."
+  },
+  "brambory": {
+    "status": "ok",
+    "id": "aa916f3d795d6a04",
+    "url": "brambory-varene-bez-slupky",
+    "title": "brambory vařené bez slupky",
+    "unit": "g",
+    "kcalPer100": 85,
+    "reason": "Položka brambory vařené bez slupky nejlépe odpovídá standardní přípravě brambor jako přílohy ve školní jídelně."
+  },
+  "paprika čerstvá": {
+    "status": "no_match",
+    "relaxed": true,
+    "reason": "Žádný z kandidátů neodpovídá samotné paprice, jedná se výhradně o plněné papričky se sýrem nebo hotová složená jídla.",
+    "candidates": [
+      "Cherry papričky plněné čerstvým sýrem, s černými olivami a zelenými paprikami Kaufland",
+      "Proteinové kuře na paprice s cottage cheese, čerstvé celozrnné těstoviny Balanced food ze Zátiší",
+      "Oranžové papriky  plněné čerstvým sýrem s medem a hořčicí a zelené olivy Chef Select",
+      "Sýr čerstvý farmářský sladká paprika Sýrárna Broumov",
+      "Plná dobra žluté třešňové papričky plněné čerstvým sýrem Perla",
+      "Plněná paprika s čerstvým sýrem",
+      "Čerstvá chuť plná tvarohu s paprikou a paradajkami Syrokrém",
+      "Plná dobra žluté papričky plněné čerstvým sýrem Perla",
+      "Červené papričky plněné čerstvým sýrem perla",
+      "papričky plněné čerstvým sýrem, naložené v oleji s bylinkami"
+    ]
+  },
+  "vepřová kýta": {
+    "status": "ok",
+    "id": "a6e0016eb0019ac8",
+    "url": "veprova-kyta-bez-kosti-libova-pecena",
+    "title": "vepřová kýta bez kosti libová pečená",
+    "unit": "g",
+    "kcalPer100": 192,
+    "reason": "Položka 2 nejlépe odpovídá tepelně upravenému masu (pečená) bez přidaných uzenářských procesů či značkových úprav."
+  },
+  "cuketa": {
+    "status": "ok",
+    "id": "a5f29a22b0c11c6b",
+    "url": "cuketa-pecena",
+    "title": "cuketa pečená",
+    "unit": "g",
+    "kcalPer100": 23,
+    "reason": "Položka cuketa pečená nejlépe odpovídá tepelně upravené surovině bez přidaných ingrediencí, které by výrazně měnily nutriční hodnotu."
+  },
+  "krůtí maso": {
+    "status": "ok",
+    "id": "a8105b722ef44e88",
+    "url": "kruti-maso-pecene",
+    "title": "krůtí maso pečené",
+    "unit": "g",
+    "kcalPer100": 132,
+    "reason": "Položka krůtí maso pečené nejlépe odpovídá tepelně upravenému krůtímu masu v rámci školního oběda a je obecnou variantou bez značky."
+  },
+  "halušky": {
+    "status": "ok",
+    "id": "93e8195de906c180",
+    "url": "halusky",
+    "title": "halušky",
+    "unit": "g",
+    "kcalPer100": 203,
+    "reason": "Položka 0 představuje obecný a nejvhodnější základ pro hotové halušky bez specifikovaných přísad, které by mohly zkreslit nutriční hodnoty."
+  },
+  "vepřové sádlo": {
+    "status": "ok",
+    "id": "bafa1a5667db649f",
+    "url": "sadlo-skvarene-veprove",
+    "title": "sádlo škvařené vepřové",
+    "unit": "g",
+    "kcalPer100": 891,
+    "reason": "Položka sádlo škvařené vepřové je obecná a nejlépe odpovídá tepelně zpracovanému stavu suroviny použité v pokrmu."
+  },
+  "mléko polotučné": {
+    "status": "ok",
+    "id": "14fe316852b297ee",
+    "url": "mleko-polotucne-1-5-tuku",
+    "title": "mléko polotučné 1,5% tuku",
+    "unit": "ml",
+    "kcalPer100": 47,
+    "reason": "Položka 0 je obecná varianta polotučného mléka, která přesně odpovídá zadání bez vazby na konkrétní značku."
+  },
+  "ovocný kompot": {
+    "status": "ok",
+    "id": "6623d5cc02c69859",
+    "url": "kompot-ze-suseneho-ovoce",
+    "title": "Kompot ze sušeného ovoce",
+    "unit": "ml",
+    "kcalPer100": 57,
+    "reason": "Položka 3 nejlépe odpovídá obecnému popisu ovocného kompotu jako hotového pokrmu, zatímco ostatní možnosti jsou buď konkrétní značkové výrobky, nebo koláče, případně komplexní jídla."
+  },
+  "salát": {
+    "status": "ok",
+    "id": "6918ee43f5747aa4",
+    "url": "zeleninovy-salat-bez-zalivky",
+    "title": "zeleninový salát bez zálivky",
+    "unit": "g",
+    "kcalPer100": 49,
+    "reason": "Položka zeleninový salát bez zálivky nejlépe odpovídá obecnému označení hotového salátu jako přílohy ke školnímu obědu."
   }
 }
