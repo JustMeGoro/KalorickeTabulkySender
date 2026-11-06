@@ -505,5 +505,56 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-06": {
+    "meal": "Krušnohorské kuře s těstovinou (houby)",
+    "photoHash": "590b4e2e49374dcd",
+    "createdAt": "2026-11-06T12:21:24.075Z",
+    "items": [
+      {
+        "name": "těstoviny vařené",
+        "grams": 220
+      },
+      {
+        "name": "kuřecí maso vařené",
+        "grams": 120
+      },
+      {
+        "name": "houby",
+        "grams": 40
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "smetana",
+        "grams": 30
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "jogurt Bobík",
+        "grams": 100,
+        "confident": true,
+        "box": [
+          221,
+          140,
+          415,
+          386
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }

@@ -897,5 +897,14 @@
     "unit": "g",
     "kcalPer100": 49,
     "reason": "Položka zeleninový salát bez zálivky nejlépe odpovídá obecnému označení hotového salátu jako přílohy ke školnímu obědu."
+  },
+  "jogurt Bobík": {
+    "status": "ok",
+    "id": "77e30d009f3a4ae6a91a17cd9d2f5698",
+    "url": "jogurtik-vanilka-bobik",
+    "title": "Jogurtík vanilka Bobík",
+    "unit": "g",
+    "kcalPer100": 121,
+    "reason": "only candidate"
   }
 }
