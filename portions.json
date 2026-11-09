@@ -556,5 +556,38 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-09": {
+    "meal": "Rybí stripsy bram.kaše",
+    "photoHash": "a6ba98923f4b0caf",
+    "createdAt": "2026-11-09T12:17:00.957Z",
+    "items": [
+      {
+        "name": "brambory vařené",
+        "grams": 230
+      },
+      {
+        "name": "mléko",
+        "grams": 37
+      },
+      {
+        "name": "máslo",
+        "grams": 9
+      },
+      {
+        "name": "rybí filet",
+        "grams": 120
+      },
+      {
+        "name": "strouhanka",
+        "grams": 25
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
