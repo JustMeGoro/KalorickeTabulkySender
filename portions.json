@@ -589,5 +589,46 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-10": {
+    "meal": "Vepřové ražniči vařený brambor, tatarská omáčka",
+    "photoHash": "ed13a250e08ec7a9",
+    "createdAt": "2026-11-10T13:12:51.585Z",
+    "items": [
+      {
+        "name": "vepřové maso",
+        "grams": 120
+      },
+      {
+        "name": "anglická slanina",
+        "grams": 25
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "paprika",
+        "grams": 20
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 230
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "tatarská omáčka",
+        "grams": 35
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
