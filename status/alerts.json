@@ -1,1 +1,1 @@
-[]
+[{"id":"gemini-quota","level":"error","title":"Gemini free quota reached","text":"Gemini reports that the free quota is used up (per minute or per day). Runs keep retrying and the daily quota resets at midnight Pacific time (about 09:00 in Prague).","since":"2026-11-12T13:31:09.896Z","updatedAt":"2026-11-12T13:31:09.896Z"}]
