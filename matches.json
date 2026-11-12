@@ -906,5 +906,95 @@
     "unit": "g",
     "kcalPer100": 121,
     "reason": "only candidate"
+  },
+  "mleté maso smíšené": {
+    "status": "ok",
+    "id": "88ff32ab85273d59",
+    "url": "smazene-mlete-maso-s-cibuli",
+    "title": "Smažené mleté maso s cibulí",
+    "unit": "g",
+    "kcalPer100": 180,
+    "reason": "only candidate"
+  },
+  "červená čočka vařená": {
+    "status": "ok",
+    "id": "3a2aa1c36684e0fe",
+    "url": "cocka-cervena-varena",
+    "title": "čočka červená vařená",
+    "unit": "g",
+    "kcalPer100": 135,
+    "reason": "Kandidát 0 přesně odpovídá hledané uvařené surovině bez značkových nebo specifikovaných přísad."
+  },
+  "houska": {
+    "status": "ok",
+    "id": "47e68d63d24b6134",
+    "url": "houska-obycejna",
+    "title": "houska obyčejná",
+    "unit": "g",
+    "kcalPer100": 288,
+    "reason": "Položka 'houska obyčejná' přesně odpovídá zadání a představuje nejběžnější obecnou variantu bez značky."
+  },
+  "krůtí prsa": {
+    "status": "ok",
+    "id": "b9ade6eb4a695b07",
+    "url": "kruti-prso-pecene-bez-kuze",
+    "title": "krůtí prso pečené bez kůže",
+    "unit": "g",
+    "kcalPer100": 135,
+    "reason": "Kandidát 3 představuje standardní tepelně upravenou (pečenou) variantu krůtího prsa bez kůže s odpovídající kalorickou hodnotou."
+  },
+  "kari koření": {
+    "status": "ok",
+    "id": "1e79e6ac086f654a",
+    "url": "kari-koreni",
+    "title": "Kari koření",
+    "unit": "g",
+    "kcalPer100": 339,
+    "reason": "Položka 0 přesně odpovídá hledané surovině 'kari koření'."
+  },
+  "celer": {
+    "status": "ok",
+    "id": "96bb6e2bb0be0b71",
+    "url": "celer-bulvovy",
+    "title": "celer bulvový",
+    "unit": "g",
+    "kcalPer100": 44,
+    "reason": "Položka 'celer bulvový' je nejvhodnější obecnou surovinou odpovídající zadání celer."
+  },
+  "petržel": {
+    "status": "ok",
+    "id": "523248e2a76742e5b8bfbba9452fbcb1",
+    "url": "petrzel-varena",
+    "title": "petržel vařená",
+    "unit": "g",
+    "kcalPer100": 36,
+    "reason": "Kandidát 1 představuje obecnou vařenou petržel, což přesně odpovídá zadané surovině i požadavku na tepelně upravenou variantu."
+  },
+  "kyselá okurka": {
+    "status": "ok",
+    "id": "da3c088b1b37a47c",
+    "url": "okurka-kysela",
+    "title": "okurka kyselá",
+    "unit": "g",
+    "kcalPer100": 30,
+    "reason": "Kandidát 0 představuje přesnou a obecnou položku pro kyselou okurku bez konkrétní značky nebo složitých hotových jídel."
+  },
+  "kuřecí prsa pečená": {
+    "status": "ok",
+    "id": "666d0414917a6c06",
+    "url": "pecena-kureci-prsa",
+    "title": "Pečená kuřecí prsa",
+    "unit": "g",
+    "kcalPer100": 165,
+    "reason": "Položka Pečená kuřecí prsa představuje nejvhodnější obecnou variantu pro tepelně upravené maso bez specifikace dalších přísad či úprav."
+  },
+  "rajčata": {
+    "status": "ok",
+    "id": "bf78a2be17b25bb9",
+    "url": "rajcata",
+    "title": "rajčata",
+    "unit": "g",
+    "kcalPer100": 25,
+    "reason": "Kandidát 0 je nejlepší volbou, protože představuje základní a nejobecnější položku pro rajčata."
   }
 }

@@ -901,6 +901,180 @@
         "name": "ovocný kompot",
         "grams": 100
       }
+    ],
+    "Sekaná pečeně s červenou čočkou šťouchané brambory": [
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mleté maso smíšené",
+        "grams": 100
+      },
+      {
+        "name": "červená čočka vařená",
+        "grams": 40
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "mléko",
+        "grams": 20
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "houska",
+        "grams": 15
+      },
+      {
+        "name": "vejce",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "Krůtí nudličky na kari duš. vietnamská rýže": [
+      {
+        "name": "krůtí prsa",
+        "grams": 120
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "kari koření",
+        "grams": 5
+      }
+    ],
+    "Vepřové bratislavské maso houskový knedlík": [
+      {
+        "name": "vepřové maso",
+        "grams": 90
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 180
+      },
+      {
+        "name": "mrkev",
+        "grams": 25
+      },
+      {
+        "name": "celer",
+        "grams": 15
+      },
+      {
+        "name": "petržel",
+        "grams": 10
+      },
+      {
+        "name": "hrášek",
+        "grams": 15
+      },
+      {
+        "name": "kyselá okurka",
+        "grams": 15
+      },
+      {
+        "name": "smetana",
+        "grams": 20
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      }
+    ],
+    "Kuřecí kapsičky se sýrem a slaninou bram. kaše": [
+      {
+        "name": "kuřecí prsa pečená",
+        "grams": 150
+      },
+      {
+        "name": "sýr eidam",
+        "grams": 30
+      },
+      {
+        "name": "anglická slanina",
+        "grams": 20
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko",
+        "grams": 40
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      }
+    ],
+    "Paella s vep. masem, zeleninový salát": [
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "vepřové maso",
+        "grams": 100
+      },
+      {
+        "name": "hrášek",
+        "grams": 40
+      },
+      {
+        "name": "paprika",
+        "grams": 40
+      },
+      {
+        "name": "olivový olej",
+        "grams": 10
+      },
+      {
+        "name": "rajčata",
+        "grams": 50
+      },
+      {
+        "name": "ledový salát",
+        "grams": 100
+      },
+      {
+        "name": "okurka",
+        "grams": 50
+      },
+      {
+        "name": "olej rostlinný",
+        "grams": 5
+      }
     ]
   }
 }

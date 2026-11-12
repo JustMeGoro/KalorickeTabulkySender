@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-11-12T01:07:52.341Z",
+  "fetchedAt": "2026-11-12T13:25:57.901Z",
   "days": [
     {
       "date": "2026-11-02",
@@ -335,6 +335,101 @@
           "slot": "Oběd další",
           "type": "drink",
           "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Sekaná pečeně s červenou čočkou šťouchané brambory"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Americké livance s horkým ovocem V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-01",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Krůtí nudličky na kari duš. vietnamská rýže"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Dušená mrkev s hráškem vař. brambor V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Džus, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-02",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Vepřové bratislavské maso houskový knedlík"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Zapečený květák s těstovinami a sýrem salát V"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-03",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Kuřecí kapsičky se sýrem a slaninou bram. kaše"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Zabijačkový talíř kys. zelí vař. brambor"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Čaj voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-04",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Paella s vep. masem, zeleninový salát"
+        },
+        {
+          "slot": "Oběd další",
+          "type": "drink",
+          "name": "Minerálka, voda, mléko"
         }
       ]
     }
