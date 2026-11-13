@@ -996,5 +996,153 @@
     "unit": "g",
     "kcalPer100": 25,
     "reason": "Kandidát 0 je nejlepší volbou, protože představuje základní a nejobecnější položku pro rajčata."
+  },
+  "sterilovaná okurka": {
+    "status": "ok",
+    "id": "4cc6e34bd6452705",
+    "url": "okurky-sterilovane",
+    "title": "okurky sterilované",
+    "unit": "g",
+    "kcalPer100": 31,
+    "reason": "Položka 2 je obecnou variantou sterilované okurky bez vazby na konkrétní značku."
+  },
+  "špenát vařený": {
+    "status": "no_match",
+    "relaxed": true,
+    "reason": "Žádný z nabízených kandidátů neodpovídá samotnému vařenému špenátu, jedná se pouze o složitá složená jídla obsahující špenát.",
+    "candidates": [
+      "Zapékací rolka se špenátem a sýrem Snadné Vaření",
+      "špagety se špenatosýrovou omačkou špagety 500g, špenat 400g. tavený sýr  200g)",
+      "Zapékací rolka se špenátem a sýrem Snadné Vaření",
+      "Bramborové špalíčky se špenátem a riccotou, vaječný muffin Zdravé stravování",
+      "Těstoviny špenát a sýr uvařené",
+      "Vepřový burger se špenátem a sýrem Snadné vaření"
+    ]
+  },
+  "hovězí maso": {
+    "status": "ok",
+    "id": "d68276332c1a7480",
+    "url": "hovezi-maso-varene",
+    "title": "hovězí maso vařené",
+    "unit": "g",
+    "kcalPer100": 170,
+    "reason": "Kandidát 0 je nejvhodnější obecná položka představující tepelně upravené hovězí maso bez značky nebo specifikace mletí."
+  },
+  "párky": {
+    "status": "ok",
+    "id": "1c79b585a7874024b0113f95bc69b93f",
+    "url": "poctive-videnske-parky-kostelecke-uzeniny",
+    "title": "Poctivé párky vídeňské 90% Kostelecké uzeniny",
+    "unit": "g",
+    "kcalPer100": 262,
+    "reason": "Všechny položky v seznamu jsou značkové, proto vybírám klasické vídeňské párky od tradičního českého výrobce."
+  },
+  "vejce uvařené": {
+    "status": "ok",
+    "id": "ea9ed298739c464fb14189a28b020355",
+    "url": "varene-vejce",
+    "title": "Vařené vejce",
+    "unit": "g",
+    "kcalPer100": 160,
+    "reason": "Kandidát 0 představuje obecné vařené slepičí vejce, což přesně odpovídá zadané surovině bez značek a vedlejších přísad."
+  },
+  "hořčice plnotučná": {
+    "status": "ok",
+    "id": "571de0ff3e20b404",
+    "url": "horcice-plnotucna",
+    "title": "hořčice plnotučná",
+    "unit": "g",
+    "kcalPer100": 102,
+    "reason": "Položka 'hořčice plnotučná' je přesný obecný název bez konkrétní značky."
+  },
+  "kuřecí křídla pečená": {
+    "status": "ok",
+    "id": "c758266dad94953a",
+    "url": "kureci-kridla-pecena-v-troube",
+    "title": "Kuřecí křídla pečená v troubě",
+    "unit": "g",
+    "kcalPer100": 290,
+    "reason": "Položka 0 nejlépe odpovídá obecnému popisu pečených kuřecích křídel bez specifických příchutí či značek."
+  },
+  "majonéza": {
+    "status": "ok",
+    "id": "de7c840920af9f6f",
+    "url": "majoneza",
+    "title": "majonéza",
+    "unit": "g",
+    "kcalPer100": 659,
+    "reason": "Položka 0 představuje obecnou variantu majonézy, která odpovídá standardní energetické hodnotě pro tento typ suroviny."
+  },
+  "kuřecí maso": {
+    "status": "ok",
+    "id": "4967d45055dec1c7",
+    "url": "varene-kureci-maso",
+    "title": "Vařené kuřecí maso",
+    "unit": "g",
+    "kcalPer100": 142,
+    "reason": "Kandidát 7 představuje obecné vařené kuřecí maso, což nejlépe odpovídá zadání pro hotový pokrm ze školní jídelny."
+  },
+  "brusinky": {
+    "status": "ok",
+    "id": "da808d90c1993cb2",
+    "url": "brusinky",
+    "title": "brusinky",
+    "unit": "g",
+    "kcalPer100": 55,
+    "reason": "Položka 0 představuje obecnou surovinu brusinky bez uvedení značky s odpovídající kalorickou hodnotou."
+  },
+  "hranolky": {
+    "status": "ok",
+    "id": "757b20720e4bf0b7",
+    "url": "hranolky",
+    "title": "hranolky",
+    "unit": "g",
+    "kcalPer100": 275,
+    "reason": "Položka 0 představuje nejvíce reprezentativní obecnou hodnotu pro běžné smažené hranolky podávané ve školních jídelnách."
+  },
+  "kořenová zelenina vařená": {
+    "status": "ok",
+    "id": "30676f6aaa8242c480ed2fb96983dd9d",
+    "url": "pecena-korenova-zelenina",
+    "title": "pečená kořenová zelenina",
+    "unit": "g",
+    "kcalPer100": 44,
+    "reason": "Položka pečená kořenová zelenina nejlépe odpovídá obecnému popisu tepelně upravené kořenové zeleniny bez přidaných masných složek či omáček."
+  },
+  "karlovarský knedlík": {
+    "status": "ok",
+    "id": "946950d36d8c539a",
+    "url": "knedlik-karlovarsky",
+    "title": "knedlík karlovarský",
+    "unit": "g",
+    "kcalPer100": 164,
+    "reason": "Kandidát 0 je obecná položka odpovídající karlovarskému knedlíku bez specifické značky či přidaných surovin."
+  },
+  "zelené fazolky": {
+    "status": "ok",
+    "id": "c8ec6cf1c4f0c4f5",
+    "url": "fazolky-zelene-varene",
+    "title": "fazolky zelené vařené",
+    "unit": "g",
+    "kcalPer100": 32,
+    "reason": "Položka odpovídá popisu vařených zelených fazolek bez přidaných ingrediencí a je obecná."
+  },
+  "hlávkové zelí": {
+    "status": "ok",
+    "id": "23b465a3e5456669",
+    "url": "zeli-hlavkove-dusene",
+    "title": "zelí hlávkové dušené",
+    "unit": "g",
+    "kcalPer100": 114,
+    "reason": "Položka 'zelí hlávkové dušené' je obecná tepelně upravená varianta hlávkového zelí, která nejlépe odpovídá uvařené surovině ze školního oběda."
+  },
+  "vývar masový": {
+    "status": "ok",
+    "id": "b180c8f55cb2dc66",
+    "url": "masovy-vyvar",
+    "title": "Masový vývar",
+    "unit": "g",
+    "kcalPer100": 54,
+    "reason": "Položka 0 je nejvíce obecná a odpovídá popisu suroviny bez přidaných specifických zavářek či značkových úprav."
   }
 }

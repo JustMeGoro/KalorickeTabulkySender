@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-11-12T23:55:13.071Z",
+  "fetchedAt": "2026-11-13T12:42:22.015Z",
   "days": [
     {
       "date": "2026-11-02",
@@ -430,6 +430,146 @@
           "slot": "Oběd další",
           "type": "drink",
           "name": "Minerálka, voda, mléko"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-07",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Vepřový cikánský plátek barevné těstoviny"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Ryžový nákyp s meruňkami kakao V"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-08",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Moravský vrabec, dušený špenát bram. knedlík"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Krůtí játra na slanině duš. rýže s bulgurem kys. okurek"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-09",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Španělský ptáček dušená rýže, salát"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Bramborový guláš chléb"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Pikantní majonezové křidýlka vař, brambor"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Rybí ražničí vař. brambor"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-11",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Berry řízek hranolky"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-14",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Svíčková na smetaně houskový a karlovarský knedlík"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Špagety se sušenými rajčaty a sýrem V"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-15",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Krůtí kostky se zelenými fazolky a tarhoní zel salát"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Dukátové buchtičky s vanilkovým krémem V"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-16",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Luhačovický špaček bram. kaše"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Studentský řízek bram. kaše"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-17",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Přírodní rybí filé na másle šťouchaný brambor kompot"
+        },
+        {
+          "slot": "Oběd 2",
+          "type": "main",
+          "name": "Houbový kuba (kroupy, houby) kys. okurek"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-18",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Marinovaný kotlet opékané brambory, ďábelská omáčka"
         }
       ]
     }

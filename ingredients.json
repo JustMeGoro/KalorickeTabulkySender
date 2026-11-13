@@ -1075,6 +1075,322 @@
         "name": "olej rostlinný",
         "grams": 5
       }
+    ],
+    "Vepřový cikánský plátek barevné těstoviny": [
+      {
+        "name": "vepřové maso",
+        "grams": 100
+      },
+      {
+        "name": "těstoviny vařené",
+        "grams": 200
+      },
+      {
+        "name": "paprika",
+        "grams": 30
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "sterilovaná okurka",
+        "grams": 15
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "pšeničná mouka hladká",
+        "grams": 10
+      }
+    ],
+    "Moravský vrabec, dušený špenát bram. knedlík": [
+      {
+        "name": "vepřové maso pečené",
+        "grams": 130
+      },
+      {
+        "name": "bramborový knedlík",
+        "grams": 200
+      },
+      {
+        "name": "špenát vařený",
+        "grams": 140
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "vepřové sádlo",
+        "grams": 15
+      },
+      {
+        "name": "smetana",
+        "grams": 25
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      }
+    ],
+    "Španělský ptáček dušená rýže, salát": [
+      {
+        "name": "hovězí maso",
+        "grams": 120
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 220
+      },
+      {
+        "name": "párky",
+        "grams": 20
+      },
+      {
+        "name": "vejce uvařené",
+        "grams": 20
+      },
+      {
+        "name": "anglická slanina",
+        "grams": 15
+      },
+      {
+        "name": "kyselá okurka",
+        "grams": 20
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "hořčice plnotučná",
+        "grams": 10
+      },
+      {
+        "name": "okurka",
+        "grams": 80
+      },
+      {
+        "name": "cukr",
+        "grams": 5
+      }
+    ],
+    "Pikantní majonezové křidýlka vař, brambor": [
+      {
+        "name": "kuřecí křídla pečená",
+        "grams": 200
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "majonéza",
+        "grams": 35
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      }
+    ],
+    "Berry řízek hranolky": [
+      {
+        "name": "kuřecí maso",
+        "grams": 130
+      },
+      {
+        "name": "strouhanka",
+        "grams": 20
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "vejce",
+        "grams": 10
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 20
+      },
+      {
+        "name": "brusinky",
+        "grams": 30
+      },
+      {
+        "name": "hranolky",
+        "grams": 200
+      }
+    ],
+    "Svíčková na smetaně houskový a karlovarský knedlík": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 120
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 50
+      },
+      {
+        "name": "kořenová zelenina vařená",
+        "grams": 80
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 150
+      },
+      {
+        "name": "karlovarský knedlík",
+        "grams": 100
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 20
+      },
+      {
+        "name": "hovězí vývar",
+        "grams": 100
+      }
+    ],
+    "Krůtí kostky se zelenými fazolky a tarhoní zel salát": [
+      {
+        "name": "krůtí maso",
+        "grams": 120
+      },
+      {
+        "name": "zelené fazolky",
+        "grams": 60
+      },
+      {
+        "name": "tarhoňa vařená",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      },
+      {
+        "name": "hlávkové zelí",
+        "grams": 80
+      },
+      {
+        "name": "cukr",
+        "grams": 5
+      }
+    ],
+    "Luhačovický špaček bram. kaše": [
+      {
+        "name": "vepřové maso",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "mléko polotučné",
+        "grams": 50
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "vývar masový",
+        "grams": 100
+      }
+    ],
+    "Přírodní rybí filé na másle šťouchaný brambor kompot": [
+      {
+        "name": "rybí filé",
+        "grams": 130
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "máslo",
+        "grams": 20
+      },
+      {
+        "name": "cibule",
+        "grams": 15
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "ovocný kompot",
+        "grams": 150
+      }
+    ],
+    "Marinovaný kotlet opékané brambory, ďábelská omáčka": [
+      {
+        "name": "vepřová kotleta",
+        "grams": 120
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "paprika čerstvá",
+        "grams": 30
+      }
     ]
   }
 }
