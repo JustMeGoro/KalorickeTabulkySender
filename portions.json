@@ -630,5 +630,26 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-16": {
+    "meal": "Vař. hovězí, rajská omáčka houskový knedlík",
+    "photoHash": "fff3f3159387fe23",
+    "createdAt": "2026-11-16T12:18:09.918Z",
+    "items": [
+      {
+        "name": "hovězí maso vařené",
+        "grams": 90
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 160
+      },
+      {
+        "name": "rajská omáčka",
+        "grams": 200
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
