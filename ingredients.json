@@ -1391,6 +1391,70 @@
         "name": "paprika čerstvá",
         "grams": 30
       }
+    ],
+    "Přírodní plátek na žampionech bram. kaše, salát": [
+      {
+        "name": "vepřová kýta",
+        "grams": 120
+      },
+      {
+        "name": "žampiony",
+        "grams": 80
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 10
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko polotučné",
+        "grams": 50
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "ledový salát",
+        "grams": 100
+      },
+      {
+        "name": "olivový olej",
+        "grams": 5
+      }
+    ],
+    "Segedínksý guláš )1.1,7,9) houskový knedlík": [
+      {
+        "name": "vepřové maso",
+        "grams": 120
+      },
+      {
+        "name": "kysané zelí",
+        "grams": 150
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 50
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 15
+      },
+      {
+        "name": "houskový knedlík",
+        "grams": 200
+      }
     ]
   }
 }

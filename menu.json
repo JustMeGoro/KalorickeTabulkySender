@@ -1,7 +1,7 @@
 {
   "source": "https://secure.ulrichsw.cz/estrava/api/?v=1&action=publicjidelnicek&idzar=103&typ=2&lang=CZ",
   "canteen": "Gymnázium Orlová",
-  "fetchedAt": "2026-11-18T01:25:33.487Z",
+  "fetchedAt": "2026-11-18T13:33:26.779Z",
   "days": [
     {
       "date": "2026-11-02",
@@ -570,6 +570,26 @@
           "slot": "Oběd 1",
           "type": "main",
           "name": "Marinovaný kotlet opékané brambory, ďábelská omáčka"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-21",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Přírodní plátek na žampionech bram. kaše, salát"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-22",
+      "meals": [
+        {
+          "slot": "Oběd 1",
+          "type": "main",
+          "name": "Segedínksý guláš )1.1,7,9) houskový knedlík"
         }
       ]
     }

@@ -1144,5 +1144,14 @@
     "unit": "g",
     "kcalPer100": 54,
     "reason": "Položka 0 je nejvíce obecná a odpovídá popisu suroviny bez přidaných specifických zavářek či značkových úprav."
+  },
+  "kysané zelí": {
+    "status": "ok",
+    "id": "cf523382f784f775",
+    "url": "zeli-kysane-dusene",
+    "title": "zelí kysané dušené",
+    "unit": "g",
+    "kcalPer100": 90,
+    "reason": "Položka zelí kysané dušené nejlépe odpovídá tepelně upravenému stavu suroviny v rámci školního oběda."
   }
 }
