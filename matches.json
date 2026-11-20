@@ -1153,5 +1153,14 @@
     "unit": "g",
     "kcalPer100": 90,
     "reason": "Položka zelí kysané dušené nejlépe odpovídá tepelně upravenému stavu suroviny v rámci školního oběda."
+  },
+  "čaj": {
+    "status": "ok",
+    "id": "7bd0a4fdc7caa0a7",
+    "url": "caj",
+    "title": "čaj",
+    "unit": "ml",
+    "kcalPer100": 0,
+    "reason": "Položka 'čaj' je nejobecnější a nejlépe odpovídá zadanému názvu bez specifické příchutě nebo slazení."
   }
 }

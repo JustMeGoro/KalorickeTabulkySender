@@ -651,5 +651,73 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-20": {
+    "meal": "Ohnivé kuřecí maso bramborové placičky",
+    "photoHash": "9a3a161725fb47c9",
+    "createdAt": "2026-11-20T11:40:25.342Z",
+    "items": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 100
+      },
+      {
+        "name": "brambory",
+        "grams": 180
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 25
+      },
+      {
+        "name": "vejce",
+        "grams": 40
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 15
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 40
+      },
+      {
+        "name": "cibule",
+        "grams": 30
+      },
+      {
+        "name": "paprika čerstvá",
+        "grams": 25
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "banán",
+        "grams": 150,
+        "confident": true,
+        "box": [
+          551,
+          50,
+          866,
+          652
+        ],
+        "note": ""
+      },
+      {
+        "id": "x2",
+        "name": "čaj",
+        "grams": 200,
+        "confident": true,
+        "box": [
+          50,
+          197,
+          281,
+          417
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }
