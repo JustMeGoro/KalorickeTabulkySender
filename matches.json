@@ -1162,5 +1162,14 @@
     "unit": "ml",
     "kcalPer100": 0,
     "reason": "Položka 'čaj' je nejobecnější a nejlépe odpovídá zadanému názvu bez specifické příchutě nebo slazení."
+  },
+  "pečivo": {
+    "status": "ok",
+    "id": "497c31dde5382824",
+    "url": "pecivo",
+    "title": "Pečivo",
+    "unit": "g",
+    "kcalPer100": 230,
+    "reason": "Položka Pečivo je nejobecnější variantou odpovídající zadané surovině bez specifikace konkrétního druhu či značky."
   }
 }

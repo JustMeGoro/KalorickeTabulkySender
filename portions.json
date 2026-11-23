@@ -719,5 +719,48 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-23": {
+    "meal": "Přírodní vep. plátek dušená rýže",
+    "photoHash": "e37ec23e62a20210",
+    "createdAt": "2026-11-23T12:29:49.007Z",
+    "items": [
+      {
+        "name": "vepřová kýta",
+        "grams": 120
+      },
+      {
+        "name": "rýže vařená",
+        "grams": 200
+      },
+      {
+        "name": "rostlinný olej",
+        "grams": 10
+      },
+      {
+        "name": "vývar",
+        "grams": 50
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 5
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "pečivo",
+        "grams": 60,
+        "confident": true,
+        "box": [
+          0,
+          453,
+          47,
+          833
+        ],
+        "note": "Two pieces of bread or rolls on a separate plate in the background."
+      }
+    ],
+    "closed": true
   }
 }
