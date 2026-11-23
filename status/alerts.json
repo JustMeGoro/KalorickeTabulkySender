@@ -1,1 +1,1 @@
-[]
+[{"id":"gemini-overload","level":"warn","title":"Gemini is overloaded","text":"7 requests to Gemini failed in the last run. Runs are slower than usual but retry other models.","since":"2026-11-23T12:34:00.215Z","updatedAt":"2026-11-23T12:34:00.215Z"}]
