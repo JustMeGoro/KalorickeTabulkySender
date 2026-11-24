@@ -762,5 +762,46 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-24": {
+    "meal": "Pečené rybí filé na zelenině šťouchané brambory salát",
+    "photoHash": "ff3872410d88da49",
+    "createdAt": "2026-11-24T13:09:29.330Z",
+    "items": [
+      {
+        "name": "rybí filé",
+        "grams": 110
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 230
+      },
+      {
+        "name": "máslo",
+        "grams": 15
+      },
+      {
+        "name": "mrkev",
+        "grams": 13
+      },
+      {
+        "name": "cuketa",
+        "grams": 13
+      },
+      {
+        "name": "olej rostlinný",
+        "grams": 10
+      },
+      {
+        "name": "ledový salát",
+        "grams": 20
+      },
+      {
+        "name": "olivový olej",
+        "grams": 1
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
