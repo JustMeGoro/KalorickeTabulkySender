@@ -803,5 +803,56 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-25": {
+    "meal": "Krůtí perkelt halušky",
+    "photoHash": "4f0366630350bd8d",
+    "createdAt": "2026-11-25T12:11:31.401Z",
+    "items": [
+      {
+        "name": "krůtí maso",
+        "grams": 110
+      },
+      {
+        "name": "halušky",
+        "grams": 230
+      },
+      {
+        "name": "cibule",
+        "grams": 45
+      },
+      {
+        "name": "olej",
+        "grams": 15
+      },
+      {
+        "name": "rajčatový protlak",
+        "grams": 25
+      },
+      {
+        "name": "smetana ke šlehání",
+        "grams": 35
+      },
+      {
+        "name": "hladká mouka",
+        "grams": 10
+      }
+    ],
+    "extras": [
+      {
+        "id": "x1",
+        "name": "ovocný nápoj",
+        "grams": 200,
+        "confident": true,
+        "box": [
+          247,
+          952,
+          440,
+          1000
+        ],
+        "note": ""
+      }
+    ],
+    "closed": true
   }
 }

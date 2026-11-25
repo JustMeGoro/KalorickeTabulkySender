@@ -1171,5 +1171,14 @@
     "unit": "g",
     "kcalPer100": 230,
     "reason": "Položka Pečivo je nejobecnější variantou odpovídající zadané surovině bez specifikace konkrétního druhu či značky."
+  },
+  "ovocný nápoj": {
+    "status": "ok",
+    "id": "cd1d1a6750af2635",
+    "url": "juice-multivitamin-hello",
+    "title": "Multivitamin ovocný nápoj Hello",
+    "unit": "ml",
+    "kcalPer100": 41,
+    "reason": "Kandidát 0 představuje běžný ovocný nápoj s odpovídající kalorickou hodnotou pro nápoj ze školního oběda."
   }
 }
