@@ -854,5 +854,38 @@
       }
     ],
     "closed": true
+  },
+  "2026-11-26": {
+    "meal": "Moravský vrabec, kys. zelí, bram. knedlík",
+    "photoHash": "a4db5891b1b4e7ee",
+    "createdAt": "2026-11-26T12:30:07.688Z",
+    "items": [
+      {
+        "name": "vepřové maso pečené",
+        "grams": 100
+      },
+      {
+        "name": "bramborový knedlík",
+        "grams": 200
+      },
+      {
+        "name": "kysané zelí dušené",
+        "grams": 150
+      },
+      {
+        "name": "vepřové sádlo",
+        "grams": 10
+      },
+      {
+        "name": "cibule",
+        "grams": 20
+      },
+      {
+        "name": "pšeničná mouka",
+        "grams": 10
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
