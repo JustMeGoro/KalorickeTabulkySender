@@ -887,5 +887,46 @@
     ],
     "extras": [],
     "closed": true
+  },
+  "2026-11-27": {
+    "meal": "Kuřecí řízek bram. kaše kompot",
+    "photoHash": "eeec900bf45359f4",
+    "createdAt": "2026-11-27T12:29:14.724Z",
+    "items": [
+      {
+        "name": "kuřecí prsa",
+        "grams": 120
+      },
+      {
+        "name": "strouhanka",
+        "grams": 20
+      },
+      {
+        "name": "vejce",
+        "grams": 30
+      },
+      {
+        "name": "olej řepkový",
+        "grams": 15
+      },
+      {
+        "name": "brambory vařené",
+        "grams": 250
+      },
+      {
+        "name": "mléko polotučné",
+        "grams": 50
+      },
+      {
+        "name": "máslo",
+        "grams": 10
+      },
+      {
+        "name": "ovocný kompot",
+        "grams": 25
+      }
+    ],
+    "extras": [],
+    "closed": true
   }
 }
